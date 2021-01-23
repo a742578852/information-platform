@@ -1,0 +1,182 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+		    "path" : "pages/index/index",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "首页",
+		        "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#CCE6FF"
+		    }
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+        {
+            "path" : "pages/setIp/setIp",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "配置网址信息",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/daTi/daTi",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"app-plus":{
+					"bounce":"none"
+				}
+		    }
+		}
+        ,{
+        "path": "pages/mine/mine",
+        "style": {
+            "navigationBarTitleText": "我的"
+            // "enablePullDownRefresh": true,
+            // "backgroundTextStyle": "dark",
+            // "app-plus": {
+            //     "titleView": false
+            // }
+        }
+    },
+	{
+            "path" : "pages/keMu/keMu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/kaoShi/kaoShi",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+			"path" : "pages/risk/risk",
+			"style" :                                                                                    
+			{
+				"navigationBarTitleText": "风险上报",
+				"enablePullDownRefresh": false
+			}
+			
+		}
+        ,{
+            "path" : "pages/woDeKaoShi/woDeKaoShi",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/risk/riskDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "风险上报详情",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/risk/addRisk",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "风险上报",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+        ,{
+            "path" : "pages/yanPan/yanPan",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "风险研判",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/banZu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "班组级风险研判",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/cheJian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "车间级风险研判",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/gongSi",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "公司级风险研判",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/zuoYe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "作业证申请",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/updatePassword/updatePassword",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/home/home.png",
+				"selectedIconPath":"static/home/home-selected.png"
+			},
+			{
+				"pagePath":"pages/mine/mine",
+				"text":"我的",
+				"iconPath":"static/yx-login/user.png",
+				"selectedIconPath":"static/account/nick.png"
+			}
+		]
+	}
+	
+	
+}
