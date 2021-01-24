@@ -149,7 +149,16 @@
             "path" : "pages/mine/updatePassword/updatePassword",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "修改密码",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/addBanZu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "新增研判",
                 "enablePullDownRefresh": false
             }
             

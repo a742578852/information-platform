@@ -1,16 +1,18 @@
 <template>
 	<view>
 		<view class="btn">
-			<button type="default" class="btn1">增加</button>
+			<button type="default" class="btn1" @click="btn1()">增加</button>
 			<button type="default" class="btn2">车间级班组汇总</button>
 		</view>
-		<view class="table">
+		<scroll-view scroll-x="true" class="table">
+			
+		
 			<view class="table-item" style="padding-left: 1px;">序号</view>
 			<view class="table-item">班组</view>
 			<view class="table-item">填报人</view>
 			<view class="table-item">附件</view>
-			<view class="table-item">操作</view>
-		</view>
+			<view class="table-item">操作66666666666</view>
+		</scroll-view>
 		<view class="table-data" v-for="(item,index) in dataList">
 			<view class="table-data-item">{{index+1}}</view>
 		</view>
@@ -25,7 +27,11 @@
 			}
 		},
 		methods: {
-			
+			btn1(){
+				uni.navigateTo({
+					url:'addBanZu'
+				})
+			}
 		}
 	}
 </script>
@@ -47,6 +53,7 @@
 		}
 	}
 	.table{
+		white-space: nowrap;
 		width: 100%;
 		height: 60px;
 		line-height: 40px;
@@ -55,6 +62,7 @@
 		font-size: 20px;
 		background-color: #8799A3;
 		.table-item{
+			display: inline-block;
 			padding-left: 22px;
 		}
 	}
