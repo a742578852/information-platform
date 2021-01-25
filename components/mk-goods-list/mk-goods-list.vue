@@ -33,7 +33,6 @@
 				var id = item.subject.id
 				uni.navigateTo({
 					url:'../../pages/daTi/daTi?id='+id
-					
 				})
 			}
 		},

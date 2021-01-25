@@ -270,10 +270,10 @@
 						<view class="title" style="height: 80px;">各风险点风险研判结果是否落实</br>相应的风险管控措施:</view>
 						<radio-group name="" @change="radioChange1" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check1"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check11"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -281,10 +281,10 @@
 						<view class="title" style="height: 80px;">特殊作业的风险辨识、作业许可</br>及管控是否落实:</view>
 						<radio-group name="" @change="radioChange2" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check2"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check22"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -292,10 +292,10 @@
 						<view class="title">是否处于试生产:</view>
 						<radio-group name="" @change="radioChange3" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check3"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check33"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -303,10 +303,10 @@
 						<view class="title">是否处于开停车状态:</view>
 						<radio-group name="" @change="radioChange4" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check4"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check44"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -314,10 +314,10 @@
 						<view class="title">承包商作业是否管控:</view>
 						<radio-group name="" @change="radioChange5" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check5"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check55"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -325,10 +325,10 @@
 						<view class="title">是否存在变更情况:</view>
 						<radio-group name="" @change="radioChange6" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check6"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check66"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -336,10 +336,10 @@
 						<view class="title">是否落实审批程序:</view>
 						<radio-group name="" @change="radioChange7" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check7"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check77"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -353,7 +353,7 @@
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">特级动火数量:</view>
-						<input  name="input" v-model="fire2" ></input>
+						<input  name="input" v-model="fire3" ></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">受限空间作业数量:</view>
@@ -392,10 +392,10 @@
 						<view class="title" style="height: 80px;">温度/压力/危化品/液位/流量</br>等工艺参数是否处于指标范围:</view>
 						<radio-group name="" @change="radioChange8" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check8"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check88"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -403,10 +403,10 @@
 						<view class="title">特种设备是否安全运行:</view>
 						<radio-group name="" @change="radioChange9" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="check9"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="check99"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -414,10 +414,10 @@
 						<view class="title">设备设施是否完好无泄漏:</view>
 						<radio-group name="" @change="radioChange10" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checka"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkaa"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -425,10 +425,10 @@
 						<view class="title" style="height: 80px;">超限报警、紧急切断、连锁等各类</br>安全设施配备完好投用，并可靠运行:</view>
 						<radio-group name="" @change="radioChange11" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checkb"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkbb"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -441,10 +441,10 @@
 						<view class="title" style="height: 80px;">储罐、管道、机泵、阀门及仪表</br>系统完好无泄漏:</view>
 						<radio-group name="" @change="radioChange12" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checkc"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkcc"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -452,10 +452,10 @@
 						<view class="title" style="height: 80px;">储罐的液位、温度、压力无超限</br>运行:</view>
 						<radio-group name="" @change="radioChange13" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checkd"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkdd"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -463,10 +463,10 @@
 						<view class="title">装卸车时确保人员是否在岗:</view>
 						<radio-group name="" @change="radioChange14" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checke"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkee"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -474,10 +474,10 @@
 						<view class="title" style="height: 80px;">可燃及有毒气体报警和联锁是否</br>处于可靠运行状态:</view>
 						<radio-group name="" @change="radioChange15" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checkf"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkff"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -485,10 +485,10 @@
 						<view class="title" style="height: 80px;">仓库按照国家标准分区分类储存</br>危险化学品，无超量、超品种储存</br>，相互禁配物质无混放混存:</view>
 						<radio-group name="" @change="radioChange16" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" :checked="checkg"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" /><text style="margin-left: 5px;">否</text>
+								<radio value="否" :checked="checkgg"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -506,8 +506,79 @@
 
 <script>
 	export default {
+		
 		data() {
 			return {
+				fxypYpnrinfos:[],
+				fxypAqcninfo:{
+					fxd:'',
+					fxgk:'',
+					lscs:'',
+					yj:'',
+					ej:'',
+					tj:'',
+					sx:'',
+					gc:'',
+					ts:'',
+					ssc:'',
+					ktc:'',
+					cbs:'',
+					bg:'',
+					lssp:'',
+					bzgw:'',
+					qzyx:'',
+					tc:'',
+					jx:'',
+					zbfw:'',
+					aqyx:'',
+					wxl:'',
+					kkyx:'',
+					whwxl:'',
+					cxyx:'',
+					ryzg:'',
+					yxzt:'',
+					hfhc:'',
+					bzfzr:'',
+					rq:'',
+				},
+				fxypBzjinfo:{
+					bz:'',
+					tbr:'',
+					cj:'',
+					tbrq:''
+				},
+				check1:false,
+				check11:false,
+				check2:false,
+				check22:false,
+				check3:false,
+				check33:false,
+				check4:false,
+				check44:false,
+				check5:false,
+				check55:false,
+				check6:false,
+				check66:false,
+				check7:false,
+				check77:false,
+				check8:false,
+				check88:false,
+				check9:false,
+				check99:false,
+				checka:false,
+				checkaa:false,
+				checkb:false,
+				checkbb:false,
+				checkc:false,
+				checkcc:false,
+				checkd:false,
+				checkdd:false,
+				checke:false,
+				checkee:false,
+				checkf:false,
+				checkff:false,
+				checkg:false,
+				checkgg:false,
 				banzu:'',
 				tianbaoren:'',
 				chejian:'',
@@ -529,6 +600,16 @@
 				val15:'',
 				val16:'',
 				point:'',
+				fire1:'',
+				fire2:'',
+				fire3:'',
+				space:'',
+				height:'',
+				els:'',
+				jiqi:'',
+				yunxing:'',
+				tingchan:'',
+				jianxiu:'',
 				info:{
 					
 				},
@@ -554,6 +635,135 @@
 				index12: 0,
 				index13: 0,
 				index14: 0
+			}
+		},
+		async onLoad(option) {
+			const bid = option.bid
+			//根据id查看研判详情
+			const res = await this.$myRequest({
+				url:'/api/judge/getBzjinfoByBzId',
+				method:'POST',
+				data:{
+					bid:bid
+				}
+			})
+			if(res.data.code==200){
+				//班组基本信息
+				this.fxypBzjinfo = res.data.data.fxypBzjinfo
+				this.banzu = this.fxypBzjinfo.bz
+				this.tianbaoren = this.fxypBzjinfo.tbr
+				this.chejian = this.fxypBzjinfo.cj
+				this.riqi = this.fxypBzjinfo.tbrq
+				//安全承诺
+				this.fxypAqcninfo = res.data.data.fxypAqcninfo
+				this.point = this.fxypAqcninfo.fxd
+				this.fire1 = this.fxypAqcninfo.yj
+				this.fire2 = this.fxypAqcninfo.ej
+				this.fire3 = this.fxypAqcninfo.tj
+				this.space = this.fxypAqcninfo.sx
+				this.height = this.fxypAqcninfo.gc
+				this.els = this.fxypAqcninfo.ts
+				this.jiqi = this.fxypAqcninfo.bzgw
+				this.yunxing = this.fxypAqcninfo.qzyx
+				this.tingchan = this.fxypAqcninfo.tc
+				this.jianxiu = this.fxypAqcninfo.jx
+				//动态改变radio
+				if(this.fxypAqcninfo.fxgk=='是'){
+					this.check1 = true
+				}
+				if(this.fxypAqcninfo.fxgk=='否'){
+					this.check11 = true
+				}
+				if(this.fxypAqcninfo.lscs=='是'){
+					this.check2 = true
+				}
+				if(this.fxypAqcninfo.lscs=='否'){
+					this.check22 = true
+				}
+				if(this.fxypAqcninfo.ssc=='是'){
+					this.check3 = true
+				}
+				if(this.fxypAqcninfo.ssc=='否'){
+					this.check33 = true
+				}
+				if(this.fxypAqcninfo.ktc=='是'){
+					this.check4 = true
+				}
+				if(this.fxypAqcninfo.ktc=='否'){
+					this.check44 = true
+				}
+				if(this.fxypAqcninfo.cbs=='是'){
+					this.check5 = true
+				}
+				if(this.fxypAqcninfo.cbs=='否'){
+					this.check55 = true
+				}
+				if(this.fxypAqcninfo.bg=='是'){
+					this.check6 = true
+				}
+				if(this.fxypAqcninfo.bg=='否'){
+					this.check66 = true
+				}
+				if(this.fxypAqcninfo.lssp=='是'){
+					this.check7 = true
+				}
+				if(this.fxypAqcninfo.lssp=='否'){
+					this.check77 = true
+				}
+				if(this.fxypAqcninfo.zbfw=='是'){
+					this.check8 = true
+				}
+				if(this.fxypAqcninfo.zbfw=='否'){
+					this.check88 = true
+				}
+				if(this.fxypAqcninfo.aqyx=='是'){
+					this.check9 = true
+				}
+				if(this.fxypAqcninfo.aqyx=='否'){
+					this.check99 = true
+				}
+				if(this.fxypAqcninfo.wxl=='是'){
+					this.checka = true
+				}
+				if(this.fxypAqcninfo.wxl=='否'){
+					this.checkaa = true
+				}
+				if(this.fxypAqcninfo.kkyx=='是'){
+					this.checkb = true
+				}
+				if(this.fxypAqcninfo.kkyx=='否'){
+					this.checkbb = true
+				}
+				if(this.fxypAqcninfo.whwxl=='是'){
+					this.checkc = true
+				}
+				if(this.fxypAqcninfo.whwxl=='否'){
+					this.checkcc = true
+				}
+				if(this.fxypAqcninfo.cxyx=='是'){
+					this.checkd = true
+				}
+				if(this.fxypAqcninfo.cxyx=='否'){
+					this.checkdd = true
+				}
+				if(this.fxypAqcninfo.ryzg=='是'){
+					this.checke = true
+				}
+				if(this.fxypAqcninfo.ryzg=='否'){
+					this.checkee = true
+				}
+				if(this.fxypAqcninfo.yxzt=='是'){
+					this.checkf = true
+				}
+				if(this.fxypAqcninfo.yxzt=='否'){
+					this.checkff = true
+				}
+				if(this.fxypAqcninfo.hfhc=='是'){
+					this.checkg = true
+				}
+				if(this.fxypAqcninfo.hfhc=='否'){
+					this.checkgg = true
+				}
 			}
 		},
 		methods: {
