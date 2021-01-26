@@ -102,7 +102,7 @@
 	
 	.table-data{
 		display: flex;
-		font-size: 15px;
+		font-size: 12px;
 		// margin: 10px;
 		width: 100%;
 		// background-color: #D2F1F0;

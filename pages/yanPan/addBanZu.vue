@@ -7,7 +7,7 @@
 			</view>
 			<view class="cu-form-group">
 				<view class="title">填报人</view>
-				<input  name="input" v-model="tianbaoren"></input>
+				<input  name="input" v-model="tianbaoren" disabled=""></input>
 			</view>
 			<view class="cu-form-group">
 				<view class="title">所属车间</view>
@@ -15,7 +15,7 @@
 			</view>
 			<view class="cu-form-group">
 				<view class="title">填报日期</view>
-				<input  name="input" v-model="riqi"></input>
+				<input  name="input" v-model="riqi" disabled=""></input>
 			</view>
 			<view class=""style="height: 5px; background-color: #D2F1F0;"></view>
 		</view>
@@ -353,7 +353,7 @@
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">特级动火数量:</view>
-						<input  name="input" v-model="fire2" ></input>
+						<input  name="input" v-model="fire3" ></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">受限空间作业数量:</view>
@@ -498,19 +498,144 @@
 				</view>
 				<view class="" v-if="state7">
 					<textarea class="" value="今天我班组已根据岗位风险辨识管控相关内容以及安全风险评估表进行安全风险研判，各项安全风险防控措施已落实到位，我承诺本岗位处于安全运行状态，涉及罐区、仓库等重大危险源安全风险得到有效管控。" auto-height="true" style="width: 750rpx; border: 1px solid;border-color: #C8C7CC;"/>
+					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
+						<view class="title">班组负责人:</view>
+						<input  name="input" v-model="fzr" ></input>
+					</view>
+					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
+						<view class="title">日期:</view>
+						<input  name="input" v-model="rq" disabled=""></input>
+					</view>
+					
 				</view>
+				<button type="default" @click="save" style="background-color: #FBBD08;">保存</button>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	
 	export default {
 		data() {
 			return {
+				fxypYpnrinfos:[
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					},
+					{
+						ypjg:'',
+						gkcs:'',
+						bz:''
+					}
+				],
+				fxypBzjinfo:{
+					bz:'',
+					tbr:'',
+					cj:'',
+					tbrq:'',
+					bzfzr:'',
+					rq:''
+				},
+				fxypAqcninfo:{
+					fxd:'',
+					fxgk:'',
+					lscs:'',
+					yj:'',
+					ej:'',
+					tj:'',
+					sx:'',
+					gc:'',
+					ts:'',
+					ssc:'',
+					ktc:'',
+					cbs:'',
+					bg:'',
+					lssp:'',
+					bzgw:'',
+					qzyx:'',
+					tc:'',
+					jx:'',
+					zbfw:'',
+					aqyx:'',
+					wxl:'',
+					kkyx:'',
+					whwxl:'',
+					cxyx:'',
+					ryzg:'',
+					yxzt:'',
+					hfhc:'',
+					bzfzr:'',
+					rq:'',
+				},
+				ypjg:'',
 				banzu:'',
 				tianbaoren:'',
 				chejian:'',
+				rq:'',
+				fzr:'',
 				riqi:'',
 				val1:'',
 				val2:'',
@@ -529,6 +654,16 @@
 				val15:'',
 				val16:'',
 				point:'',
+				els:'',
+				jiqi:'',
+				yunxing:'',
+				tingchan:'',
+				jianxiu:'',
+				fire1:'',
+				fire2:'',
+				fire3:'',
+				space:'',
+				height:'',
 				info:{
 					
 				},
@@ -556,7 +691,178 @@
 				index14: 0
 			}
 		},
+		onLoad() {
+			var tianbr = uni.getStorageSync('admin').nick
+			this.tianbaoren = tianbr
+			console.log(tianbr);
+			var date = new Date()
+			var year = date.getFullYear()
+			var month = date.getMonth() + 1
+			var day = date.getDate()
+			var timer = year + '-' + month + '-' + day 
+			this.riqi = timer
+			this.rq = timer
+		},
+		
 		methods: {
+			
+		async save(){
+				//班组基础信息
+				this.fxypBzjinfo.bz = this.banzu
+				this.fxypBzjinfo.tbr = this.tianbaoren
+				this.fxypBzjinfo.cj = this.chejian
+				this.fxypBzjinfo.tbrq = this.riqi
+				//研判信息
+				if(this.index1 == 0){
+					this.fxypYpnrinfos[0].ypjg = '不涉及'
+				}else if(this.index1 == 1){
+					this.fxypYpnrinfos[0].ypjg = '是'
+				}else if(this.index1 == 2){
+					this.fxypYpnrinfos[0].ypjg = '否'				
+				}
+				if(this.index2 == 0){
+					this.fxypYpnrinfos[1].ypjg = '不涉及'
+				}else if(this.index2 == 1){
+					this.fxypYpnrinfos[1].ypjg = '是'
+				}else if(this.index2 == 2){
+					this.fxypYpnrinfos[1].ypjg = '否'				
+				}
+				if(this.index3 == 0){
+					this.fxypYpnrinfos[2].ypjg = '不涉及'
+				}else if(this.index3 == 1){
+					this.fxypYpnrinfos[2].ypjg = '是'
+				}else if(this.index3 == 2){
+					this.fxypYpnrinfos[2].ypjg = '否'				
+				}
+				if(this.index4 == 0){
+					this.fxypYpnrinfos[3].ypjg = '不涉及'
+				}else if(this.index4 == 1){
+					this.fxypYpnrinfos[3].ypjg = '是'
+				}else if(this.index4 == 2){
+					this.fxypYpnrinfos[3].ypjg = '否'				
+				}
+				if(this.index5 == 0){
+					this.fxypYpnrinfos[4].ypjg = '不涉及'
+				}else if(this.index5 == 1){
+					this.fxypYpnrinfos[4].ypjg = '是'
+				}else if(this.index5 == 2){
+					this.fxypYpnrinfos[4].ypjg = '否'				
+				}
+				if(this.index6 == 0){
+					this.fxypYpnrinfos[5].ypjg = '不涉及'
+				}else if(this.index6 == 1){
+					this.fxypYpnrinfos[5].ypjg = '是'
+				}else if(this.index6 == 2){
+					this.fxypYpnrinfos[5].ypjg = '否'				
+				}
+				if(this.index7 == 0){
+					this.fxypYpnrinfos[6].ypjg = '不涉及'
+				}else if(this.index7 == 1){
+					this.fxypYpnrinfos[6].ypjg = '是'
+				}else if(this.index7 == 2){
+					this.fxypYpnrinfos[6].ypjg = '否'				
+				}
+				if(this.index8 == 0){
+					this.fxypYpnrinfos[7].ypjg = '不涉及'
+				}else if(this.index8 == 1){
+					this.fxypYpnrinfos[7].ypjg = '是'
+				}else if(this.index8 == 2){
+					this.fxypYpnrinfos[7].ypjg = '否'				
+				}
+				if(this.index9 == 0){
+					this.fxypYpnrinfos[8].ypjg = '不涉及'
+				}else if(this.index9 == 1){
+					this.fxypYpnrinfos[8].ypjg = '是'
+				}else if(this.index9 == 2){
+					this.fxypYpnrinfos[8].ypjg = '否'				
+				}
+				if(this.index10 == 0){
+					this.fxypYpnrinfos[9].ypjg = '不涉及'
+				}else if(this.index10 == 1){
+					this.fxypYpnrinfos[9].ypjg = '是'
+				}else if(this.index10 == 2){
+					this.fxypYpnrinfos[9].ypjg = '否'				
+				}
+				if(this.index11 == 0){
+					this.fxypYpnrinfos[10].ypjg = '不涉及'
+				}else if(this.index11 == 1){
+					this.fxypYpnrinfos[10].ypjg = '是'
+				}else if(this.index11 == 2){
+					this.fxypYpnrinfos[10].ypjg = '否'				
+				}
+				if(this.index12 == 0){
+					this.fxypYpnrinfos[11].ypjg = '不涉及'
+				}else if(this.index12 == 1){
+					this.fxypYpnrinfos[11].ypjg = '是'
+				}else if(this.index12 == 2){
+					this.fxypYpnrinfos[11].ypjg = '否'				
+				}
+				if(this.index13 == 0){
+					this.fxypYpnrinfos[12].ypjg = '不涉及'
+				}else if(this.index13 == 1){
+					this.fxypYpnrinfos[12].ypjg = '是'
+				}else if(this.index13 == 2){
+					this.fxypYpnrinfos[12].ypjg = '否'				
+				}
+				if(this.index14 == 0){
+					this.fxypYpnrinfos[13].ypjg = '不涉及'
+				}else if(this.index14 == 1){
+					this.fxypYpnrinfos[13].ypjg = '是'
+				}else if(this.index14 == 2){
+					this.fxypYpnrinfos[13].ypjg = '否'				
+				}
+				//承诺信息
+				this.fxypAqcninfo.fxd = this.point
+				this.fxypAqcninfo.fxgk = this.val1
+				this.fxypAqcninfo.lscs = this.val2
+				this.fxypAqcninfo.ssc = this.val3
+				this.fxypAqcninfo.ktc = this.val4
+				this.fxypAqcninfo.cbs = this.val5
+				this.fxypAqcninfo.bg = this.val6
+				this.fxypAqcninfo.lssp = this.val7
+				this.fxypAqcninfo.yj = this.fire1
+				this.fxypAqcninfo.ej = this.fire2
+				this.fxypAqcninfo.tj = this.fire3
+				this.fxypAqcninfo.sx = this.space
+				this.fxypAqcninfo.gc = this.height
+				this.fxypAqcninfo.ts = this.els
+				this.fxypAqcninfo.bzgw = this.jiqi
+				this.fxypAqcninfo.qzyx = this.yunxing
+				this.fxypAqcninfo.tc = this.tingchan
+				this.fxypAqcninfo.jx = this.jianxiu
+				this.fxypAqcninfo.zbfw = this.val8
+				this.fxypAqcninfo.aqyx = this.val9
+				this.fxypAqcninfo.wxl = this.val10
+				this.fxypAqcninfo.kkyx = this.val11
+				this.fxypAqcninfo.whwxl = this.val12
+				this.fxypAqcninfo.cxyx = this.val13
+				this.fxypAqcninfo.ryzg = this.val14
+				this.fxypAqcninfo.yxzt = this.val15
+				this.fxypAqcninfo.hfhc = this.val16
+				this.fxypAqcninfo.bzfzr = this.fzr
+				this.fxypAqcninfo.rq = this.rq
+				var map = {}
+				map['bzjinfo'] = this.fxypBzjinfo
+				map['ypnr'] = this.fxypYpnrinfos
+				map['chengnuo'] = this.fxypAqcninfo
+				var token = uni.getStorageSync('token')
+				const res = await this.$myRequest({
+					url:'/api/judge/addOrUpdateJudge',
+					data:{
+						
+							'bzjinfo':this.fxypBzjinfo,
+							'ypnr':this.fxypYpnrinfos,
+							'chengnuo':this.fxypAqcninfo
+					
+					},
+					header:{
+						'content-type': 'application/json',
+						'token': token
+					},
+					method:'POST'
+				})
+				console.log(res);
+			},
 			SetBorderSize(e) {
 				this.bordersize = e.detail.value
 			},
@@ -617,52 +923,52 @@
 				this.index14 = e.target.value
 			},
 			radioChange1(event){
-				const val1 = event.value
+				this.val1 = event.target.value
 			},
 			radioChange2(event){
-				const val2 = event.value
+				this.val2 = event.target.value
 			},
 			radioChange3(event){
-				const val3 = event.value
+				this.val3 = event.target.value
 			},
 			radioChange4(event){
-				const val4 = event.value
+				this.val4 = event.target.value
 			},
 			radioChange5(event){
-				const val5 = event.value
+				this.val5 = event.target.value
 			},
 			radioChange6(event){
-				const val6 = event.value
+				this.val6 = event.target.value
 			},
 			radioChange7(event){
-				const val7 = event.value
+				this.val7 = event.target.value
 			},
 			radioChange8(event){
-				const val8 = event.value
+				this.val8 = event.target.value
 			},
 			radioChange9(event){
-				const val9 = event.value
+				this.val9 = event.target.value
 			},
 			radioChange10(event){
-				const val10 = event.value
+				this.val10 = event.target.value
 			},
 			radioChange11(event){
-				const val11 = event.value
+				this.val11 = event.target.value
 			},
 			radioChange12(event){
-				const val12 = event.value
+				this.val12 = event.target.value
 			},
 			radioChange13(event){
-				const val13 = event.value
+				this.val13 = event.target.value
 			},
 			radioChange14(event){
-				const val14 = event.value
+				this.val14 = event.target.value
 			},
 			radioChange15(event){
-				const val15 = event.value
+				this.val15 = event.target.value
 			},
 			radioChange16(event){
-				const val16 = event.value
+				this.val16 = event.target.value
 			}
 			
 		}
@@ -684,7 +990,7 @@
 			display: flex;
 			//margin-left: 10px;
 			.item1{
-				margin-left: 60px;
+				margin-left: 55px;
 			}
 		}
 		.state1-item2{
@@ -692,7 +998,7 @@
 			display: flex;
 			width: 100%;
 			.item2{
-				margin-left: 20px;
+				margin-left: 10px;
 				width: 25%;
 			}
 			.uni-input{

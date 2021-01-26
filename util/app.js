@@ -12,8 +12,9 @@ export const myRequest = (options) => {
 			url: BASE_URL + options.url,
 			method: options.method || 'GET',
 			data: options.data || {},
-			header:{
-				'content-type': 'application/x-www-form-urlencoded',
+			header:options.header || {
+				 'content-type': 'application/x-www-form-urlencoded',
+				//'content-type': 'application/json',
 				'token': token
 			},
 			success: (res) => {
