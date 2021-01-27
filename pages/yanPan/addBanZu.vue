@@ -41,10 +41,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index1]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs1' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz1' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 								</view>
 								
 						</view>
@@ -55,10 +55,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index2]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs2' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz2' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -68,10 +68,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index3]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs3' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz3' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -81,10 +81,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index4]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs4' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz4' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 					</scroll-view>
@@ -110,10 +110,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index5]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs5' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz5' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 								</view>
 								
 						</view>
@@ -124,10 +124,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index6]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs6' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz6' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -137,10 +137,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index7]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs7' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz7' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -150,10 +150,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index8]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs8' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz8' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -163,10 +163,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index9]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs9' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz9' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -176,10 +176,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index10]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs10' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz10' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -189,10 +189,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index11]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs11' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz11' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 					</scroll-view>
@@ -218,10 +218,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index12]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs12' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz12' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 								</view>
 								
 						</view>
@@ -232,10 +232,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index13]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs13' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz13' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
@@ -245,10 +245,10 @@
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{array[index14]}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'cs14' value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" @blur = 'bz14' value="" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 					</scroll-view>
@@ -270,7 +270,7 @@
 						<view class="title" style="height: 80px;">各风险点风险研判结果是否落实</br>相应的风险管控措施:</view>
 						<radio-group name="" @change="radioChange1" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -281,7 +281,7 @@
 						<view class="title" style="height: 80px;">特殊作业的风险辨识、作业许可</br>及管控是否落实:</view>
 						<radio-group name="" @change="radioChange2" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -292,7 +292,7 @@
 						<view class="title">是否处于试生产:</view>
 						<radio-group name="" @change="radioChange3" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -303,7 +303,7 @@
 						<view class="title">是否处于开停车状态:</view>
 						<radio-group name="" @change="radioChange4" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -314,7 +314,7 @@
 						<view class="title">承包商作业是否管控:</view>
 						<radio-group name="" @change="radioChange5" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -325,7 +325,7 @@
 						<view class="title">是否存在变更情况:</view>
 						<radio-group name="" @change="radioChange6" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -336,7 +336,7 @@
 						<view class="title">是否落实审批程序:</view>
 						<radio-group name="" @change="radioChange7" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -392,7 +392,7 @@
 						<view class="title" style="height: 80px;">温度/压力/危化品/液位/流量</br>等工艺参数是否处于指标范围:</view>
 						<radio-group name="" @change="radioChange8" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -403,7 +403,7 @@
 						<view class="title">特种设备是否安全运行:</view>
 						<radio-group name="" @change="radioChange9" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -414,7 +414,7 @@
 						<view class="title">设备设施是否完好无泄漏:</view>
 						<radio-group name="" @change="radioChange10" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -425,7 +425,7 @@
 						<view class="title" style="height: 80px;">超限报警、紧急切断、连锁等各类</br>安全设施配备完好投用，并可靠运行:</view>
 						<radio-group name="" @change="radioChange11" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -441,7 +441,7 @@
 						<view class="title" style="height: 80px;">储罐、管道、机泵、阀门及仪表</br>系统完好无泄漏:</view>
 						<radio-group name="" @change="radioChange12" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -452,7 +452,7 @@
 						<view class="title" style="height: 80px;">储罐的液位、温度、压力无超限</br>运行:</view>
 						<radio-group name="" @change="radioChange13" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -463,7 +463,7 @@
 						<view class="title">装卸车时确保人员是否在岗:</view>
 						<radio-group name="" @change="radioChange14" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -474,7 +474,7 @@
 						<view class="title" style="height: 80px;">可燃及有毒气体报警和联锁是否</br>处于可靠运行状态:</view>
 						<radio-group name="" @change="radioChange15" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -485,7 +485,7 @@
 						<view class="title" style="height: 80px;">仓库按照国家标准分区分类储存</br>危险化学品，无超量、超品种储存</br>，相互禁配物质无混放混存:</view>
 						<radio-group name="" @change="radioChange16" style="display: flex;">
 							<label>
-								<radio value="是" checked=""/><text style="margin-left: 5px;">是</text>
+								<radio value="是" /><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
 								<radio value="否" /><text style="margin-left: 5px;">否</text>
@@ -521,85 +521,157 @@
 			return {
 				fxypYpnrinfos:[
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:1,
+						ypnr:'生产装置的温度、压力、组分、液位、流量等主要工艺参数是否处于指标范围',
+						yplb:'生产装置安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:2,
+						ypnr:'压力容器、压力管道等特种设备是否处于安全运行状态',
+						yplb:'生产装置安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:3,
+						ypnr:'各类设备设施的静动密封是否完好无泄漏',
+						yplb:'生产装置安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:4,
+						ypnr:'超限报警、紧急切断、联锁等各类安全设施配备是否完好投用，并可靠运行',
+						yplb:'生产装置安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:5,
+						ypnr:'储罐、管道、机泵、阀门及仪表系统是否完好无泄漏',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:6,
+						ypnr:'储罐的液位、温度、压力是否超限运行',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:7,
+						ypnr:'内浮顶储罐运行中浮盘是否可能落底',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:8,
+						ypnr:'油气罐区手动切水、切罐、装卸车时是否确保人员在岗',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:9,
+						ypnr:'可燃及有毒气体报警和联锁是否处于可靠运行状态',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:10,
+						ypnr:'仓库是否按国家标准分区分类储存危险化学品',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:11,
+						ypnr:'是否超量、超品种储存，相互禁配物质是否混放混存',
+						yplb:'危险化学品罐区、仓库等重大危险源的安全运行状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:12,
+						ypnr:'装置开停车是否制定开停车方案，试生产是否制定试生产方案并经专家论证',
+						yplb:'高危生产活动及作业的安全风险可控状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:13,
+						ypnr:'各项特殊作业、检维修作业、承包商作业是否健全和完善相关管理制度，作业过程是否进行安全风险辨识，严格程序确认和作业许可审批，加强现场监督，危险化学品罐区动火作业是否做到升级管理等',
+						yplb:'高危生产活动及作业的安全风险可控状态'
 					},
 					{
+						createdAt:'',
+						bzjid:'',
 						ypjg:'',
 						gkcs:'',
-						bz:''
+						bz:'',
+						xh:14,
+						ypnr:'各项变更的审批程序是否符合规定',
+						yplb:'高危生产活动及作业的安全风险可控状态'
 					}
 				],
 				fxypBzjinfo:{
+					id:0,
 					bz:'',
 					tbr:'',
 					cj:'',
-					tbrq:'',
-					bzfzr:'',
-					rq:''
+					tbrq:''
 				},
 				fxypAqcninfo:{
+					bmmc:'',
+					tbr:'',
+					tbrq:'',
 					fxd:'',
 					fxgk:'',
 					lscs:'',
@@ -694,7 +766,6 @@
 		onLoad() {
 			var tianbr = uni.getStorageSync('admin').nick
 			this.tianbaoren = tianbr
-			console.log(tianbr);
 			var date = new Date()
 			var year = date.getFullYear()
 			var month = date.getMonth() + 1
@@ -705,14 +776,99 @@
 		},
 		
 		methods: {
-			
-		async save(){
+			cs1:function(e){
+				this.fxypYpnrinfos[0].gkcs = e.detail.value
+			},
+			cs2:function(e){
+				this.fxypYpnrinfos[1].gkcs = e.detail.value
+			},
+			cs3:function(e){
+				this.fxypYpnrinfos[2].gkcs = e.detail.value
+			},
+			cs4:function(e){
+				this.fxypYpnrinfos[3].gkcs = e.detail.value
+			},
+			cs5:function(e){
+				this.fxypYpnrinfos[4].gkcs = e.detail.value
+			},
+			cs6:function(e){
+				this.fxypYpnrinfos[5].gkcs = e.detail.value
+			},
+			cs7:function(e){
+				this.fxypYpnrinfos[6].gkcs = e.detail.value
+			},
+			cs8:function(e){
+				this.fxypYpnrinfos[7].gkcs = e.detail.value
+			},
+			cs9:function(e){
+				this.fxypYpnrinfos[8].gkcs = e.detail.value
+			},
+			cs10:function(e){
+				this.fxypYpnrinfos[9].gkcs = e.detail.value
+			},
+			cs11:function(e){
+				this.fxypYpnrinfos[10].gkcs = e.detail.value
+			},
+			cs12:function(e){
+				this.fxypYpnrinfos[11].gkcs = e.detail.value
+			},
+			cs13:function(e){
+				this.fxypYpnrinfos[12].bz = e.detail.value
+			},
+			cs14:function(e){
+				this.fxypYpnrinfos[13].gkcs = e.detail.value
+			},
+			bz1:function(e){
+				this.fxypYpnrinfos[0].bz = e.detail.value
+			},
+			bz2:function(e){
+				this.fxypYpnrinfos[1].bz = e.detail.value
+			},
+			bz3:function(e){
+				this.fxypYpnrinfos[2].bz = e.detail.value
+			},
+			bz4:function(e){
+				this.fxypYpnrinfos[3].bz = e.detail.value
+			},
+			bz5:function(e){
+				this.fxypYpnrinfos[4].bz = e.detail.value
+			},
+			bz6:function(e){
+				this.fxypYpnrinfos[5].bz = e.detail.value
+			},
+			bz7:function(e){
+				this.fxypYpnrinfos[6].bz = e.detail.value
+			},
+			bz8:function(e){
+				this.fxypYpnrinfos[7].bz = e.detail.value
+			},
+			bz9:function(e){
+				this.fxypYpnrinfos[8].bz = e.detail.value
+			},
+			bz10:function(e){
+				this.fxypYpnrinfos[9].bz = e.detail.value
+			},
+			bz11:function(e){
+				this.fxypYpnrinfos[10].bz = e.detail.value
+			},
+			bz12:function(e){
+				this.fxypYpnrinfos[11].bz = e.detail.value
+			},
+			bz13:function(e){
+				this.fxypYpnrinfos[12].bz = e.detail.value
+			},
+			bz14:function(e){
+				this.fxypYpnrinfos[13].bz = e.detail.value
+			},
+			async save(){
+				
 				//班组基础信息
 				this.fxypBzjinfo.bz = this.banzu
 				this.fxypBzjinfo.tbr = this.tianbaoren
 				this.fxypBzjinfo.cj = this.chejian
 				this.fxypBzjinfo.tbrq = this.riqi
 				//研判信息
+				
 				if(this.index1 == 0){
 					this.fxypYpnrinfos[0].ypjg = '不涉及'
 				}else if(this.index1 == 1){
@@ -841,19 +997,17 @@
 				this.fxypAqcninfo.hfhc = this.val16
 				this.fxypAqcninfo.bzfzr = this.fzr
 				this.fxypAqcninfo.rq = this.rq
-				var map = {}
-				map['bzjinfo'] = this.fxypBzjinfo
-				map['ypnr'] = this.fxypYpnrinfos
-				map['chengnuo'] = this.fxypAqcninfo
+				this.fxypAqcninfo.tbr = this.tianbaoren
+				this.fxypAqcninfo.bmmc = this.banzu
+				this.fxypAqcninfo.tbrq = this.riqi
+				
 				var token = uni.getStorageSync('token')
 				const res = await this.$myRequest({
 					url:'/api/judge/addOrUpdateJudge',
 					data:{
-						
-							'bzjinfo':this.fxypBzjinfo,
-							'ypnr':this.fxypYpnrinfos,
-							'chengnuo':this.fxypAqcninfo
-					
+						'bzjinfo':this.fxypBzjinfo,
+						'ypnr':this.fxypYpnrinfos,
+						'chengnuo':this.fxypAqcninfo
 					},
 					header:{
 						'content-type': 'application/json',
@@ -861,7 +1015,6 @@
 					},
 					method:'POST'
 				})
-				console.log(res);
 			},
 			SetBorderSize(e) {
 				this.bordersize = e.detail.value

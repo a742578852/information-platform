@@ -2,19 +2,19 @@
 	<view>
 		<view class="baseinfo">
 			<view class="cu-form-group">
-				<view class="title">班组</view>
+				<view class="title">班组:</view>
 				<input placeholder="选择班组" name="input" v-model="banzu"></input>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">填报人</view>
+				<view class="title">填报人:</view>
 				<input  name="input" v-model="tianbaoren"></input>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">所属车间</view>
+				<view class="title">所属车间:</view>
 				<input placeholder="选择车间" name="input" v-model="chejian"></input>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">填报日期</view>
+				<view class="title">填报日期:</view>
 				<input  name="input" v-model="riqi"></input>
 			</view>
 			<view class=""style="height: 5px; background-color: #D2F1F0;"></view>
@@ -560,9 +560,7 @@
 					bz:'',
 					tbr:'',
 					cj:'',
-					tbrq:'',
-					bzfzr:'',
-					rq:''
+					tbrq:''
 				},
 				check1:false,
 				check11:false,

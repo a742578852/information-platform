@@ -181,6 +181,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/yanPan/chaKanCheJian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

@@ -20,7 +20,7 @@
 			<view class="table-data-item" style="display: flex;width: 32%;">
 				<button @click="select(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">查看</button>
 				<view class=""style="font-size: 30px;">/</view>
-				<button type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">修改</button>
+				<button @click="update(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">修改</button>
 			</view>
 		</view>
 		</scroll-view>
@@ -46,6 +46,13 @@
 				const bid = id
 				uni.navigateTo({
 					url:'chaKanBanZu?bid='+bid
+				})
+			},
+			//根据id修改研判详情
+			async update(id){
+				const bid = id
+				uni.navigateTo({
+					url:'updateBanZu?bid='+bid
 				})
 			}
 		},
