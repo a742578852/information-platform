@@ -3,19 +3,19 @@
 		<view class="baseinfo">
 			<view class="cu-form-group">
 				<view class="title">班组:</view>
-				<input placeholder="选择班组" name="input" v-model="banzu"></input>
+				<input placeholder="选择班组" name="input" v-model="banzu" disabled=""></input>
 			</view>
 			<view class="cu-form-group">
 				<view class="title">填报人:</view>
-				<input  name="input" v-model="tianbaoren"></input>
+				<input  name="input" v-model="tianbaoren" disabled=""></input>
 			</view>
 			<view class="cu-form-group">
 				<view class="title">所属车间:</view>
-				<input placeholder="选择车间" name="input" v-model="chejian"></input>
+				<input placeholder="选择车间" name="input" v-model="chejian" disabled=""></input>
 			</view>
 			<view class="cu-form-group">
 				<view class="title">填报日期:</view>
-				<input  name="input" v-model="riqi"></input>
+				<input  name="input" v-model="riqi" disabled=""></input>
 			</view>
 			<view class=""style="height: 5px; background-color: #D2F1F0;"></view>
 		</view>
@@ -37,54 +37,54 @@
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">生产装置的温度、压力、</br>组分、液位、流量等主要</br>工艺参数是否处于指标范围</view>
 						
-								<picker @change="bindPickerChange1" :value="index1" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange1" :value="index1" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[0].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[0].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[0].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[0].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[0].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 								</view>
 								
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">压力容器、压力管道等特种</br>设备是否处于安全运行状态</view>
 						
-								<picker @change="bindPickerChange2" :value="index2" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange2" :value="index2" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[1].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[1].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[1].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[1].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[1].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">各类设备设施的静动密封是</br>否完好无泄漏</view>
 						
-								<picker @change="bindPickerChange3" :value="index3" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange3" :value="index3" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[2].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[2].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[2].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[2].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[2].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">超限报警、紧急切断、联锁</br>等各类安全设施配备是否完</br>好投用，并可靠运行</view>
 						
-								<picker @change="bindPickerChange4" :value="index4" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange4" :value="index4" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[3].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[3].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[3].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[3].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[3].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 					</scroll-view>
@@ -106,93 +106,93 @@
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">储罐、管道、机泵、阀门</br>及仪表系统是否完好无泄漏</view>
 						
-								<picker @change="bindPickerChange5" :value="index5" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange5" :value="index5" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[4].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[4].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[4].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[4].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[4].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 								</view>
 								
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">储罐的液位、温度、压力是</br>否超限运行</view>
 						
-								<picker @change="bindPickerChange6" :value="index6" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange6" :value="index6" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[5].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[5].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[5].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[5].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[5].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">内浮顶储罐运行中浮盘是否</br>可能落底</view>
 						
-								<picker @change="bindPickerChange7" :value="index7" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange7" :value="index7" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[6].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[6].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[6].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[6].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[6].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">油气罐区手动切水、切罐、</br>装卸车时是否确保人员在岗</view>
 						
-								<picker @change="bindPickerChange8" :value="index8" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange8" :value="index8" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[7].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[7].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[7].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[7].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[7].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">可燃及有毒气体报警和联锁</br>是否处于可靠运行状态</view>
 						
-								<picker @change="bindPickerChange9" :value="index9" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange9" :value="index9" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[8].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[8].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[8].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[8].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[8].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">仓库是否按国家标准分区分</br>类储存危险化学品</view>
 						
-								<picker @change="bindPickerChange10" :value="index10" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange10" :value="index10" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[9].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[9].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[9].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[9].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[9].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">是否超量、超品种储存，相</br>互禁配物质是否混放混存</view>
 						
-								<picker @change="bindPickerChange11" :value="index11" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange11" :value="index11" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[10].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[10].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[10].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[10].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[10].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 					</scroll-view>
@@ -214,41 +214,41 @@
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">装置开停车是否制定开停车</br>方案，试生产是否制定试生</br>产方案并经专家论证</view>
 						
-								<picker @change="bindPickerChange12" :value="index12" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange12" :value="index12" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[11].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[11].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[11].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[11].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[11].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 								</view>
 								
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">各项特殊作业、检维修作业</br>、承包商作业是否健全和完</br>善相关管理制度，作业过程</br>是否进行安全风险辨识，严</br>格程序确认和作业许可审批</br>，加强现场监督，危险化学</br>品罐区动火作业是否做到升</br>级管理等</view>
 						
-								<picker @change="bindPickerChange13" :value="index13" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange13" :value="index13" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[12].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[12].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[12].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[12].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[12].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 						<view class="state1-item2">
 							<view class="item2" style="border: 1px solid;border-color: #C8C7CC;width: 180px;">各项变更的审批程序是否符</br>合规定</view>
 						
-								<picker @change="bindPickerChange14" :value="index14" :range="array" class="item2" style="margin-left: 100px;">
+								<picker @change="bindPickerChange14" :value="index14" :range="array" class="item2" style="margin-left: 100px;" disabled="">
 									<view class="uni-input" style="width: 50px;margin-left: -80px;">{{fxypYpnrinfos[13].ypjg}}</view>
 								</picker>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[13].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[13].gkcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 								</view>
 								<view class="item2" style="width: 150px;">
-									<textarea class="" :value="fxypYpnrinfos[13].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
+									<textarea class="" disabled="" :value="fxypYpnrinfos[13].bz" auto-height="true" style="width: 150px; border: 1px solid;border-color: #C8C7CC;"/>
 							</view>
 						</view>
 					</scroll-view>
@@ -264,16 +264,16 @@
 				<view class="" v-if="state4">
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">研判风险点数量:</view>
-						<input  name="input" v-model="point" ></input>
+						<input  name="input" v-model="point" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;height: 80px;">
 						<view class="title" style="height: 80px;">各风险点风险研判结果是否落实</br>相应的风险管控措施:</view>
-						<radio-group name="" @change="radioChange1" style="display: flex;">
+						<radio-group name="" @change="radioChange1" style="display: flex;" >
 							<label>
-								<radio value="是" :checked="check1"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check1"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check11"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check11"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -281,10 +281,10 @@
 						<view class="title" style="height: 80px;">特殊作业的风险辨识、作业许可</br>及管控是否落实:</view>
 						<radio-group name="" @change="radioChange2" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check2"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check2"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check22"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check22"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -292,10 +292,10 @@
 						<view class="title">是否处于试生产:</view>
 						<radio-group name="" @change="radioChange3" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check3"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check3"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check33"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check33"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -303,10 +303,10 @@
 						<view class="title">是否处于开停车状态:</view>
 						<radio-group name="" @change="radioChange4" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check4"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check4"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check44"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check44"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -314,10 +314,10 @@
 						<view class="title">承包商作业是否管控:</view>
 						<radio-group name="" @change="radioChange5" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check5"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check5"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check55"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check55"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -325,10 +325,10 @@
 						<view class="title">是否存在变更情况:</view>
 						<radio-group name="" @change="radioChange6" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check6"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check6"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check66"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check66"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -336,36 +336,36 @@
 						<view class="title">是否落实审批程序:</view>
 						<radio-group name="" @change="radioChange7" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check7"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check7"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check77"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check77"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">一级动火数量:</view>
-						<input  name="input" v-model="fire1" ></input>
+						<input  name="input" v-model="fire1" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">二级动火数量:</view>
-						<input  name="input" v-model="fire2" ></input>
+						<input  name="input" v-model="fire2" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">特级动火数量:</view>
-						<input  name="input" v-model="fire3" ></input>
+						<input  name="input" v-model="fire3" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">受限空间作业数量:</view>
-						<input  name="input" v-model="space" ></input>
+						<input  name="input" v-model="space" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">高处作业数量:</view>
-						<input  name="input" v-model="height" ></input>
+						<input  name="input" v-model="height" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其他作业数量:</view>
-						<input  name="input" v-model="els" ></input>
+						<input  name="input" v-model="els" disabled=""></input>
 					</view>
 				</view>
 				<view class="cu-form-group" >
@@ -374,28 +374,28 @@
 				<view class="" v-if="state5">
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">班组岗位生产装置数量:</view>
-						<input  name="input" v-model="jiqi" ></input>
+						<input  name="input" v-model="jiqi" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其中运行生产装置数量:</view>
-						<input  name="input" v-model="yunxing" ></input>
+						<input  name="input" v-model="yunxing" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其中停产装置数量:</view>
-						<input  name="input" v-model="tingchan" ></input>
+						<input  name="input" v-model="tingchan" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其中检修装置数量:</view>
-						<input  name="input" v-model="jianxiu" ></input>
+						<input  name="input" v-model="jianxiu" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;height: 80px;">
 						<view class="title" style="height: 80px;">温度/压力/危化品/液位/流量</br>等工艺参数是否处于指标范围:</view>
 						<radio-group name="" @change="radioChange8" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check8"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check8"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check88"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check88"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -403,10 +403,10 @@
 						<view class="title">特种设备是否安全运行:</view>
 						<radio-group name="" @change="radioChange9" style="display: flex;">
 							<label>
-								<radio value="是" :checked="check9"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="check9"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="check99"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="check99"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -414,10 +414,10 @@
 						<view class="title">设备设施是否完好无泄漏:</view>
 						<radio-group name="" @change="radioChange10" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checka"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checka"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkaa"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkaa"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -425,10 +425,10 @@
 						<view class="title" style="height: 80px;">超限报警、紧急切断、连锁等各类</br>安全设施配备完好投用，并可靠运行:</view>
 						<radio-group name="" @change="radioChange11" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checkb"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checkb"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkbb"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkbb"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -441,10 +441,10 @@
 						<view class="title" style="height: 80px;">储罐、管道、机泵、阀门及仪表</br>系统完好无泄漏:</view>
 						<radio-group name="" @change="radioChange12" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checkc"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checkc"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkcc"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkcc"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -452,10 +452,10 @@
 						<view class="title" style="height: 80px;">储罐的液位、温度、压力无超限</br>运行:</view>
 						<radio-group name="" @change="radioChange13" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checkd"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checkd"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkdd"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkdd"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -463,10 +463,10 @@
 						<view class="title">装卸车时确保人员是否在岗:</view>
 						<radio-group name="" @change="radioChange14" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checke"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checke"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkee"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkee"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -474,10 +474,10 @@
 						<view class="title" style="height: 80px;">可燃及有毒气体报警和联锁是否</br>处于可靠运行状态:</view>
 						<radio-group name="" @change="radioChange15" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checkf"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checkf"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkff"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkff"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -485,10 +485,10 @@
 						<view class="title" style="height: 80px;">仓库按照国家标准分区分类储存</br>危险化学品，无超量、超品种储存</br>，相互禁配物质无混放混存:</view>
 						<radio-group name="" @change="radioChange16" style="display: flex;">
 							<label>
-								<radio value="是" :checked="checkg"/><text style="margin-left: 5px;">是</text>
+								<radio value="是" disabled="" :checked="checkg"/><text style="margin-left: 5px;">是</text>
 							</label>
 							<label>
-								<radio value="否" :checked="checkgg"/><text style="margin-left: 5px;">否</text>
+								<radio value="否" disabled="" :checked="checkgg"/><text style="margin-left: 5px;">否</text>
 							</label>
 						</radio-group>
 					</view>
@@ -500,11 +500,11 @@
 					<textarea class="" value="今天我班组已根据岗位风险辨识管控相关内容以及安全风险评估表进行安全风险研判，各项安全风险防控措施已落实到位，我承诺本岗位处于安全运行状态，涉及罐区、仓库等重大危险源安全风险得到有效管控。" auto-height="true" style="width: 750rpx; border: 1px solid;border-color: #C8C7CC;"/>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">班组负责人:</view>
-						<input  name="input" v-model="fzr" ></input>
+						<input  name="input" v-model="fzr" disabled=""></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">日期:</view>
-						<input  name="input" v-model="rq" ></input>
+						<input  name="input" v-model="rq" disabled=""></input>
 					</view>
 				</view>
 				
