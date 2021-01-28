@@ -2,7 +2,8 @@
 	<view style="width: 100%;">
 		<view class="btn">
 			<button type="default" class="btn1" @click="btn1()">增加</button>
-			<button type="default" class="btn2">车间级班组汇总</button>
+			<button type="default" class="btn2" @click="huizong()">车间级班组汇总</button>
+			
 		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
@@ -29,13 +30,19 @@
 
 <script>
 	export default {
+		
 		data() {
 			return {
 				dataList:{},
-				
 			}
+			
 		},
 		methods: {
+			huizong(){
+				uni.navigateTo({
+					url:'huiZongBan'
+				})
+			},
 			btn1(){
 				uni.navigateTo({
 					url:'addBanZu'

@@ -2,19 +2,25 @@
 	<view>
 		<view class="baseinfo">
 			<view class="cu-form-group">
-				<view class="title">班组</view>
-				<input placeholder="选择班组" name="input" v-model="banzu"></input>
+				<view class="title">班组:</view>
+				<picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
+					<view class="uni-input" style="">{{arrayBz[index]}}</view>
+				</picker>
+				<!-- <input placeholder="选择班组" name="input" v-model="banzu" ></input> -->
 			</view>
 			<view class="cu-form-group">
-				<view class="title">填报人</view>
+				<view class="title">填报人:</view>
 				<input  name="input" v-model="tianbaoren" disabled=""></input>
 			</view>
 			<view class="cu-form-group">
-				<view class="title">所属车间</view>
-				<input placeholder="选择车间" name="input" v-model="chejian"></input>
+				<view class="title">所属车间:</view>
+				<picker @change="bindPickerChanges" :value="indexs" :range="arrayBz" class="item2" style="">
+					<view class="uni-input" style="">{{arrayBz[indexs]}}</view>
+				</picker>
+				<!-- <input placeholder="选择车间" name="input" v-model="chejian"></input> -->
 			</view>
 			<view class="cu-form-group">
-				<view class="title">填报日期</view>
+				<view class="title">填报日期:</view>
 				<input  name="input" v-model="riqi" disabled=""></input>
 			</view>
 			<view class=""style="height: 5px; background-color: #D2F1F0;"></view>
@@ -264,7 +270,7 @@
 				<view class="" v-if="state4">
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">研判风险点数量:</view>
-						<input  name="input" v-model="point" ></input>
+						<input  name="input" v-model="point" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;height: 80px;">
 						<view class="title" style="height: 80px;">各风险点风险研判结果是否落实</br>相应的风险管控措施:</view>
@@ -345,27 +351,27 @@
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">一级动火数量:</view>
-						<input  name="input" v-model="fire1" ></input>
+						<input  name="input" v-model="fire1" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">二级动火数量:</view>
-						<input  name="input" v-model="fire2" ></input>
+						<input  name="input" v-model="fire2" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">特级动火数量:</view>
-						<input  name="input" v-model="fire3" ></input>
+						<input  name="input" v-model="fire3" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">受限空间作业数量:</view>
-						<input  name="input" v-model="space" ></input>
+						<input  name="input" v-model="space" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">高处作业数量:</view>
-						<input  name="input" v-model="height" ></input>
+						<input  name="input" v-model="height" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其他作业数量:</view>
-						<input  name="input" v-model="els" ></input>
+						<input  name="input" v-model="els" type="number"></input>
 					</view>
 				</view>
 				<view class="cu-form-group" >
@@ -374,19 +380,19 @@
 				<view class="" v-if="state5">
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">班组岗位生产装置数量:</view>
-						<input  name="input" v-model="jiqi" ></input>
+						<input  name="input" v-model="jiqi" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其中运行生产装置数量:</view>
-						<input  name="input" v-model="yunxing" ></input>
+						<input  name="input" v-model="yunxing" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其中停产装置数量:</view>
-						<input  name="input" v-model="tingchan" ></input>
+						<input  name="input" v-model="tingchan" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;">
 						<view class="title">其中检修装置数量:</view>
-						<input  name="input" v-model="jianxiu" ></input>
+						<input  name="input" v-model="jianxiu" type="number"></input>
 					</view>
 					<view class="cu-form-group" style="border-bottom: 1px solid;border-color: #C8C7CC;height: 80px;">
 						<view class="title" style="height: 80px;">温度/压力/危化品/液位/流量</br>等工艺参数是否处于指标范围:</view>
@@ -736,9 +742,7 @@
 				fire3:'',
 				space:'',
 				height:'',
-				info:{
-					
-				},
+				arrayBz:[],
 				state1:false,
 				state2:false,
 				state3:false,
@@ -747,6 +751,8 @@
 				state6:false,
 				state7:false,
 				array: ['不涉及', '是', '否'],
+				index:0,
+				indexs:0,
 				index1: 0,
 				index2: 0,
 				index3: 0,
@@ -763,7 +769,14 @@
 				index14: 0
 			}
 		},
-		onLoad() {
+		async onLoad() {
+			const res = await this.$myRequest({
+					url:'/api/util/getDepartment',
+					method:'POST'
+				})
+				 for (var i = 0; i < res.data.data.length; i++) {
+					 this.arrayBz.push(res.data.data[i].bmmc)  
+				 }
 			var tianbr = uni.getStorageSync('admin').nick
 			this.tianbaoren = tianbr
 			var date = new Date()
@@ -863,9 +876,9 @@
 			async save(){
 				
 				//班组基础信息
-				this.fxypBzjinfo.bz = this.banzu
+				this.fxypBzjinfo.bz = this.arrayBz[this.index]
 				this.fxypBzjinfo.tbr = this.tianbaoren
-				this.fxypBzjinfo.cj = this.chejian
+				this.fxypBzjinfo.cj = this.arrayBz[this.indexs]
 				this.fxypBzjinfo.tbrq = this.riqi
 				//研判信息
 				
@@ -1015,10 +1028,28 @@
 					},
 					method:'POST'
 				})
+				if(res.data.code==200){
+					uni.showToast({
+						title:'保存成功'
+					})
+					uni.navigateTo({
+						url:'banZu'
+					})
+				}
 			},
 			SetBorderSize(e) {
 				this.bordersize = e.detail.value
 			},
+			bindPickerChange(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index = e.detail.value
+				
+				},
+			bindPickerChanges(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.indexs = e.detail.value
+				
+				},
 			bindPickerChange1: function(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.target.value

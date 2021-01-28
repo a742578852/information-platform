@@ -190,6 +190,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/yanPan/huiZongBan",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
