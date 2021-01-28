@@ -167,7 +167,7 @@
             "path" : "pages/yanPan/chaKanBanZu",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "查看班组研判",
                 "enablePullDownRefresh": false
             }
             
@@ -176,7 +176,7 @@
             "path" : "pages/yanPan/updateBanZu",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "修改班组研判",
                 "enablePullDownRefresh": false
             }
             
@@ -185,13 +185,31 @@
             "path" : "pages/yanPan/chaKanCheJian",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "查看车间研判",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
             "path" : "pages/yanPan/huiZongBan",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "汇总班组",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/yanPanBiao",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/chengNuoBiao",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
