@@ -86,7 +86,7 @@
 					<radio value="是" :checked="check"/><text style="margin-left: 5px;">是</text>
 				</label>
 				<label>
-					<radio value="否" :checked="check"/><text style="margin-left: 5px;">否</text>
+					<radio value="否" :checked="checks"/><text style="margin-left: 5px;">否</text>
 				</label>
 			</radio-group>
 		</view>
@@ -102,9 +102,9 @@
 			<view class="table-data-item" >{{index+1}}</view>
 			<view class="table-data-item">{{item.bz}}</view>
 			<view class="table-data-item">{{item.tbr}}</view>
-			<view class="table-data-item" style="width: 30%;">{{item.tbrq}}</view>
-			<view class="table-data-item" style="display: flex;width: 32%;">
-				<view class="">《安全风险研判表》</view>
+			<view class="table-data-item" style="width: 25%;">{{item.tbrq}}</view>
+			<view class="table-data-item" style="width: 35%; font-size: 10px;line-height: 15px;">
+				<view class="">《安全风险研判表》</view></br>
 				<view class="">《研判报告及承诺书》</view>
 			</view>
 		</view>
@@ -160,7 +160,7 @@
 				check4:false,
 				check44:false,
 				check:false,
-				check:false
+				checks:false
 			}
 		},
 		methods: {
@@ -185,7 +185,6 @@
 					cjid:cjid
 				}
 			})
-			console.log(res.data.data.cjinfo);
 			if(res.data.code==200){
 				this.cjinfo = res.data.data.cjinfo
 				this.bzjList = res.data.data.bzjList
@@ -221,7 +220,7 @@
 				this.check = true
 			}
 			if(this.cjinfo.aqzt=='否'){
-				this.check4 = true
+				this.checks = true
 			}
 		}
 	}
