@@ -70,7 +70,7 @@
 	export default {
 		data() {
 			return {
-				
+
 				index: -1,
 				fxwz: '',
 				fxyss: ['人', '机', '料', '法', '环', '管'],
@@ -79,7 +79,7 @@
 				fxrxm: '',
 				fxrq: '2020-12-25',
 				imgList: [],
-				url: 'http://192.168.137.1:8081',
+				url: 'http://127.0.0.1:8081',
 
 			}
 		},
@@ -99,14 +99,37 @@
 			},
 
 			//表单上传
-			sumbitRisk() {
-
+			async sumbitRisk() {
+				
+				// const res = await this.$myRequest({
+				// 	url: '/api/risk/riskReport',
+				// 	method: 'POST',
+				// 	data:{
+				// 		riskId: 0,
+				// 		fxwz: this.fxwz,
+				// 		fxys: this.fxys,
+				// 		fxms: this.fxms,
+				// 		fxrxm: this.fxrxm,
+				// 		fxrq: this.fxrq,
+				// 		file:this.imgList[0]
+				// 	},
+				// 	header:{
+				// 		 'content-type': 'multipart/form-data',
+				// 		 'token':uni.getStorageSync('token')
+				// 	},
+					
+				// })
+				// uni.navigateTo({
+				// 			url: '../risk/risk',
+				
+				// 		})
+				
 				uni.uploadFile({
 					url: this.url + '/api/risk/riskReport',
 					filePath: this.imgList[0],
 					name: 'file',
 					formData: {
-						riskId: this.id,
+						riskId: 0,
 						fxwz: this.fxwz,
 						fxys: this.fxys,
 						fxms: this.fxms,
@@ -114,6 +137,7 @@
 						fxrq: this.fxrq,
 						token: uni.getStorageSync('token')
 					},
+					
 					success: (uploadFileRes) => {
 
 						uni.navigateTo({
@@ -132,6 +156,7 @@
 			PickerChange(e) {
 
 				this.index = e.detail.value
+				this.fxys = this.fxyss[this.index]
 
 
 			},

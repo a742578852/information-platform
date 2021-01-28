@@ -80,7 +80,7 @@
 				fxrxm: '',
 				fxrq: '2020-12-25',
 				imgList: [],
-				url: 'http://192.168.137.1:8081'
+				url: 'http://127.0.0.1:8081'
 
 			}
 		},
@@ -157,6 +157,7 @@
 			PickerChange(e) {
 
 				this.index = e.detail.value
+				this.fxys = this.fxyss[this.index]
 
 
 			},
