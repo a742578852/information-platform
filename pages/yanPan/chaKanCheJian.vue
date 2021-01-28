@@ -93,19 +93,21 @@
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
-				<view class="table-item" style="padding-left: 17px;">班组</view>
-				<view class="table-item" style="padding-left: 20px;">上报人</view>
-				<view class="table-item" style="padding-left: 18px;">日期</view>
-				<view class="table-item" style="padding-left: 55px;">研判材料</view>
+				<view class="table-item" style="padding-left: 22px;">班组</view>
+				<view class="table-item" style="padding-left: 22px;">上报人</view>
+				<view class="table-item" style="padding-left: 20px;">日期</view>
+				<view class="table-item" style="padding-left: 40px;">研判材料</view>
 			</view>
 		<view class="table-data" v-for="(item,index) in bzjList">
 			<view class="table-data-item" >{{index+1}}</view>
 			<view class="table-data-item">{{item.bz}}</view>
 			<view class="table-data-item">{{item.tbr}}</view>
-			<view class="table-data-item" style="width: 25%;">{{item.tbrq}}</view>
-			<view class="table-data-item" style="width: 35%; font-size: 10px;line-height: 15px;">
-				<view class="">《安全风险研判表》</view></br>
-				<view class="">《研判报告及承诺书》</view>
+			<view class="table-data-item" style="width: 23%;">{{item.tbrq}}</view>
+			<view class="table-data-item" style="width: 36%; font-size: 13px;line-height: 12px;">
+				<!-- <button type="default">《安全风险研判表》</button>
+				<button type="default">《研判报告及承诺书》</button> -->
+				<view class="" @click="yanpanbiao(item.id,item.bz,item.tbr)" style="border: 1px solid;border-radius: 15px;background-color: #D2F1F0;margin-top: 9px;">安全风险研判表</view></br>
+				<view class="" @click="chengnuobiao(item.id,item.bz)" style="border: 1px solid;border-radius: 15px;background-color: #D2F1F0;">研判报告及承诺书</view>
 			</view>
 		</view>
 		</scroll-view>
@@ -164,6 +166,19 @@
 			}
 		},
 		methods: {
+			  yanpanbiao(id,bz,tbr){
+			   const bzid = id
+				uni.navigateTo({
+					url:'./yanPanBiao?bzid='+bzid+'&bz='+bz+'&tbr='+tbr
+				})
+			},
+			chengnuobiao(id,bz){
+			   const bzid = id
+			   uni.navigateTo({
+			   	url:'./chengNuoBiao?bzid='+bzid+'&bz='+bz
+			   })
+			
+			},
 			radioChange3(event){
 				const val3 = event.value
 			},
