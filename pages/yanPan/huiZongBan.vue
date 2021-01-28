@@ -45,6 +45,12 @@
 		},
 		methods: {
 			async save(){
+				uni.showLoading({
+					title:'汇总成功'
+				})
+				setTimeout(function(){
+					uni.hideLoading()
+				},1500)
 				const res = await this.$myRequest({
 					url:'/api/judge/nzjHzCj',
 					data:{
@@ -54,6 +60,11 @@
 					},
 					method:'POST'
 				})
+				if(res.data.code==200){
+					uni.navigateTo({
+						url:"banZu"
+					})
+				}
 			},
 			bindPickerChange(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)

@@ -30,6 +30,15 @@
 				
 			}
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.switchTab({
+				url:'../index/index' 
+			})
+			return true;
+		},
 		methods: {
 			btn1(){
 				uni.navigateTo({

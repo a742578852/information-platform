@@ -514,7 +514,7 @@
 					</view>
 					
 				</view>
-				<button type="default" @click="save" style="background-color: #FBBD08;">保存</button>
+				<button type="default" @click="save" style="background-color: #FBBD08;" :disabled="jinyong">保存</button>
 			</view>
 		</view>
 	</view>
@@ -742,6 +742,7 @@
 				fire3:'',
 				space:'',
 				height:'',
+				jinyong:false,
 				arrayBz:[],
 				state1:false,
 				state2:false,
@@ -787,7 +788,15 @@
 			this.riqi = timer
 			this.rq = timer
 		},
-		
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'banZu'
+			})
+			return true;
+		},
 		methods: {
 			cs1:function(e){
 				this.fxypYpnrinfos[0].gkcs = e.detail.value
@@ -874,6 +883,14 @@
 				this.fxypYpnrinfos[13].bz = e.detail.value
 			},
 			async save(){
+				//禁用保存按钮
+				this.jinyong = true
+				uni.showLoading({
+					title:'汇总成功'
+				})
+				setTimeout(function(){
+					uni.hideLoading()
+				},1500)
 				
 				//班组基础信息
 				this.fxypBzjinfo.bz = this.arrayBz[this.index]
@@ -1028,14 +1045,14 @@
 					},
 					method:'POST'
 				})
+				
 				if(res.data.code==200){
-					uni.showToast({
-						title:'保存成功'
-					})
 					uni.navigateTo({
 						url:'banZu'
 					})
 				}
+				//保存按钮解禁
+				this.jinyong = false
 			},
 			SetBorderSize(e) {
 				this.bordersize = e.detail.value

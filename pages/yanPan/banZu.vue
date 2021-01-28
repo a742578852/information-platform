@@ -37,6 +37,15 @@
 			}
 			
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'yanPan' 
+			})
+			return true;
+		},
 		methods: {
 			huizong(){
 				uni.navigateTo({

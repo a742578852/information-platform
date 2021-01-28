@@ -515,7 +515,7 @@
 				</view>
 				
 			</view>
-			<button type="default" @click="save" style="background-color: #FBBD08;">保存</button>
+			<button type="default" @click="save" style="background-color: #FBBD08;" :disabled="jinyong">保存</button>
 		</view>
 	</view>
 </template>
@@ -767,6 +767,7 @@
 				yunxing:'',
 				tingchan:'',
 				jianxiu:'',
+				jinyong:false,
 				fzr:'',
 				rq:'',
 				id:'',
@@ -1054,6 +1055,15 @@
 				}
 			}
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'banZu' 
+			})
+			return true;
+		},
 		methods: {
 			cs1:function(e){
 				this.fxypYpnrinfos[0].gkcs = e.detail.value
@@ -1140,6 +1150,14 @@
 				this.fxypYpnrinfos[13].bz = e.detail.value
 			},
 			async save(){
+				//保存按钮禁用
+				this.jinyong = true
+				uni.showLoading({
+					title:'汇总成功'
+				})
+				setTimeout(function(){
+					uni.hideLoading()
+				},1500)
 					//班组基础信息
 					this.fxypBzjinfo.bz = this.arrayBz[this.index]
 					this.fxypBzjinfo.tbr = this.tianbaoren
@@ -1291,13 +1309,13 @@
 						method:'POST'
 					})
 					if(res.data.code==200){
-						uni.showToast({
-							title:'修改成功'
-						})
+						
 						uni.navigateTo({
 							url:'banZu'
 						})
 					}
+					//保存按钮解禁
+					this.jinyong = false
 				},
 			SetBorderSize(e) {
 				this.bordersize = e.detail.value
