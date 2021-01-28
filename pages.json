@@ -199,6 +199,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/danger/dangerDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐患整改单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/danger/dangerList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐患整改单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

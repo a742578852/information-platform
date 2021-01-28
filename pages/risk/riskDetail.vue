@@ -60,7 +60,7 @@
 
 			<view class="padding flex flex-direction">
 				<button @click="sumbitRisk" class="cu-btn bg-green lg">保存</button>
-				<button class="cu-btn bg-red margin-tb-sm lg">查看关联隐患</button>
+				<button @click="goChangeList" class="cu-btn bg-red margin-tb-sm lg">查看关联隐患</button>
 			</view>
 		</form>
 
@@ -110,7 +110,7 @@
 					}
 				})
 
-
+			
 				// const res = await this.$myRequest({
 				// 	url: '/api/risk/riskReport',
 				// 	method: 'POST',
@@ -126,7 +126,12 @@
 				// })
 
 			},
-
+		goChangeList(){
+				
+				uni.navigateTo({
+					url:"../danger/dangerList?riskid="+this.id
+				})
+			},
 			//初始化	
 			async getDetail() {
 				const res = await this.$myRequest({
