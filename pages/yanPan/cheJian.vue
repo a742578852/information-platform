@@ -1,7 +1,7 @@
 <template>
 	<view style="width: 100%;">
 		<view class="btn">
-			<button type="default" class="btn2">公司级汇总</button>
+			<button type="default" class="btn2" @click="btn2">公司级汇总</button>
 		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
@@ -33,6 +33,15 @@
 				
 			}
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'yanPan'
+			})
+			return true;
+		},
 		methods: {
 			
 			//根据id查看研判详情
@@ -40,6 +49,11 @@
 				const bid = id
 				uni.navigateTo({
 					 url:'chaKanCheJian?bid='+bid
+				})
+			},
+			btn2(){
+				uni.navigateTo({
+					url:'huiZongCheJian'
 				})
 			}
 		},

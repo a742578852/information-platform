@@ -77,7 +77,7 @@
             "path" : "pages/woDeKaoShi/woDeKaoShi",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "我的考试",
                 "enablePullDownRefresh": false
             }
             
@@ -203,7 +203,7 @@
             "path" : "pages/yanPan/yanPanBiao",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "查看研判表",
                 "enablePullDownRefresh": false
             }
             
@@ -212,7 +212,7 @@
             "path" : "pages/yanPan/chengNuoBiao",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "查看承诺表",
                 "enablePullDownRefresh": false
             }
             
@@ -231,6 +231,213 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "隐患整改单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/huiZongCheJian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "汇总车间",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/yanPan/chaKanGongSi",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看公司研判信息",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/dongHuoZuoYe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "动火作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/gaoChuZuoYe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "高处作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/shouXianKongJian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "受限作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/diaoZhuangZuoYe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "吊装作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/linShiYongDian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "临时用电",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/dongTuZuoYe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "动土作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/mangBanChouDu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "盲板抽堵",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/duanLuZuoYe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "断路作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanDongHuo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改动火作业证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanGaoChu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改登高证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanShouXian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改受限证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanDiaoZhuang",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改吊装证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanLinShiYongDian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改临时用电证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanDongTu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改动土证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanMangBanChouDu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改盲板抽堵证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/chaKanDuanLu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看修改断路证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/safe/safe",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐患排查",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/safe/jianChaJiLu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "检查记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/safe/jianChaBiao",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "检查表",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/safe/chanKanJianCha",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查看检查记录",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/safe/chaKanJianchaBiao",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             

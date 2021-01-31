@@ -21,7 +21,7 @@
 			</view>
 			<view class="cu-form-group">
 				<view class="title">填报日期</view>
-				<input  name="input" v-model="riqi"></input>
+				<input  name="input" v-model="riqi" disabled=""></input>
 			</view>
 			<view class=""style="height: 5px; background-color: #D2F1F0;"></view>
 		</view>

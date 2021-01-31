@@ -4,18 +4,24 @@
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
-				<view class="table-item" style="padding-left: 17px;">部门</view>
-				<view class="table-item" style="padding-left: 20px;">填报人</view>
-				<view class="table-item" style="padding-left: 18px;">日期</view>
+				<view class="table-item" style="padding-left: 17px;">检查类型</view>
+				<view class="table-item" style="padding-left: 20px;">检查单号</view>
+				<view class="table-item" style="padding-left: 18px;">录入人</view>
+				<view class="table-item" style="padding-left: 18px;">检查日期</view>
+				<view class="table-item" style="padding-left: 18px;">检查成员</view>
+				<view class="table-item" style="padding-left: 18px;">受检部门</view>
 				<view class="table-item" style="padding-left: 55px;">操作</view>
 			</view>
 		<view class="table-data" v-for="(item,index) in dataList">
 			<view class="table-data-item" >{{index+1}}</view>
-			<view class="table-data-item">{{item.bm}}</view>
-			<view class="table-data-item">{{item.sbr}}</view>
-			<view class="table-data-item" style="width: 30%;">{{item.sbsj}}</view>
-			<view class="table-data-item" style="display: flex;width: 32%;">
-				<button @click="select(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">查看</button>
+			<view class="table-data-item">{{}}</view>
+			<view class="table-data-item">{{}}</view>
+			<view class="table-data-item">{{}}</view>
+			<view class="table-data-item">{{}}</view>
+			<view class="table-data-item">{{}}</view>
+			<view class="table-data-item">{{}}</view>
+			<view class="table-data-item" >
+				<button @click="select(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">提交隐患</button>
 				<!-- <view class=""style="font-size: 30px;">/</view> -->
 				<!-- <button @click="update(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">修改</button>	 -->
 			</view>
@@ -34,7 +40,7 @@
 		},
 		methods: {
 			
-			//根据id查看研判详情
+			//根据id查看记录详情
 			async select(id){
 				const gsid = id
 				uni.navigateTo({
@@ -43,9 +49,9 @@
 			}
 		},
 		async onLoad() {
-			// 获取公司风险研判列表
+			// 获取检查记录列表
 			const res = await this.$myRequest({
-				url:'/api/judge/getAllGsinfo',
+				url:'',
 				method:'POST'
 			})
 			if(res.data.code==200){
@@ -58,38 +64,25 @@
 <style lang="scss">
 	page{
 		background-color: #FFFFFF;
-		width: 100%;
+		// width: 100%;
 	}
-.btn{
-		width: 100%;
-		height: 65px;
-		line-height: 30px;
-		font-size: 30px;
-		padding: 10px;
-		// background-color: #CCE6FF;
-		display: flex;
-		.btn1{
-			background-color: #CCE6FF;
-		}
-		.btn2{
-			background-color: #CCE6FF;
-		}
-	}
+
 	.scroll{
-		width: 100%;
+		// width: 100%;
 	
 	.table{
 		white-space: nowrap;
-		width: 100%;
-		height: 60px;
+		// width: 100%;
+		// height: 60px;
 		line-height: 40px;
 		display: flex;
 		padding: 10px 0;
 		font-size: 18px;
-		background-color: #D2F1F0;
+		
 		.table-item{
 			display: inline-block;
 			padding-left: 30px;
+			background-color: #D2F1F0;
 		}
 	}
 	

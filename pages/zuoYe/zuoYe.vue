@@ -18,30 +18,55 @@
 				
 			}
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.switchTab({
+				url:'../index/index'
+			})
+			return true;
+		},
 		methods: {
 			btn1(){
-				
+				uni.navigateTo({
+					url:'dongHuoZuoYe'
+				})
 			},
 			btn2(){
-				
+				uni.navigateTo({
+					url:'gaoChuZuoYe'
+				})
 			},
 			btn3(){
-				
+				uni.navigateTo({
+					url:'shouXianKongJian'
+				})
 			},
 			btn4(){
-				
+				uni.navigateTo({
+					url:'diaoZhuangZuoYe'
+				})
 			},
 			btn5(){
-				
+				uni.navigateTo({
+					url:'linShiYongDian'
+				})
 			},
 			btn6(){
-				
+				uni.navigateTo({
+					url:'dongTuZuoYe'
+				})
 			},
 			btn7(){
-				
+				uni.navigateTo({
+					url:'mangBanChouDu'
+				})
 			},
 			btn8(){
-				
+				uni.navigateTo({
+					url:'duanLuZuoYe'
+				})
 			}
 		}
 	}
