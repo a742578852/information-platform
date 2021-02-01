@@ -15,7 +15,7 @@
 		</view>
 		<cg-swiper :swiperList="swiperList" @clickItem="clickItem"></cg-swiper>
 
-		
+
 	</view>
 </template>
 
@@ -130,14 +130,14 @@
 						keyw: '12',
 						value: 90
 					},
-				 ],
+				],
 				items: {
 					keyw: '02',
 					value: 110,
 				}
 			}
-	},
-	methods: {
+		},
+		methods: {
 			clickItem(item) {
 				if (item.text == '在线学习') {
 					uni.navigateTo({
@@ -160,8 +160,9 @@
 						url: '../zuoYe/zuoYe',
 					})
 				} else if (item.text == '隐患整改') {
-					uni.showToast({
-						title: "测试中..."
+				
+					uni.navigateTo({
+						url:'../danger/dangerList'
 					})
 				} else if (item.text == '风险研判') {
 					uni.navigateTo({
@@ -170,8 +171,10 @@
 				}
 
 
-			}
+			},
+		
 		},
+		
 
 	}
 </script>
