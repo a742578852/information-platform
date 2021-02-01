@@ -233,214 +233,223 @@
                 "navigationBarTitleText": "隐患整改单",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/yanPan/huiZongCheJian",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "汇总车间",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/yanPan/chaKanGongSi",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看公司研判信息",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/dongHuoZuoYe",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "动火作业",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/gaoChuZuoYe",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "高处作业",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/shouXianKongJian",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "受限作业",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/diaoZhuangZuoYe",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "吊装作业",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/linShiYongDian",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "临时用电",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/dongTuZuoYe",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "动土作业",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/mangBanChouDu",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "盲板抽堵",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/duanLuZuoYe",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "断路作业",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanDongHuo",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改动火作业证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanGaoChu",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改登高证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanShouXian",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改受限证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanDiaoZhuang",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改吊装证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanLinShiYongDian",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改临时用电证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanDongTu",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改动土证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanMangBanChouDu",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改盲板抽堵证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/zuoYe/chaKanDuanLu",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看修改断路证",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/safe/safe",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "隐患排查",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/safe/jianChaJiLu",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "检查记录",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/safe/jianChaBiao",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "检查表",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/safe/chanKanJianCha",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "查看检查记录",
                 "enablePullDownRefresh": false
             }
-            
+
         }
         ,{
             "path" : "pages/safe/chaKanJianchaBiao",
-            "style" :                                                                                    
+            "style" :
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
+
+        }
+        ,{
+            "path" : "pages/statistics/stac",
+            "style" :
+            {
+                "navigationBarTitleText": "统计分析",
+                "enablePullDownRefresh": false
+            }
+
         }
     ],
 	"globalStyle": {
@@ -458,11 +467,18 @@
 				"selectedIconPath":"static/home/home-selected.png"
 			},
 			{
+				"pagePath":"pages/statistics/stac",
+				"text":"统计分析",
+				"iconPath":"static/today.png",
+				"selectedIconPath":"static/account/publish.png"
+			},
+			{
 				"pagePath":"pages/mine/mine",
 				"text":"我的",
 				"iconPath":"static/yx-login/user.png",
 				"selectedIconPath":"static/account/nick.png"
 			}
+
 		]
 	}
 	

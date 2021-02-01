@@ -8,7 +8,7 @@
 			
 			<view class="cu-form-group">
 				<view class="title" >整改单编号:</view>
-				<input placeholder="" name="input" :value="risk.fxsbid"></input>
+				<input placeholder="" name="input" :value="risk.zgdbh"></input>
 			</view>
 			
 			<view class="cu-form-group">
@@ -110,6 +110,7 @@
 				risk:{
 					id:'',
 					fxsbid:'',
+					zgdbh:'',
 					yhszd:'',
 					yhdj:'',
 					yhhg:'',

@@ -14,10 +14,8 @@
 			</swiper>
 		</view>
 		<cg-swiper :swiperList="swiperList" @clickItem="clickItem"></cg-swiper>
-		<view class="tongji">
-			<view class="" style="margin-left: 143px;">风险上报统计</view>
-			<jpCharts v-if="list.length>0" :list="list" :Y="Charts.Y" :X="Charts.X" :keyId="Charts.keyId" :width="Charts.width" :bgColor="Charts.bgColor" :height="Charts.height" :canClick="Charts.canClick" :x_width="Charts.x_width" :items="items" :proportion="Charts.proportion" :checkedColor="Charts.checkedColor" :scrollLeft="100"></jpCharts>
-		</view>
+
+		
 	</view>
 </template>
 
