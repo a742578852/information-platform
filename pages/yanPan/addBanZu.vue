@@ -6,7 +6,6 @@
 				<picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
 					<view class="uni-input" style="">{{arrayBz[index]}}</view>
 				</picker>
-				<!-- <input placeholder="选择班组" name="input" v-model="banzu" ></input> -->
 			</view>
 			<view class="cu-form-group">
 				<view class="title">填报人:</view>

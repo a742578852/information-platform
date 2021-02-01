@@ -1,30 +1,26 @@
 <template>
 	<view style="width: 100%;">
-		
+		<view class="btn">
+			<button type="default" class="btn1" @click="btn1">增加</button>
+		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
 				<view class="table-item" style="padding-left: 17px;">检查类型</view>
-				<view class="table-item" style="padding-left: 20px;">检查单号</view>
+				<view class="table-item" style="padding-left: 17px;">检查单号</view>
 				<view class="table-item" style="padding-left: 18px;">录入人</view>
-				<view class="table-item" style="padding-left: 18px;">检查日期</view>
+				<view class="table-item" style="padding-left: 19px;">检查日期</view>
 				<view class="table-item" style="padding-left: 18px;">检查成员</view>
 				<view class="table-item" style="padding-left: 18px;">受检部门</view>
-				<view class="table-item" style="padding-left: 55px;">操作</view>
 			</view>
-		<view class="table-data" v-for="(item,index) in dataList">
-			<view class="table-data-item" >{{index+1}}</view>
-			<view class="table-data-item">{{}}</view>
-			<view class="table-data-item">{{}}</view>
-			<view class="table-data-item">{{}}</view>
-			<view class="table-data-item">{{}}</view>
-			<view class="table-data-item">{{}}</view>
-			<view class="table-data-item">{{}}</view>
-			<view class="table-data-item" >
-				<button @click="select(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">提交隐患</button>
-				<!-- <view class=""style="font-size: 30px;">/</view> -->
-				<!-- <button @click="update(item.id)" type="default" style="width: 60px;height: 30px;font-size: 10px;line-height: 30px;background-color: #CCE6FF;">修改</button>	 -->
-			</view>
+		<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
+			<view class="table-data-item" style="width: 15%;">{{index+1}}</view>
+			<view class="table-data-item">{{item.jclx}}</view>
+			<view class="table-data-item">{{item.jcdh}}</view>
+			<view class="table-data-item">{{item.lrr}}</view>
+			<view class="table-data-item">{{item.jcrq}}</view>
+			<view class="table-data-item">{{item.jczcy}}</view>
+			<view class="table-data-item">{{item.sjbm}}</view>
 		</view>
 		</scroll-view>
 	</view>
@@ -39,19 +35,23 @@
 			}
 		},
 		methods: {
-			
+			btn1(){
+				uni.navigateTo({
+					url:'./addJiancha'
+				})
+			},
 			//根据id查看记录详情
 			async select(id){
-				const gsid = id
+				const checkId = id
 				uni.navigateTo({
-					 url:'chaKanGongSi?gsid='+gsid
+					 url:'chanKanJianCha?checkId='+checkId
 				})
 			}
 		},
 		async onLoad() {
 			// 获取检查记录列表
 			const res = await this.$myRequest({
-				url:'',
+				url:'/api/risk/getCheckrecordList',
 				method:'POST'
 			})
 			if(res.data.code==200){
@@ -90,16 +90,31 @@
 		display: flex;
 		font-size: 12px;
 		// margin: 10px;
-		width: 100%;
+		width: 158%;
 		// background-color: #D2F1F0;
 		.table-data-item{
 			// margin-left: 20px;
 			border: 1px solid;
-			height: 35px;
-			width: 20%;
-			line-height: 35px;
+			// height: 35px;
+			width: 22%;
+			// line-height: 35px;
 			text-align: center;
 		}
 	}
 	}
+	.btn{
+			width: 100%;
+			height: 65px;
+			line-height: 30px;
+			font-size: 30px;
+			padding: 10px;
+			// background-color: #CCE6FF;
+			display: flex;
+			.btn1{
+				background-color: #CCE6FF;
+			}
+			.btn2{
+				background-color: #CCE6FF;
+			}
+		}
 </style>
