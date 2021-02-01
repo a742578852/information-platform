@@ -79,12 +79,12 @@
 				fxrxm: '',
 				fxrq: '2020-12-25',
 				imgList: [],
-				url: 'http://192.168.41.5:8081',
+				url: 'http://192.168.0.103:8081',
 
 			}
 		},
 		methods: {
-
+		
 			async getUser() {
 				const res = await this.$myRequest({
 					url: '/api/user/getUser',
