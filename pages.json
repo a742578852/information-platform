@@ -235,6 +235,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/statistics/stac",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "统计分析",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -251,11 +260,18 @@
 				"selectedIconPath":"static/home/home-selected.png"
 			},
 			{
+				"pagePath":"pages/statistics/stac",
+				"text":"统计分析",
+				"iconPath":"static/today.png",
+				"selectedIconPath":"static/account/publish.png"
+			},
+			{
 				"pagePath":"pages/mine/mine",
 				"text":"我的",
 				"iconPath":"static/yx-login/user.png",
 				"selectedIconPath":"static/account/nick.png"
 			}
+			
 		]
 	}
 	
