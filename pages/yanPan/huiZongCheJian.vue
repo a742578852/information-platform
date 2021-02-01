@@ -8,15 +8,15 @@
 			<!-- <input  name="input" v-model="hzrq" ></input> -->
 		</view>
 		<view class="cu-form-group">
-			<view class="title">所属车间:</view>
-			<picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
+			<view class="title">所属公司:</view>
+			<!-- <picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
 				<view class="uni-input" style="">{{arrayBz[index]}}</view>
-			</picker>
-			<!-- <input  name="input" v-model="sscj" ></input> -->
+			</picker> -->
+			<input  name="input" v-model="ssgs" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">填报人:</view>
-			<input  name="input" v-model="tianbaoren" ></input>
+			<input  name="input" v-model="tianbaoren" disabled=""></input>
 		</view>
 		<button type="default" @click="save" style="background-color: #FBBD08;">保存</button>
 	</view>
@@ -32,7 +32,8 @@
 				tianbaoren:'',
 				arrayBz:[],
 				index:0,
-				date:currentDate
+				date:currentDate,
+				ssgs:'总公司'
 			}
 		},
 		computed: {
@@ -43,6 +44,15 @@
 				return this.getDate('end');
 			}
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'cheJian'
+			})
+			return true;
+		},
 		methods: {
 			async save(){
 				uni.showLoading({
@@ -52,17 +62,17 @@
 					uni.hideLoading()
 				},1500)
 				const res = await this.$myRequest({
-					url:'/api/judge/nzjHzCj',
+					url:'/api/judge/mergeGsinfo',
 					data:{
 						'date':this.date,
-						'cj':this.arrayBz[this.index],
+						'gsName':this.ssgs,
 						'sbr':this.tianbaoren
 					},
 					method:'POST'
 				})
 				if(res.data.code==200){
 					uni.navigateTo({
-						url:"banZu"
+						url:"cheJian"
 					})
 				}else{
 					uni.showToast({
@@ -70,10 +80,10 @@
 					})
 				}
 			},
-			bindPickerChange(e) {
-				console.log('picker发送选择改变，携带值为', e.target.value)
-				this.index = e.detail.value
-			},
+			// bindPickerChange(e) {
+			// 	console.log('picker发送选择改变，携带值为', e.target.value)
+			// 	this.index = e.detail.value
+			// },
 			bindDateChange: function(e) {
 				this.date = e.target.value
 			},
@@ -93,14 +103,14 @@
 				return `${year}-${month}-${day}`;
 			}
 		},
-		async onLoad() {
-			const res = await this.$myRequest({
-					url:'/api/util/getDepartment',
-					method:'POST'
-				})
-				 for (var i = 0; i < res.data.data.length; i++) {
-					 this.arrayBz.push(res.data.data[i].bmmc)  
-				 }
+		onLoad() {
+			// const res = await this.$myRequest({
+			// 		url:'/api/util/getDepartment',
+			// 		method:'POST'
+			// 	})
+			// 	 for (var i = 0; i < res.data.data.length; i++) {
+			// 		 this.arrayBz.push(res.data.data[i].bmmc)  
+			// 	 }
 			var tianbr = uni.getStorageSync('admin').nick
 			this.tianbaoren = tianbr
 		}

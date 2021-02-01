@@ -784,6 +784,13 @@
 			var year = date.getFullYear()
 			var month = date.getMonth() + 1
 			var day = date.getDate()
+			if(month<10){
+				month = '0'+month
+			}
+			var day = date.getDate()
+			if(day<10){
+				day = '0'+day
+			}
 			var timer = year + '-' + month + '-' + day 
 			this.riqi = timer
 			this.rq = timer
@@ -886,7 +893,7 @@
 				//禁用保存按钮
 				this.jinyong = true
 				uni.showLoading({
-					title:'汇总成功'
+					title:'新增成功'
 				})
 				setTimeout(function(){
 					uni.hideLoading()
