@@ -41,6 +41,9 @@
 				uni.navigateTo({
 					url:'../login/login',
 					})
+			},
+			update(){
+				
 			}
 		}
 	}

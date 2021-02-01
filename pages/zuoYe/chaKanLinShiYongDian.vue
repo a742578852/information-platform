@@ -2,73 +2,73 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="zyzbh" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzbh" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="sqrq" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqrq" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="sqdw" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqdw" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
-			<input placeholder="" name="input" v-model="sqr" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">用电作业单位:</view>
-			<input placeholder="" name="input" v-model="ydzydw" ></input>
+			<input placeholder="" name="input" v-model="dataList.ydzydw" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">用电单位负责人:</view>
-			<input placeholder="" name="input" v-model="yddwfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.yddwfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">用电人:</view>
-			<input placeholder="" name="input" v-model="tdr" ></input>
+			<input placeholder="" name="input" v-model="dataList.ydr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">计划性:</view>
-			<picker @change="bindPickerChange" :value="index2" :range="arrayjhx" class="item2" style="">
-				<view class="uni-input" style="">{{jhx==''?arrayjhx[index2] : jhx}}</view>
+			<picker @change="bindPickerChange" :value="index1" :range="arrayjhx" class="item2" style="">
+				<view class="uni-input" style="">{{dataList.jhx==''?arrayjhx[index1] : dataList.jhx}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">监护人:</view>
-			<input placeholder="" name="input" v-model="jhr" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">实施安全教育人:</view>
-			<input placeholder="" name="input" v-model="ssaqjyr" ></input>
+			<input placeholder="" name="input" v-model="dataList.ssaqjyr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">用电设备功率:</view>
-			<input placeholder="" name="input" v-model="ydsbgl" ></input>
+			<input placeholder="" name="input" v-model="dataList.ydsbjgl" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">用电电压:</view>
-			<input placeholder="" name="input" v-model="yddy" ></input>
+			<input placeholder="" name="input" v-model="dataList.gzyl" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">用电区域:</view>
-			<input placeholder="" name="input" v-model="ydqy" ></input>
+			<input placeholder="" name="input" v-model="dataList.ydqy" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">接引设施:</view>
-			<input placeholder="" name="input" v-model="jyss" ></input>
+			<input placeholder="" name="input" v-model="dataList.jyss" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">施工项目:</view>
-			<input placeholder="" name="input" v-model="sgxm" ></input>
+			<input placeholder="" name="input" v-model="dataList.sgxm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">临时用电原因:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.lsydyy" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
-		<view class="">涉及其他作业证</view>
+		<!-- <view class="">涉及其他作业证</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
@@ -86,33 +86,35 @@
 					<view class="table-data-item">{{}}</view>
 					<view class="table-data-item">{{}}</view>
 				</view>
-		</scroll-view>
+		</scroll-view> -->
 		<view class="cu-form-group">
-			<view class="title">临时用电证有效期:</view>
-			<input placeholder="" name="input" v-model="yxq" ></input>
-		</view>
+			<scroll-view scroll-y="true" >
+				<view class="title">临时用电证有效期:</view>
+				<input placeholder="" name="input" v-model="dataList.lsydzyxq" ></input>
+			</scroll-view>
+		</view>  
 		<view class="cu-form-group">
 			<view class="title">生产工艺风险危害辨识:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">消减风险安全措施:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">施工作业风险评估危害辨识:</view>
+			<view class="title">施工  风险评估危害辨识:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.pgwhbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">施工作业消减风险安全措施:</view>
+			<view class="title">施工消减风险安全措施:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.fxaqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 	</view>
@@ -122,15 +124,97 @@
 	export default {
 		data() {
 			return {
-				
+				dataList:{
+					zyzbh:'',
+					sqrq:'',
+					sqdw:'',
+					sqr:'',
+					ydzydw:'',
+					yddwfzr:'',
+					ydr:'',
+					jhx:'',
+					jhr:'',
+					ssaqjyr:'',
+					ydsbjgl:'',
+					gzyl:'',
+					ydqy:'',
+					jyss:'',
+					sgxm:'',
+					lsydyy:'',
+					sgfa:'',
+					fj:'',
+					sjqtzyz:'',
+					jhrgw:'',
+					lsydzyxq:'',
+					whbs:'',
+					aqcs:'',
+					pgwhbs:'',
+					fxaqcs:'',
+					ssqk:'',
+					jhqk:''
+				},
+				arrayjhx:['非计划性','计划性'],
+				index1:0
 			}
 		},
 		methods: {
-			
+			bindPickerChange(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index1 = e.detail.value
+				},
+		},
+		async onLoad(option) {
+			var orderId = option.orderId
+			// 获取临时用电作业证详情
+			const res = await this.$myRequest({
+				url:'/api/workorder/getelectricorderDetail',
+				method:'POST',
+				data:{
+					'orderId':orderId
+				}
+			})
+			if(res.data.code==200){
+				this.dataList = res.data.data
+				}
 		}
 	}
 </script>
 
-<style>
-
+<style lang="scss">
+	.scroll{
+		// width: 100%;
+		
+	
+	.table{
+		white-space: nowrap;
+		//  width: 100%;
+		// height: 60px;
+		line-height: 40px;
+		//display: flex;
+		padding: 10px 0;
+		font-size: 18px;
+		
+		.table-item{
+			display: inline-block;
+			padding-left: 30px;
+			background-color: #D2F1F0;
+		}
+	}
+	
+	.table-data{
+		display: flex;
+		font-size: 12px;
+		// margin: 10px;
+		// width: 100%;
+		// background-color: #D2F1F0;
+		.table-data-item{
+			// margin-left: 20px;
+			border: 1px solid;
+			// height: 35px;
+			width: 20%;
+			// line-height: 35px;
+			text-align: center;
+		}
+	}
+	}
 </style>

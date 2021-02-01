@@ -2,59 +2,59 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="zyzbh" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzbh" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="sqrq" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqrq" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="sqdw" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqdw" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">内部单位负责人:</view>
-			<input placeholder="" name="input" v-model="nbdwfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.nbzydwfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
-			<input placeholder="" name="input" v-model="sqr" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">动火地点:</view>
-			<input placeholder="" name="input" v-model="dhdd" ></input>
+			<input placeholder="" name="input" v-model="dataList.dhdd" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">动火方式:</view>
-			<input placeholder="" name="input" v-model="dhfs" ></input>
+			<input placeholder="" name="input" v-model="dataList.dhfs" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">动火分析人:</view>
-			<input placeholder="" name="input" v-model="dhfxr" ></input>
+			<input placeholder="" name="input" v-model="dataList.dhfxr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">施工项目:</view>
-			<input placeholder="" name="input" v-model="sgxm" ></input>
+			<input placeholder="" name="input" v-model="dataList.sgxm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">施工负责人:</view>
-			<input placeholder="" name="input" v-model="sgfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.sgfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">动火证类型:</view>
-			<picker @change="bindPickerChange" :value="index1" :range="arraydhzlx" class="item2" style="">
-				<view class="uni-input" style="">{{dhzlx==''?arraydhzlx[index1] : dhzlx}}</view>
+			<picker @change="bindPickerChange1" :value="index1" :range="arraydhzlx" class="item2" style="">
+				<view class="uni-input" style="">{{dataList.dhzlx==''?arraydhzlx[index1] : dataList.dhzlx}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">计划性:</view>
-			<picker @change="bindPickerChange" :value="index2" :range="arrayjhx" class="item2" style="">
-				<view class="uni-input" style="">{{jhx==''?arrayjhx[index2] : jhx}}</view>
+			<picker @change="bindPickerChange2" :value="index2" :range="arrayjhx" class="item2" style="">
+				<view class="uni-input" style="">{{dataList.jhx==''?arrayjhx[index2] : dataList.jhx}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">施工安全教育人:</view>
-			<input placeholder="" name="input" v-model="ssaqjyr" ></input>
+			<input placeholder="" name="input" v-model="dataList.ssaqjyr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">包含外部单位:</view>
@@ -69,19 +69,19 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">外部作业单位:</view>
-			<input placeholder="" name="input" v-model="wbzydw" ></input>
+			<input placeholder="" name="input" v-model="dataList.wbzydw" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">外部单位负责人:</view>
-			<input placeholder="" name="input" v-model="wbdwfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.wbzydwfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">动火内容:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.dhnr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
-		<view class="">涉及其他作业证</view>
+		<!-- <view class="">涉及其他作业证</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
@@ -99,29 +99,37 @@
 					<view class="table-data-item">{{}}</view>
 					<view class="table-data-item">{{}}</view>
 				</view>
-		</scroll-view>
+		</scroll-view> -->
 		<view class="cu-form-group">
 			<view class="title">监火人:</view>
-			<input placeholder="" name="input" v-model="jhr" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">监火人岗位:</view>
-			<input placeholder="" name="input" v-model="jhrgw" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhrgw" ></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">动火期限:</view>
-			<input placeholder="" name="input" v-model="jhrgw" ></input>
+			<scroll-view scroll-x="true" class="scroll">
+				<view class="title">动火期限上午:</view>
+				<input placeholder="" name="input" v-model="dataList.dhqxsw" style="height: auto;"></input>
+			</scroll-view>
+		</view>
+		<view class="cu-form-group">
+			<scroll-view scroll-x="true" class="scroll">
+				<view class="title">动火期限下午:</view>
+				<input placeholder="" name="input" v-model="dataList.dhqxxw" ></input>
+			</scroll-view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 	</view>
@@ -131,16 +139,77 @@
 	export default {
 		data() {
 			return {
-				arraydhzlx:[],
-				arrayjhx:[],
+				arraydhzlx:['特殊动火作业证','一级动火作业证','二级动火作业证'],
+				arrayjhx:['非计划性','计划性'],
 				index1:0,
 				index2:0,
-				
-				
+				check1:false,
+				check11:false,
+				dataList:{
+					zyzbh:'',
+					sqrq:'',
+					sqdw:'',
+					nbzydwfzr:'',
+					sqr:'',
+					dhdd:'',
+					dhfs:'',
+					dhfxr:'',
+					sgxm:'',
+					sgfzr:'',
+					dhzlx:'',
+					jhx:'',
+					ssaqjyr:'',
+					bhwbdw:'',
+					wbzydw:'',
+					wbzydwfzr:'',
+					dhnr:'',
+					sgfa:'',
+					sjqtzyz:'',
+					jhr:'',
+					jhrgw:'',
+					dhqxsw:'',
+					dhqxxw:'',
+					whbs:'',
+					aqcs:'',
+					ssqk:'',
+					jhqk:'',
+					
+				}
 			}
 		},
 		methods: {
-			
+			bindPickerChange1(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index1 = e.detail.value
+				},
+			bindPickerChange2(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index2 = e.detail.value
+				},
+			radioChange1(event){
+				this.dataList.bhwbdw = event.target.value
+			},
+		},
+		async onLoad(option) {
+			var orderId = option.orderId
+			// 获取动火作业证详情
+			const res = await this.$myRequest({
+				url:'/api/workorder/getFireorderDetail',
+				method:'POST',
+				data:{
+					'orderId':orderId
+				}
+			})
+			if(res.data.code==200){
+				this.dataList = res.data.data
+				
+				if(this.dataList.bhwbdw=='是'){
+					this.check1 = true
+				}
+				if(this.dataList.bhwbdw=='否'){
+					this.check11 = true
+				}
+			}
 		}
 	}
 </script>

@@ -2,71 +2,71 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="zyzbh" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzbh" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="sqrq" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqrq" ></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="sqdw" ></input>
+			<view class="title">申请部门:</view>
+			<input placeholder="" name="input" v-model="dataList.sqbm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
-			<input placeholder="" name="input" v-model="sqr" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">受限空间介质:</view>
-			<input placeholder="" name="input" v-model="sxkjjz" ></input>
+			<input placeholder="" name="input" v-model="dataList.sxkjzyjz" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">受限空间名称:</view>
-			<input placeholder="" name="input" v-model="sxkjmc" ></input>
+			<input placeholder="" name="input" v-model="dataList.sxkjmc" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业部门:</view>
-			<input placeholder="" name="input" v-model="zybm" ></input>
+			<input placeholder="" name="input" v-model="dataList.zybm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业负责人:</view>
-			<input placeholder="" name="input" v-model="zyfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全监护人:</view>
-			<input placeholder="" name="input" v-model="aqjhr" ></input>
+			<input placeholder="" name="input" v-model="dataList.aqjhr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">确认人:</view>
-			<input placeholder="" name="input" v-model="qrr" ></input>
+			<input placeholder="" name="input" v-model="dataList.qrr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">受限空间分析人:</view>
-			<input placeholder="" name="input" v-model="sxkjfxr" ></input>
+			<input placeholder="" name="input" v-model="dataList.sxkjfxr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">计划性:</view>
-			<picker @change="bindPickerChange" :value="index2" :range="arrayjhx" class="item2" style="">
-				<view class="uni-input" style="">{{jhx==''?arrayjhx[index2] : jhx}}</view>
+			<picker @change="bindPickerChange1" :value="index1" :range="arrayjhx" class="item2" style="">
+				<view class="uni-input" style="">{{dataList.jhx==''?arrayjhx[index1] : dataList.jhx}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">施工项目:</view>
-			<input placeholder="" name="input" v-model="sgxm" ></input>
+			<input placeholder="" name="input" v-model="dataList.sgxm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">电源情况:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.dyqk" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业内容:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.zynr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
-		<view class="">涉及其他作业证</view>
+		<!-- <view class="">涉及其他作业证</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
@@ -84,29 +84,29 @@
 					<view class="table-data-item">{{}}</view>
 					<view class="table-data-item">{{}}</view>
 				</view>
-		</scroll-view>
+		</scroll-view> -->
 		<view class="cu-form-group">
 			<view class="title">监护人:</view>
-			<input placeholder="" name="input" v-model="jhr" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">监护人岗位:</view>
-			<input placeholder="" name="input" v-model="jhrgw" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhrgw" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业期限:</view>
-			<input placeholder="" name="input" v-model="jhrgw" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyqx" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 	</view>
@@ -116,15 +116,94 @@
 	export default {
 		data() {
 			return {
-				
+				dataList:{
+					zyzbh:'',
+					sqrq:'',
+					sxkjmc:'',
+					sxkjzyjz:'',
+					zybm:'',
+					zyfzr:'',
+					jhx:'',
+					sqbm:'',
+					sqr:'',
+					aqjhr:'',
+					qrr:'',
+					sxkjfxr:'',
+					sgxm:'',
+					dyqk:'',
+					zynr:'',
+					sjqtzyz:'',
+					jhr:'',
+					jhrgw:'',
+					zyqx:'',
+					whbs:'',
+					aqcs:'',
+					ssqk:'',
+					jhqk:''
+				},
+				index1:0,
+				arrayjhx:['非计划性','计划性']
 			}
 		},
 		methods: {
-			
+			bindPickerChange1(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index1 = e.detail.value
+				},
+		},
+		async onLoad(option) {
+			var orderId = option.orderId
+			// 获取受限作业证详情
+			const res = await this.$myRequest({
+				url:'/api/workorder/getSpaceorderDetail',
+				method:'POST',
+				data:{
+					'orderId':orderId
+				}
+			})
+			if(res.data.code==200){
+				this.dataList = res.data.data
+				}
 		}
 	}
 </script>
 
-<style>
-
+<style lang="scss">
+	.scroll{
+		// width: 100%;
+		
+	
+	.table{
+		white-space: nowrap;
+		//  width: 100%;
+		// height: 60px;
+		line-height: 40px;
+		//display: flex;
+		padding: 10px 0;
+		font-size: 18px;
+		
+		.table-item{
+			display: inline-block;
+			padding-left: 30px;
+			background-color: #D2F1F0;
+		}
+	}
+	
+	.table-data{
+		display: flex;
+		font-size: 12px;
+		// margin: 10px;
+		// width: 100%;
+		// background-color: #D2F1F0;
+		.table-data-item{
+			// margin-left: 20px;
+			border: 1px solid;
+			// height: 35px;
+			width: 20%;
+			// line-height: 35px;
+			text-align: center;
+		}
+	}
+	}
 </style>
+

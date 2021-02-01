@@ -12,18 +12,16 @@
 				<view class="table-item" style="padding-left: 18px;">动火地点</view>
 				<view class="table-item" style="padding-left: 18px;">动火方式</view>
 				<view class="table-item" style="padding-left: 18px;">监火人</view>
-				<view class="table-item" style="padding-left: 18px;">审核状态</view>
 				<!-- <view class="table-item" style="padding-left: 55px;">操作</view> -->
 			</view>
-				<view class="table-data" v-for="(item,index) in dataList">
-					<view class="table-data-item" >{{index+1}}</view>
-					<view class="table-data-item">{{}}</view>
-					<view class="table-data-item">{{}}</view>
-					<view class="table-data-item" >{{}}</view>
-					<view class="table-data-item">{{}}</view>
-					<view class="table-data-item">{{}}</view>
-					<view class="table-data-item" >{{}}</view>
-					<view class="table-data-item" >{{}}</view>
+				<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
+					<view class="table-data-item" style="width: 120px;">{{index+1}}</view>
+					<view class="table-data-item" style="padding-top: 0px;">{{item.zyzbh}}</view>
+					<view class="table-data-item">{{item.sqrq}}</view>
+					<view class="table-data-item" >{{item.sqdw}}</view>
+					<view class="table-data-item">{{item.dhdd}}</view>
+					<view class="table-data-item">{{item.dhfs}}</view>
+					<view class="table-data-item" >{{item.jhr}}</view>
 				</view>
 		
 		</scroll-view>
@@ -48,71 +46,48 @@
 			})
 			return true;
 		},
-		onBackPress(event) {
-			if (event.from === 'navigateBack') {
-				return false;
-			}
-			uni.navigateTo({
-				url:'zuoYe' 
-			})
-			return true;
-		},
 		methods: {
-			huizong(){
+			
+			
+			//根据id查看动火详情
+			async select(id){
+				const orderId = id
 				uni.navigateTo({
-					url:'huiZongBan'
+					url:'chaKanDongHuo?orderId='+orderId
 				})
 			},
-			// btn1(){
-			// 	uni.navigateTo({
-			// 		url:''
-			// 	})
-			// },
-			//根据id查看研判详情
-			async select(id){
-				const bid = id
-				// uni.navigateTo({
-				// 	url:'chaKanBanZu?bid='+bid
-				// })
-			},
 			//根据id修改研判详情
-			async update(id){
-				const bid = id
+			// async update(id){
+			// 	const bid = id
 				// uni.navigateTo({
 				// 	url:'updateBanZu?bid='+bid
 				// })
-			}
+			// }
 		},
-		// async onLoad() {
-		// 	// 获取风险研判列表
-		// 	const res = await this.$myRequest({
-		// 		url:'/api/judge/getJudgeInfoByParms',
-		// 		method:'POST'
-		// 	})
-		// 	if(res.data.code==200){
-		// 		this.dataList = res.data.data
-		// 	}
-		// }
+		async onLoad() {
+			// 获取动火作业证列表
+			const res = await this.$myRequest({
+				url:'/api/workorder/getFireorderList',
+				method:'POST'
+			})
+			if(res.data.code==200){
+				this.dataList = res.data.data
+			}
+		}
 	}
 </script>
 
 <style lang="scss">
 	page{
 		background-color: #FFFFFF;
-		// width: 100%;
 		
 	}
 
 	.scroll{
-		// width: 100%;
-		
 	
 	.table{
 		white-space: nowrap;
-		//  width: 100%;
-		// height: 60px;
 		line-height: 40px;
-		//display: flex;
 		padding: 10px 0;
 		font-size: 18px;
 		
@@ -126,16 +101,12 @@
 	.table-data{
 		display: flex;
 		font-size: 12px;
-		// margin: 10px;
-		// width: 100%;
-		// background-color: #D2F1F0;
+		width: 160%;
 		.table-data-item{
-			// margin-left: 20px;
 			border: 1px solid;
-			// height: 35px;
-			width: 20%;
-			// line-height: 35px;
+			width: 200px;
 			text-align: center;
+			padding-top: 5px;
 		}
 	}
 	}

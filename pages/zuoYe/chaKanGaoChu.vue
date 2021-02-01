@@ -2,61 +2,61 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="zyzbh" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzbh" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业证类型:</view>
-			<picker @change="bindPickerChange" :value="index1" :range="arrayzyzlx" class="item2" style="">
-				<view class="uni-input" style="">{{zyzlx==''?arrayzyzlx[index1] : zyzlx}}</view>
+			<picker @change="bindPickerChange1" :value="index1" :range="arrayzyzlx" class="item2" style="">
+				<view class="uni-input" style="">{{dataList.gczlx==''?arrayzyzlx[index1] : dataList.gczlx}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="sqrq" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzsqrq" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="sqdw" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqbm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">内部单位负责人:</view>
-			<input placeholder="" name="input" v-model="nbdwfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.zynbfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">外部单位负责人:</view>
-			<input placeholder="" name="input" v-model="wbdwfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.zywbfzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
-			<input placeholder="" name="input" v-model="sqr" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业地点:</view>
-			<input placeholder="" name="input" v-model="zydd" ></input>
+			<input placeholder="" name="input" v-model="dataList.zydd" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业高度:</view>
-			<input placeholder="" name="input" v-model="zygd" ></input>
+			<input placeholder="" name="input" v-model="dataList.zygd" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">施工项目:</view>
-			<input placeholder="" name="input" v-model="sgxm" ></input>
+			<input placeholder="" name="input" v-model="dataList.sgxm" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">编制人:</view>
-			<input placeholder="" name="input" v-model="bzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.bzr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">实施安全教育人:</view>
-			<input placeholder="" name="input" v-model="ssaqjyr" ></input>
+			<input placeholder="" name="input" v-model="dataList.ssaqjyr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业内容:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.zynr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
-		<view class="">涉及其他作业证</view>
+		<!-- <view class="">涉及其他作业证</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
@@ -74,29 +74,31 @@
 					<view class="table-data-item">{{}}</view>
 					<view class="table-data-item">{{}}</view>
 				</view>
-		</scroll-view>
+		</scroll-view> -->
 		<view class="cu-form-group">
 			<view class="title">监护人:</view>
-			<input placeholder="" name="input" v-model="jhr" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">监护人岗位:</view>
-			<input placeholder="" name="input" v-model="jhrgw" ></input>
+			<input placeholder="" name="input" v-model="dataList.jhrgw" ></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">作业期限:</view>
-			<input placeholder="" name="input" v-model="jhrgw" ></input>
+			<scroll-view scroll-y="true" >
+				<view class="title">作业期限:</view>
+				<input placeholder="" name="input" v-model="dataList.zyqx" ></input>
+			</scroll-view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
 			<view class="item2" style="width: 150px;">
-				<textarea class=""  value="" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
 	</view>
@@ -106,16 +108,56 @@
 	export default {
 		data() {
 			return {
-				arrayzyzlx:[],
+				dataList:{
+					zyzbh:'',
+					gczlx:'',
+					sqr:'',
+					sqbm:'',
+					zynbfzr:'',
+					zydd:'',
+					zywbfzr:'',
+					zygd:'',
+					sgxm:'',
+					zyzsqrq:'',
+					bzr:'',
+					ssaqjyr:'',
+					zynr:'',
+					sgfa:'',
+					jhr:'',
+					fj:'',
+					sjqtzyz:'',
+					jhrgw:'',
+					zyqx:'',
+					whbs:'',
+					aqcs:'',
+					ssqk:'',
+					jhqk:'',
+					
+				},
+				arrayzyzlx:['特级高处作业证(h>=30)','一级高处作业证(15<=h<30)','二级高处作业证(5<=h<15)','三级高处作业证(2<=h<5)'],
 				
 				index1:0,
-				index2:0,
-				
-				
 			}
 		},
 		methods: {
-			
+			bindPickerChange1(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index1 = e.detail.value
+				},
+		},
+		async onLoad(option) {
+			var orderId = option.orderId
+			// 获取高处作业证详情
+			const res = await this.$myRequest({
+				url:'/api/workorder/getHighorderDetail',
+				method:'POST',
+				data:{
+					'orderId':orderId
+				}
+			})
+			if(res.data.code==200){
+				this.dataList = res.data.data
+				}
 		}
 	}
 </script>

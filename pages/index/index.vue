@@ -154,8 +154,8 @@
 						url: '../risk/risk',
 					})
 				} else if (item.text == '隐患排查') {
-					uni.showToast({
-						title: "测试中..."
+					uni.navigateTo({
+						url: '../safe/safe',
 					})
 				} else if (item.text == '作业管理') {
 					uni.navigateTo({
