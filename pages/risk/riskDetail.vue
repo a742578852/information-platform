@@ -80,56 +80,60 @@
 				fxrxm: '',
 				fxrq: '2020-12-25',
 				imgList: [],
-				url: 'http://192.168.0.103:8081'
-
+				//url: 'http://122.51.190.13:8081'
+				//url: 'http://192.168.0.103:8081',
 			}
 		},
 		methods: {
 			//表单上传
-			sumbitRisk() {
+			async sumbitRisk() {
 
-				uni.uploadFile({
-					url: this.url + '/api/risk/riskReport',
-					filePath: this.imgList[0],
-					name: 'file',
-					formData: {
-						riskId: this.id,
-						fxwz: this.fxwz,
-						fxys: this.fxys,
-						fxms: this.fxms,
-						fxrxm: this.fxrxm,
-						fxrq: this.fxrq,
-						token: uni.getStorageSync('token')
-					},
-					success: (uploadFileRes) => {
+				// uni.uploadFile({
+				// 	url: this.url + '/api/risk/riskReport',
+				// 	filePath: this.imgList[0],
+				// 	name: 'file',
+				// 	formData: {
+				// 		riskId: this.id,
+				// 		fxwz: this.fxwz,
+				// 		fxys: this.fxys,
+				// 		fxms: this.fxms,
+				// 		fxrxm: this.fxrxm,
+				// 		fxrq: this.fxrq,
+				// 		token: uni.getStorageSync('token')
+				// 	},
+				// 	success: (uploadFileRes) => {
 
-						uni.navigateTo({
-							url: '../risk/risk',
+				// 		uni.navigateTo({
+				// 			url: '../risk/risk',
 
-						})
-					}
-				})
-
-			
-				// const res = await this.$myRequest({
-				// 	url: '/api/risk/riskReport',
-				// 	method: 'POST',
-				// 	data: {
-				// 		riskId:this.id,
-				// 		fxwz:this.fxwz,
-				// 		fxys:this.fxys,
-				// 		fxms:this.fxms,
-				// 		fxrxm:this.fxrxm,
-				// 		fxrq:this.fxrq,
-				// 		file:this.imgList
+				// 		})
 				// 	}
 				// })
 
-			},
-		goChangeList(){
-				
+
+				const res = await this.$myRequest({
+					url: '/api/risk/riskReport',
+					method: 'POST',
+					data: {
+						riskId:this.id,
+						fxwz:this.fxwz,
+						fxys:this.fxys,
+						fxms:this.fxms,
+						fxrxm:this.fxrxm,
+						fxrq:this.fxrq
+						
+					}
+				})
 				uni.navigateTo({
-					url:"../danger/dangerList?riskid="+this.id
+							url: '../risk/risk',
+				
+						})
+
+			},
+			goChangeList() {
+
+				uni.navigateTo({
+					url: "../danger/dangerList?riskid=" + this.id
 				})
 			},
 			//初始化	
@@ -154,7 +158,11 @@
 				//附件
 				var fj = res.data.data.fj
 				var address = uni.getStorageSync('address')
-				this.imgList.push('http://' + address + '/' + fj)
+				
+				if(fj != null && fj != ''){
+					this.imgList.push('http://' + address + '/' + fj)
+				}
+				
 
 			},
 

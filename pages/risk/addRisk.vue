@@ -79,7 +79,8 @@
 				fxrxm: '',
 				fxrq: '2020-12-25',
 				imgList: [],
-				url: 'http://192.168.0.103:8081',
+				//url: 'http://122.51.190.13:8081',
+				// url: 'http://192.168.0.103:8081',
 
 			}
 		},
@@ -101,51 +102,51 @@
 			//表单上传
 			async sumbitRisk() {
 				
-				// const res = await this.$myRequest({
-				// 	url: '/api/risk/riskReport',
-				// 	method: 'POST',
-				// 	data:{
-				// 		riskId: 0,
-				// 		fxwz: this.fxwz,
-				// 		fxys: this.fxys,
-				// 		fxms: this.fxms,
-				// 		fxrxm: this.fxrxm,
-				// 		fxrq: this.fxrq,
-				// 		file:this.imgList[0]
-				// 	},
-				// 	header:{
-				// 		 'content-type': 'multipart/form-data',
-				// 		 'token':uni.getStorageSync('token')
-				// 	},
-					
-				// })
-				// uni.navigateTo({
-				// 			url: '../risk/risk',
-				
-				// 		})
-				
-				uni.uploadFile({
-					url: this.url + '/api/risk/riskReport',
-					filePath: this.imgList[0],
-					name: 'file',
-					formData: {
+				const res = await this.$myRequest({
+					url: '/api/risk/riskReport',
+					method: 'POST',
+					data:{
 						riskId: 0,
 						fxwz: this.fxwz,
 						fxys: this.fxys,
 						fxms: this.fxms,
 						fxrxm: this.fxrxm,
 						fxrq: this.fxrq,
-						token: uni.getStorageSync('token')
+						// file:this.imgList[0]
 					},
+					// header:{
+					// 	 'content-type': 'multipart/form-data',
+					// 	 'token':uni.getStorageSync('token')
+					// },
 					
-					success: (uploadFileRes) => {
-
-						uni.navigateTo({
-							url: '../risk/risk',
-
-						})
-					}
 				})
+				uni.navigateTo({
+							url: '../risk/risk',
+				
+						})
+				
+				// uni.uploadFile({
+				// 	url: this.url + '/api/risk/riskReport',
+				// 	filePath: this.imgList[0],
+				// 	name: 'file',
+				// 	formData: {
+				// 		riskId: 0,
+				// 		fxwz: this.fxwz,
+				// 		fxys: this.fxys,
+				// 		fxms: this.fxms,
+				// 		fxrxm: this.fxrxm,
+				// 		fxrq: this.fxrq,
+				// 		token: uni.getStorageSync('token')
+				// 	},
+					
+				// 	success: (uploadFileRes) => {
+
+				// 		uni.navigateTo({
+				// 			url: '../risk/risk',
+
+				// 		})
+				// 	}
+				// })
 
 			},
 

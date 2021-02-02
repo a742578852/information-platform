@@ -1,7 +1,17 @@
 <template>
 	<view>
-		<mk-goods-list :goods="goods" @clickItem="goodsItem"></mk-goods-list>
-		
+<!-- 		<mk-goods-list :goods="goods" @clickItem="goodsItem"></mk-goods-list>
+ -->
+		 
+		 
+		 <view class="cu-list menu" :class="[menuBorder?'sm-border':'',menuCard?'card-menu margin-top':'']">
+		 	<view class="cu-item" :class="menuArrow?'arrow':''" v-for="item in goods">
+		 		<view class="content" @click="goStudy(item.subject.id)">
+		 			<text class="cuIcon-circlefill text-grey"></text>
+		 			<text class="text-grey">{{item.subject.kmmc}}</text>
+		 		</view>
+		 	</view>
+			</view>
 	</view>
 </template>
 
@@ -19,6 +29,12 @@
 			}
 		},
 		methods: {
+			goStudy(e){
+				uni.navigateTo({
+					url:"../daTi/daTi?id="+e
+				})
+				
+			},
 			goodsItem(){}
 		},
 		async onLoad() {

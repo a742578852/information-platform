@@ -22,6 +22,7 @@
 <script>
 	import cgSwiper from '@/components/cg-swiper/cg-swiper.vue';
 	import jpCharts from '@/components/jp-charts/index.vue';
+
 	export default {
 		components: {
 			cgSwiper,
@@ -160,9 +161,9 @@
 						url: '../zuoYe/zuoYe',
 					})
 				} else if (item.text == '隐患整改') {
-				
+
 					uni.navigateTo({
-						url:'../danger/dangerList'
+						url: '../danger/dangerList'
 					})
 				} else if (item.text == '风险研判') {
 					uni.navigateTo({
@@ -172,9 +173,34 @@
 
 
 			},
-		
+			
+			getDeviceIp() {
+				var deviceIp = ''
+					if (plus.os.name == "Android") {
+						var Context = plus.android.importClass("android.content.Context");
+						var wifiManager = plus.android.runtimeMainActivity().getSystemService(Context.WIFI_SERVICE);
+						var wifiInfo = plus.android.invoke(wifiManager, "getConnectionInfo");
+						var ipAddress = plus.android.invoke(wifiInfo, "getIpAddress");
+						deviceIp = '';
+						if (ipAddress != 0) {
+							deviceIp = ((ipAddress & 0xff) + "." + (ipAddress >> 8 & 0xff) + "." + (ipAddress >> 16 & 0xff) + "." + (
+								ipAddress >> 24 & 0xff));
+						}
+					}
+				console.log(deviceIp)
+				return deviceIp;
+			},
+
 		},
-		
+
+		async onLoad() {
+			const res = await this.$myRequest({
+				url: '/api/user/addLoginInfo',
+				method: 'POST',
+			 
+			})
+		}
+
 
 	}
 </script>
