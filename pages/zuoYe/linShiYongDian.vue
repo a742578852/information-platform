@@ -8,10 +8,10 @@
 				<view class="table-item" style="padding-left: 30px;">序号</view>
 				<view class="table-item" style="padding-left: 1px;">作业证编号</view>
 				<view class="table-item" style="padding-left: 10px;">申请日期</view>
-				<view class="table-item" style="padding-left: 20px;">申请人</view>
-				<view class="table-item" style="padding-left: 11px;">申请部门</view>
-				<view class="table-item" style="padding-left: 13px;">用电区域</view>
-				<view class="table-item" style="padding-left: 18px;">监护人</view>
+				<view class="table-item" style="padding-left: 25px;">申请人</view>
+				<view class="table-item" style="padding-left: 15px;">申请部门</view>
+				<view class="table-item" style="padding-left: 20px;">用电区域</view>
+				<view class="table-item" style="padding-left: 25px;">监护人</view>
 			</view>
 				<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
 					<view class="table-data-item" >{{index+1}}</view>
@@ -92,7 +92,7 @@
 		.table-item{
 			display: inline-block;
 			background-color: #D2F1F0;
-			width: 97px;
+			width: 98px;
 		}
 	}
 	
@@ -102,6 +102,7 @@
 		width: 188%;
 		.table-data-item{
 			border: 1px solid;
+			border-color: #D2F1F0;
 			width: 200px;
 			text-align: center;
 			padding-top: 5px;

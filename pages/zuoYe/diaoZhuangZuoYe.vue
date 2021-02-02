@@ -66,7 +66,6 @@
 				url:'/api/workorder/getHoistingorderList',
 				method:'POST'
 			})
-			console.log(res.data.data);
 			if(res.data.code==200){
 				this.dataList = res.data.data
 			}
@@ -90,7 +89,7 @@
 		.table-item{
 			display: inline-block;
 			background-color: #D2F1F0;
-			width: 97px;
+			width: 100px;
 		}
 	}
 	
@@ -100,6 +99,7 @@
 		width: 160%;
 		.table-data-item{
 			border: 1px solid;
+			border-color: #D2F1F0;
 			width: 200px;
 			text-align: center;
 			padding-top: 5px;

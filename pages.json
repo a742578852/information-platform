@@ -437,7 +437,7 @@
             "path" : "pages/safe/chaKanJianchaBiao",
             "style" :
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "查看检查表",
                 "enablePullDownRefresh": false
             }
 
@@ -455,7 +455,7 @@
             "path" : "pages/safe/addJiancha",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "新增检查记录",
                 "enablePullDownRefresh": false
             }
             

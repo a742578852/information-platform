@@ -101,6 +101,7 @@
 		width: 160%;
 		.table-data-item{
 			border: 1px solid;
+			border-color: #D2F1F0;
 			width: 200px;
 			text-align: center;
 			padding-top: 5px;

@@ -8,10 +8,10 @@
 				<view class="table-item" style="padding-left: 30px;">序号</view>
 				<view class="table-item" style="padding-left: 1px;">作业证编号</view>
 				<view class="table-item" style="padding-left: 10px;">作业证名称</view>
-				<view class="table-item" style="padding-left: 17px;">申请人</view>
-				<view class="table-item" style="padding-left: 20px;">申请部门</view>
-				<view class="table-item" style="padding-left: 18px;">作业期限</view>
-				<view class="table-item" style="padding-left: 18px;">监护人</view>
+				<view class="table-item" style="padding-left: 25px;">申请人</view>
+				<view class="table-item" style="padding-left: 22px;">申请部门</view>
+				<view class="table-item" style="padding-left: 22px;">作业期限</view>
+				<view class="table-item" style="padding-left: 25px;">监护人</view>
 			</view>
 				<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
 					<view class="table-data-item" >{{index+1}}</view>
@@ -69,7 +69,6 @@
 				url:'/api/workorder/getSoilorderList',
 				method:'POST'
 			})
-			console.log(res.data.data);
 			if(res.data.code==200){
 				this.dataList = res.data.data
 			}
@@ -93,17 +92,18 @@
 		.table-item{
 			display: inline-block;
 			background-color: #D2F1F0;
-			width: 99px;
+			width: 100px;
 		}
 	}
 	
 	.table-data{
 		display: flex;
 		font-size: 12px;
-		width: 192%;
+		width: 188%;
 		.table-data-item{
 			border: 1px solid;
-			width: 200px;
+			border-color: #D2F1F0;
+			width: 198px;
 			text-align: center;
 			padding-top: 5px;
 		}

@@ -167,6 +167,7 @@
 	.w_table_swper {
 		height: 100%;
 		box-sizing: border-box;
+		font-size: 35rpx;
 	}
 
 	.w_table_content {

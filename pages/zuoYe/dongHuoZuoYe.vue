@@ -6,12 +6,12 @@
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
-				<view class="table-item" style="padding-left: 10px;">作业证编号</view>
-				<view class="table-item" style="padding-left: 17px;">申请日期</view>
-				<view class="table-item" style="padding-left: 20px;">申请单位</view>
-				<view class="table-item" style="padding-left: 18px;">动火地点</view>
+				<view class="table-item" style="padding-left: 8px;">作业证编号</view>
+				<view class="table-item" style="padding-left: 10px;">申请日期</view>
+				<view class="table-item" style="padding-left: 15px;">申请单位</view>
+				<view class="table-item" style="padding-left: 22px;">动火地点</view>
 				<view class="table-item" style="padding-left: 18px;">动火方式</view>
-				<view class="table-item" style="padding-left: 18px;">监火人</view>
+				<view class="table-item" style="padding-left: 28px;padding-right: 20px;">监火人</view>
 				<!-- <view class="table-item" style="padding-left: 55px;">操作</view> -->
 			</view>
 				<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
@@ -104,6 +104,7 @@
 		width: 160%;
 		.table-data-item{
 			border: 1px solid;
+			border-color: #D2F1F0;
 			width: 200px;
 			text-align: center;
 			padding-top: 5px;

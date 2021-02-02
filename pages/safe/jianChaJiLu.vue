@@ -1,7 +1,7 @@
 <template>
 	<view style="width: 100%;">
 		<view class="btn">
-			<button type="default" class="btn1" @click="btn1">增加</button>
+			<button type="default" class="btn1" @click="btn1">新增检查记录</button>
 		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
@@ -111,10 +111,9 @@
 			// background-color: #CCE6FF;
 			display: flex;
 			.btn1{
+				width: 100%;
 				background-color: #CCE6FF;
 			}
-			.btn2{
-				background-color: #CCE6FF;
-			}
+			
 		}
 </style>
