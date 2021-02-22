@@ -50,7 +50,7 @@
             "path" : "pages/keMu/keMu",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "学习科目",
                 "enablePullDownRefresh": false
             }
             

@@ -6,10 +6,10 @@
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
-				<view class="table-item" style="padding-left: 17px;">部门</view>
-				<view class="table-item" style="padding-left: 20px;">填报人</view>
-				<view class="table-item" style="padding-left: 18px;">日期</view>
-				<view class="table-item" style="padding-left: 55px;">操作</view>
+				<view class="table-item" style="padding-left: 19px;">部门</view>
+				<view class="table-item" style="padding-left: 25px;">填报人</view>
+				<view class="table-item" style="padding-left: 25px;">日期</view>
+				<view class="table-item" style="padding-left: 65px;">操作</view>
 			</view>
 		<view class="table-data" v-for="(item,index) in dataList">
 			<view class="table-data-item" >{{index+1}}</view>
@@ -101,6 +101,7 @@
 		display: flex;
 		padding: 10px 0;
 		font-size: 18px;
+		margin: 10px 0;
 		background-color: #D2F1F0;
 		.table-item{
 			display: inline-block;
@@ -111,12 +112,10 @@
 	.table-data{
 		display: flex;
 		font-size: 12px;
-		// margin: 10px;
 		width: 100%;
-		// background-color: #D2F1F0;
 		.table-data-item{
-			// margin-left: 20px;
 			border: 1px solid;
+			border-color: #D2F1F0;
 			height: 35px;
 			width: 20%;
 			line-height: 35px;

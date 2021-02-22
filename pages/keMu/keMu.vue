@@ -25,7 +25,10 @@
 			return {
 				goods:{
 					
-				}
+				},
+				menuArrow:'',
+				menuCard:'',
+				menuBorder:''
 			}
 		},
 		methods: {

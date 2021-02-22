@@ -72,13 +72,10 @@
 		line-height: 30px;
 		font-size: 30px;
 		padding: 10px;
-		// background-color: #CCE6FF;
 		display: flex;
-
 		.btn1 {
 			background-color: #CCE6FF;
 		}
-
 		.btn2 {
 			background-color: #CCE6FF;
 		}
@@ -86,7 +83,6 @@
 
 	.scroll {
 		width: 100%;
-
 		.table {
 			white-space: nowrap;
 			width: 100%;
@@ -96,29 +92,22 @@
 			padding: 10px 0;
 			font-size: 18px;
 			background-color: #D2F1F0;
-
+			margin: 10px 0;
 			.table-item {
 				font-size: 15px;
 				display: inline-block;
 				padding-left: 10px;
 			}
 		}
-
 		.table-data {
-
 			display: flex;
 			font-size: 12px;
-			// margin: 10px;
 			width: 100%;
-
-			// background-color: #D2F1F0;
 			.table-data-item {
 				white-space: pre-line;
-				// margin-left: 20px;
 				border: 1px solid;
-
+				border-color: #D2F1F0;
 				width: 20%;
-
 				text-align: center;
 			}
 		}

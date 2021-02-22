@@ -9,9 +9,9 @@
 				<view class="table-item" style="padding-left: 17px;">检查类型</view>
 				<view class="table-item" style="padding-left: 17px;">检查单号</view>
 				<view class="table-item" style="padding-left: 18px;">录入人</view>
-				<view class="table-item" style="padding-left: 19px;">检查日期</view>
-				<view class="table-item" style="padding-left: 18px;">检查成员</view>
-				<view class="table-item" style="padding-left: 18px;">受检部门</view>
+				<view class="table-item" style="padding-left: 25px;">检查日期</view>
+				<view class="table-item" style="padding-left: 25px;">检查成员</view>
+				<view class="table-item" style="padding-left: 25px;">受检部门</view>
 			</view>
 		<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
 			<view class="table-data-item" style="width: 15%;">{{index+1}}</view>
@@ -91,13 +91,10 @@
 		font-size: 12px;
 		// margin: 10px;
 		width: 158%;
-		// background-color: #D2F1F0;
 		.table-data-item{
-			// margin-left: 20px;
 			border: 1px solid;
-			// height: 35px;
+			border-color: #D2F1F0;
 			width: 22%;
-			// line-height: 35px;
 			text-align: center;
 		}
 	}

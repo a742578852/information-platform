@@ -88,7 +88,8 @@
 <style lang="scss">
 .kaoshi{
 	display: flex;
-	background-color: #8799A3;
+	margin: 8px 0;
+	background-color: #D2F1F0;
 	.xu{
 		margin: 10px 0px;
 	}
@@ -97,7 +98,7 @@
 	}
 }
 .shijuan{
-	background-color: #66FFFF;
+	background-color: #D2F1F0;
 	display: flex;
 	.shijuan-item{
 		margin: 10px 12px;

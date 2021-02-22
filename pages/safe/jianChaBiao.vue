@@ -5,9 +5,9 @@
 			<view class="table">
 				<view class="table-item" style="padding-left: 20px;">序号</view>
 				<view class="table-item" style="padding-left: 30px;">标题</view>
-				<view class="table-item" style="padding-left: 30px;">创建人</view>
-				<view class="table-item" style="padding-left: 10px;">是否通用</view>
-				<view class="table-item" style="padding-left: 10px;width: 70px;">备注</view>
+				<view class="table-item" style="padding-left: 32px;">创建人</view>
+				<view class="table-item" style="padding-left: 13px;">是否通用</view>
+				<view class="table-item" style="padding-left: 20px;width: 70px;">备注</view>
 			</view>
 		<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id,item.bt,item.tbr,item.isty,item.bz)">
 			<view class="table-data-item" >{{index+1}}</view>
@@ -80,13 +80,10 @@
 	.table-data{
 		display: flex;
 		font-size: 12px;
-		// margin: 10px;
 		width: 100%;
-		// background-color: #D2F1F0;
 		.table-data-item{
-			// margin-left: 20px;
 			border: 1px solid;
-			// height: 35px;
+			border-color: #D2F1F0;
 			width: 20%;
 			line-height: 35px;
 			text-align: center;

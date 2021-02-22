@@ -1,5 +1,5 @@
 
-const BASE_URL = "http://192.168.0.103:8081"
+const BASE_URL = "http://47.114.110.211:9501"
 export default{
 	BASE_URL
 }

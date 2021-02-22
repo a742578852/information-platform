@@ -117,6 +117,7 @@
 		padding: 10px 0;
 		font-size: 18px;
 		background-color: #D2F1F0;
+		margin: 10px 0;
 		.table-item{
 			display: inline-block;
 			padding-left: 30px;
@@ -128,10 +129,9 @@
 		font-size: 12px;
 		// margin: 10px;
 		width: 100%;
-		// background-color: #D2F1F0;
 		.table-data-item{
-			// margin-left: 20px;
 			border: 1px solid;
+			border-color: #D2F1F0;
 			height: 35px;
 			width: 20%;
 			line-height: 35px;
