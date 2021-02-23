@@ -13,7 +13,7 @@
 				<view class="table-item" style="padding-left: 8px;">安全教育人</view>
 				<view class="table-item" style="padding-left: 15px;">施工项目</view>
 			</view>
-				<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
+				<view class="table-data" hover-class="onclick" v-for="(item,index) in dataList" @click="select(item.id)">
 					<view class="table-data-item" >{{index+1}}</view>
 					<view class="table-data-item">{{item.zyzbh}}</view>
 					<view class="table-data-item">{{item.zydw}}</view>
@@ -106,6 +106,9 @@
 			text-align: center;
 			padding-top: 5px;
 		}
+	}
+	.onclick{
+		background: #D2F1F0;
 	}
 	}
 </style>

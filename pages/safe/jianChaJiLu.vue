@@ -13,7 +13,7 @@
 				<view class="table-item" style="padding-left: 25px;">检查成员</view>
 				<view class="table-item" style="padding-left: 25px;">受检部门</view>
 			</view>
-		<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
+		<view class="table-data" hover-class="onclick" v-for="(item,index) in dataList" @click="select(item.id)">
 			<view class="table-data-item" style="width: 15%;">{{index+1}}</view>
 			<view class="table-data-item">{{item.jclx}}</view>
 			<view class="table-data-item">{{item.jcdh}}</view>
@@ -97,6 +97,9 @@
 			width: 22%;
 			text-align: center;
 		}
+	}
+	.onclick{
+		background: #D2F1F0;
 	}
 	}
 	.btn{

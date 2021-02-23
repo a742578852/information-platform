@@ -8,7 +8,7 @@
 				<view class="table-item">隐患等级</view>
 				<view class="table-item">整改要求</view>
 			</view>
-			<view @click="goDangeDetail(item)" class="table-data" v-for="(item,index) in risks">
+			<view @click="goDangeDetail(item)" hover-class="onclick" class="table-data" v-for="(item,index) in risks">
 				<view class="table-data-item">{{index+1}}</view>
 				<view class="table-data-item">{{item.zgdbh}}</view>
 				<view class="table-data-item">{{item.yhszd}}</view>
@@ -110,6 +110,9 @@
 				width: 20%;
 				text-align: center;
 			}
+		}
+		.onclick{
+			background: #D2F1F0;
 		}
 	}
 </style>

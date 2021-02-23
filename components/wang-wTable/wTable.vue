@@ -157,9 +157,10 @@
 		height: 100%;
 		min-height: 130upx;
 		min-width: 100%;
-		background: #fff;
-		border: 2upx solid #ccc;
-		font-size: 14upx;
+		/* background-color: #D2F1F0; */
+		border: 2upx solid #D2F1F0;
+		
+		font-size: 12upx;
 		box-sizing: border-box;
 		overflow: scroll;
 	}
@@ -167,7 +168,8 @@
 	.w_table_swper {
 		height: 100%;
 		box-sizing: border-box;
-		font-size: 35rpx;
+		font-size: 30rpx;
+		
 	}
 
 	.w_table_content {
@@ -192,7 +194,7 @@
 	}
 
 	.w-table_title_item_border {
-		border-right: 2upx solid #fff;
+		border-right: 2upx solid #D2F1F0;
 	}
 
 	.w_table_title_content {
@@ -202,6 +204,7 @@
 	.w_table_body {
 		display: flex;
 		justify-content: space-between;
+		border-color: #D2F1F0;
 	}
 
 	.w_table_body_col {

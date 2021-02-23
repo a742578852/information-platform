@@ -9,7 +9,7 @@
 				<view class="table-item" style="padding-left: 13px;">是否通用</view>
 				<view class="table-item" style="padding-left: 20px;width: 70px;">备注</view>
 			</view>
-		<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id,item.bt,item.tbr,item.isty,item.bz)">
+		<view class="table-data" hover-class="onclick" v-for="(item,index) in dataList" @click="select(item.id,item.bt,item.tbr,item.isty,item.bz)">
 			<view class="table-data-item" >{{index+1}}</view>
 			<view class="table-data-item">{{item.bt}}</view>
 			<view class="table-data-item">{{item.tbr}}</view>
@@ -88,6 +88,9 @@
 			line-height: 35px;
 			text-align: center;
 		}
+	}
+	.onclick{
+		background: #D2F1F0;
 	}
 	}
 </style>

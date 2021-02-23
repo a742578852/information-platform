@@ -14,7 +14,7 @@
 				<view class="table-item" style="padding-left: 28px;padding-right: 20px;">监火人</view>
 				<!-- <view class="table-item" style="padding-left: 55px;">操作</view> -->
 			</view>
-				<view class="table-data" v-for="(item,index) in dataList" @click="select(item.id)">
+				<view class="table-data" hover-class="onclick" v-for="(item,index) in dataList" @click="select(item.id)">
 					<view class="table-data-item" style="width: 120px;">{{index+1}}</view>
 					<view class="table-data-item" style="padding-top: 0px;">{{item.zyzbh}}</view>
 					<view class="table-data-item">{{item.sqrq}}</view>
@@ -28,7 +28,7 @@
 	</view>
 </template>
 
-<script>
+<script>	
 	export default {
 		
 		data() {
@@ -47,8 +47,6 @@
 			return true;
 		},
 		methods: {
-			
-			
 			//根据id查看动火详情
 			async select(id){
 				const orderId = id
@@ -109,6 +107,9 @@
 			text-align: center;
 			padding-top: 5px;
 		}
+	}
+	.onclick{
+		background: #D2F1F0;
 	}
 	}
 </style>

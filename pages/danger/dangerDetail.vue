@@ -33,12 +33,12 @@
 			
 			<view class="cu-form-group align-start">
 				<view class="title">不合格因素:</view>
-				<textarea v-model="risk.bhgys" maxlength="-1" :disabled="modalName!=null" @input="textareaBInput" placeholder="多行文本输入框" ></textarea>
+				<textarea v-model="risk.bhgys" maxlength="-1" :disabled="modalName!=null"  placeholder="多行文本输入框" ></textarea>
 			</view>
 			
 			<view class="cu-form-group align-start">
 				<view class="title">整改要求:</view>
-				<textarea v-model="risk.zgyq" maxlength="-1" :disabled="modalName!=null" @input="textareaBInput" placeholder="多行文本输入框" ></textarea>
+				<textarea v-model="risk.zgyq" maxlength="-1" :disabled="modalName!=null"  placeholder="多行文本输入框" ></textarea>
 			</view>
 			
 			<view class="cu-form-group">
@@ -91,7 +91,7 @@
 			</view>
 			<view class="cu-form-group">
 				<view class="grid col-4 grid-square flex-sub">
-					<view class="bg-img" v-for="(item,index) in imgList" :key="index" @tap="ViewImage" :data-url="imgList[index]">
+					<view class="bg-img" v-for="(item,index) in imgList" :key="index"  :data-url="imgList[index]">
 					 <image :src="imgList[index]" mode="aspectFill"></image>
 						
 					</view>
