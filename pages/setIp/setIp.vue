@@ -28,9 +28,9 @@
 			async btn(){
 				uni.setStorageSync('ip',this.ip)
 				uni.setStorageSync('port',this.port)
+				var p 
 				if((this.ip.trim()!='') && (this.port.trim()!='')){
-					var p = this.ip+':'+this.port
-					console.log(p)
+					 p = this.ip+':'+this.port
 					const res =await this.$myRequest({
 						method:'POST',
 						url:'/login/testConnection',
