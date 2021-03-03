@@ -64,6 +64,7 @@
 			async login(){
 				var that = this
 				var address = uni.getStorageSync('address')
+				
 				if(address!=''){
 					if(that.From.UserName==''){
 						uni.showToast({

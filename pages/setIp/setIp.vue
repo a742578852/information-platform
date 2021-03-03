@@ -17,7 +17,8 @@
 		data() {
 			return {
 				ip:'',
-				port:''
+				port:'',
+				address:''
 			}
 		},
 		onShow() {
@@ -26,20 +27,23 @@
 		},
 		methods: {
 			async btn(){
+				
 				uni.setStorageSync('ip',this.ip)
 				uni.setStorageSync('port',this.port)
-				var p 
+				
 				if((this.ip.trim()!='') && (this.port.trim()!='')){
-					 p = this.ip+':'+this.port
+					 this.address = this.ip+':'+this.port
+					
 					const res =await this.$myRequest({
 						method:'POST',
 						url:'/login/testConnection',
 						data:{
-							address:p
+							address:this.address
 						}
 					})
 					if(res.data.code==200){
-						uni.setStorageSync('address',p)
+						
+						uni.setStorageSync('address',this.address)
 						uni.navigateTo({
 							url:'../login/login',
 							})

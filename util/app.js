@@ -7,9 +7,15 @@ export default{
 export const myRequest = (options) => {
 	return new Promise((resolve, reject) => {
 		var token = uni.getStorageSync('token')
-	
+		var url = BASE_URL
+		if (uni.getStorageSync('address') == '218.92.167.118:8089'){
+			url = 'http://218.92.167.118:8082'
+		}
+		if (uni.getStorageSync('address') == '58.220.132.188:8001'){
+			url = 'http://58.220.132.188:8006'
+		}
 		uni.request({
-			url: BASE_URL + options.url,
+			url: url + options.url,
 			method: options.method || 'GET',
 			data: options.data || {},
 			header:options.header || {

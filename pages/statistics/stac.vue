@@ -70,6 +70,7 @@
 				})
 				let Ring={series:[]};
 				Ring.series=res.data.data
+				
 				_self.showRing("canvasRing",Ring);
 
 			},
@@ -212,7 +213,7 @@
 					legend: {
 						show: true
 					},
-					fontSize: 11,
+					fontSize: 5,
 					background: '#FFFFFF',
 					pixelRatio: _self.pixelRatio,
 					animation: true,
