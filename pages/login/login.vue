@@ -70,7 +70,7 @@
 						uni.showToast({
 							title:'请填写用户名'
 						})
-						that.UserNametips='请输入用户名'	
+						that.UserNametips='请输入用户名'
 					}else if(that.From.PassWord==''){
 						uni.showToast({
 							title:'请输入密码'
