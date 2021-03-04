@@ -2,19 +2,19 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzbh" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzbh" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzsqrq" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzsqrq" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请部门:</view>
-			<input placeholder="" name="input" v-model="dataList.sqbm" ></input>
+			<input placeholder="" name="input" v-model="dataList.sqbm" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzfzr" ></input>
+			<input placeholder="" name="input" v-model="dataList.zyzfzr" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">吊装地点:</view>
@@ -100,6 +100,9 @@
 				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
 			</view>
 		</view>
+		<view class="btn">
+			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存修改</button>
+		</view>
 	</view>
 </template>
 
@@ -107,6 +110,7 @@
 	export default {
 		data() {
 			return {
+				jinyong:false,
 				dataList:{
 					zyzbh:'',
 					dzzlx:'',
@@ -136,7 +140,23 @@
 			}
 		},
 		methods: {
-			
+			//修改吊装作业
+			async btn1(){
+				//禁用保存按钮
+				this.jinyong = true
+				uni.showLoading({
+					title:'请稍候。。。'
+				})
+				setTimeout(function(){
+					uni.hideLoading()
+				},1500)
+				const res = await this.$myRequest({
+					url:'',
+					method:'POST'
+				}) 
+				//保存按钮解禁
+				this.jinyong = false
+			}
 		},
 		async onLoad(option) {
 			var orderId = option.orderId

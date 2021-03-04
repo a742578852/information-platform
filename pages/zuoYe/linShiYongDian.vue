@@ -1,8 +1,8 @@
 <template>
 	<view >
-		<!-- <view class="btn">
-			<button type="default" class="btn1" @click="btn1()">增加</button>
-		</view> -->
+		<view class="btn">
+			<button type="default" class="btn1" @click="btn1()">申请临时用电</button>
+		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 30px;">序号</view>
@@ -54,13 +54,12 @@
 					url:'chaKanLinShiYongDian?orderId='+orderId
 				})
 			},
-			//根据id修改研判详情
-			// async update(id){
-			// 	const bid = id
-				// uni.navigateTo({
-				// 	url:'updateBanZu?bid='+bid
-				// })
-			// }
+			//新增临时用电作业
+			btn1(){
+				uni.navigateTo({
+					url:'./addLinShiYongDian'
+				})
+			}
 		},
 		async onLoad() {
 			// 获取临时用电列表
@@ -68,7 +67,6 @@
 				url:'/api/workorder/getelectricorderList',
 				method:'POST'
 			})
-			console.log(res.data.data);
 			if(res.data.code==200){
 				this.dataList = res.data.data
 			}
@@ -79,7 +77,9 @@
 <style lang="scss">
 	page{
 		background-color: #FFFFFF;
-		
+		.btn1{
+			background-color: #CCE6FF;
+		}
 	}
 	
 	.scroll{

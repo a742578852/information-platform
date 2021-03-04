@@ -2,7 +2,7 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzbh" disabled=""></input>
+			<input placeholder="保存后自动生成" name="input" v-model="dataList.zyzbh" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业证类型:</view>
@@ -12,11 +12,17 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzsqrq" disabled=""></input>
+			<input placeholder="" name="input" v-model="dataList.zyzsqrq" ></input>
 		</view>
+		<!-- <view class="cu-form-group">
+			<view class="title">申请单位:</view>
+			<input placeholder="" name="input" v-model="dataList.sqbm" ></input>
+		</view> -->
 		<view class="cu-form-group">
 			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="dataList.sqbm" disabled=""></input>
+			<picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
+				<view class="uni-input" style="">{{arrayBz[index]}}</view>
+			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">内部单位负责人:</view>
@@ -28,7 +34,7 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
-			<input placeholder="" name="input" v-model="dataList.sqr" disabled=""></input>
+			<input placeholder="" name="input" v-model="dataList.sqr" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业地点:</view>
@@ -102,7 +108,7 @@
 			</view>
 		</view>
 		<view class="btn">
-			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存修改</button>
+			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存</button>
 		</view>
 	</view>
 </template>
@@ -111,7 +117,9 @@
 	export default {
 		data() {
 			return {
+				arrayBz:[],
 				jinyong:false,
+				index:0,
 				dataList:{
 					zyzbh:'',
 					gczlx:'',
@@ -144,12 +152,17 @@
 			}
 		},
 		methods: {
+			bindPickerChange(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index = e.detail.value
+				this.dataList.sqbm = this.arrayBz[this.index]
+			},
 			bindPickerChange1(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.detail.value
 				this.dataList.gczlx = this.arrayzyzlx[this.index1]
 				},
-				//修改高处作业
+				//保存高处作业
 				async btn1(){
 					//禁用保存按钮
 					this.jinyong = true
@@ -167,20 +180,41 @@
 					this.jinyong = false
 				}
 		},
-		async onLoad(option) {
-			var orderId = option.orderId
-			// 获取高处作业证详情
-			const res = await this.$myRequest({
-				url:'/api/workorder/getHighorderDetail',
-				method:'POST',
-				data:{
-					'orderId':orderId
-				}
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'gaoChuZuoYe'
 			})
-			if(res.data.code==200){
-				this.dataList = res.data.data
-				}
-		}
+			return true;
+		},
+		async onLoad() {
+			const res = await this.$myRequest({
+					url:'/api/util/getDepartment',
+					method:'POST'
+				})
+				 for (var i = 0; i < res.data.data.length; i++) {
+					 this.arrayBz.push(res.data.data[i].bmmc)  
+				 }
+			var tianbr = uni.getStorageSync('admin').nick
+			this.dataList.sqr = tianbr
+			
+			
+			var date = new Date()
+			var year = date.getFullYear()
+			var month = date.getMonth() + 1
+			var day = date.getDate()
+			if(month<10){
+				month = '0'+month
+			}
+			var day = date.getDate()
+			if(day<10){
+				day = '0'+day
+			}
+			var timer = year + '-' + month + '-' + day 
+			this.dataList.zyzsqrq = timer
+		},
 	}
 </script>
 

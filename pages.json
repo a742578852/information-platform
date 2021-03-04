@@ -460,6 +460,78 @@
             }
             
         }
+        ,{
+            "path" : "pages/zuoYe/addDongHuo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请动火作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addGaoChu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请高处作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addShouXian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请受限作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addDiaoZhuang",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请吊装作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addLinShiYongDian",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请临时用电",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addDongTu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请动土作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addMangBanChouDu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请盲板抽堵",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/zuoYe/addDuanLu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "申请断路作业",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

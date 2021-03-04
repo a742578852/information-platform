@@ -2,59 +2,87 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzbh" disabled=""></input>
+			<input placeholder="保存后自动生成" name="input" v-model="dataList.zyzbh" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">作业证类型:</view>
-			<picker @change="bindPickerChange1" :value="index1" :range="arrayzyzlx" class="item2" style="">
-				<view class="uni-input" style="">{{dataList.gczlx==''?arrayzyzlx[index1] : dataList.gczlx}}</view>
-			</picker>
+			<view class="title">作业证名称:</view>
+			<input placeholder="" name="input" v-model="dataList.zyzmc" ></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzsqrq" disabled=""></input>
+			<input placeholder="" name="input" v-model="dataList.sqrq" disabled=""></input>
 		</view>
+		<!-- <view class="cu-form-group">
+			<view class="title">申请部门:</view>
+			<input placeholder="" name="input" v-model="dataList.sqbm" ></input>
+		</view> -->
 		<view class="cu-form-group">
 			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="dataList.sqbm" disabled=""></input>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">内部单位负责人:</view>
-			<input placeholder="" name="input" v-model="dataList.zynbfzr" ></input>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">外部单位负责人:</view>
-			<input placeholder="" name="input" v-model="dataList.zywbfzr" ></input>
+			<picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
+				<view class="uni-input" style="">{{arrayBz[index]}}</view>
+			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
 			<input placeholder="" name="input" v-model="dataList.sqr" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">作业地点:</view>
-			<input placeholder="" name="input" v-model="dataList.zydd" ></input>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">作业高度:</view>
-			<input placeholder="" name="input" v-model="dataList.zygd" ></input>
-		</view>
-		<view class="cu-form-group">
-			<view class="title">施工项目:</view>
-			<input placeholder="" name="input" v-model="dataList.sgxm" ></input>
-		</view>
-		<view class="cu-form-group">
 			<view class="title">编制人:</view>
 			<input placeholder="" name="input" v-model="dataList.bzr" ></input>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">实施安全教育人:</view>
-			<input placeholder="" name="input" v-model="dataList.ssaqjyr" ></input>
+			<view class="title">计划性:</view>
+			<picker @change="bindPickerChange1" :value="index1" :range="arrayjhx" class="item2" style="">
+				<view class="uni-input" style="">{{arrayjhx[index1]}}</view>
+			</picker>
 		</view>
 		<view class="cu-form-group">
-			<view class="title">作业内容:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.zynr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
-			</view>
+			<view class="title">装盲板负责人:</view>
+			<input placeholder="" name="input" v-model="dataList.zmbfzr" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">装盲板日期:</view>
+			<input placeholder="" name="input" v-model="dataList.zmbsj" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">拆盲板负责人:</view>
+			<input placeholder="" name="input" v-model="dataList.cmbfzr" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">拆盲板日期:</view>
+			<input placeholder="" name="input" v-model="dataList.cmbsj" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">设备管线名称:</view>
+			<input placeholder="" name="input" v-model="dataList.sbgxmc" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">主要介质:</view>
+			<input placeholder="" name="input" v-model="dataList.zyjz" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">温度:</view>
+			<input placeholder="" name="input" v-model="dataList.wd" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">压力:</view>
+			<input placeholder="" name="input" v-model="dataList.yl" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">盲板材质:</view>
+			<input placeholder="" name="input" v-model="dataList.mbcz" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">盲板规格:</view>
+			<input placeholder="" name="input" v-model="dataList.mbgg" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">盲板编号:</view>
+			<input placeholder="" name="input" v-model="dataList.mbbh" ></input>
+		</view>
+		<view class="cu-form-group">
+			<view class="title">施工项目:</view>
+			<input placeholder="" name="input" v-model="dataList.sgxm" ></input>
 		</view>
 		<!-- <view class="">涉及其他作业证</view>
 		<scroll-view scroll-x="true" class="scroll">
@@ -102,7 +130,7 @@
 			</view>
 		</view>
 		<view class="btn">
-			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存修改</button>
+			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存</button>
 		</view>
 	</view>
 </template>
@@ -111,45 +139,61 @@
 	export default {
 		data() {
 			return {
+				arrayBz:[],
+				index:0,
 				jinyong:false,
 				dataList:{
-					zyzbh:'',
-					gczlx:'',
-					sqr:'',
-					sqbm:'',
-					zynbfzr:'',
-					zydd:'',
-					zywbfzr:'',
-					zygd:'',
-					sgxm:'',
-					zyzsqrq:'',
-					bzr:'',
-					ssaqjyr:'',
-					zynr:'',
-					sgfa:'',
-					jhr:'',
-					fj:'',
-					sjqtzyz:'',
-					jhrgw:'',
-					zyqx:'',
-					whbs:'',
-					aqcs:'',
-					ssqk:'',
-					jhqk:'',
 					
 				},
-				arrayzyzlx:['特级高处作业证(h>=30)','一级高处作业证(15<=h<30)','二级高处作业证(5<=h<15)','三级高处作业证(2<=h<5)'],
-				
 				index1:0,
+				arrayjhx:['非计划性','计划性']
 			}
+		},
+		async onLoad() {
+			const res = await this.$myRequest({
+					url:'/api/util/getDepartment',
+					method:'POST'
+				})
+				 for (var i = 0; i < res.data.data.length; i++) {
+					 this.arrayBz.push(res.data.data[i].bmmc)  
+				 }
+			var tianbr = uni.getStorageSync('admin').nick
+			this.dataList.sqr = tianbr
+			var date = new Date()
+			var year = date.getFullYear()
+			var month = date.getMonth() + 1
+			var day = date.getDate()
+			if(month<10){
+				month = '0'+month
+			}
+			var day = date.getDate()
+			if(day<10){
+				day = '0'+day
+			}
+			var timer = year + '-' + month + '-' + day 
+			this.dataList.sqrq = timer
+		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'mangBanChouDu'
+			})
+			return true;
 		},
 		methods: {
 			bindPickerChange1(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.detail.value
-				this.dataList.gczlx = this.arrayzyzlx[this.index1]
+				this.dataList.jhx = this.arrayjhx[this.index1]
 				},
-				//修改高处作业
+				bindPickerChange(e) {
+					console.log('picker发送选择改变，携带值为', e.target.value)
+					this.index = e.detail.value
+					this.dataList.sqbm = this.arrayBz[this.index]
+				},
+				//保存盲板抽堵作业
 				async btn1(){
 					//禁用保存按钮
 					this.jinyong = true
@@ -167,20 +211,7 @@
 					this.jinyong = false
 				}
 		},
-		async onLoad(option) {
-			var orderId = option.orderId
-			// 获取高处作业证详情
-			const res = await this.$myRequest({
-				url:'/api/workorder/getHighorderDetail',
-				method:'POST',
-				data:{
-					'orderId':orderId
-				}
-			})
-			if(res.data.code==200){
-				this.dataList = res.data.data
-				}
-		}
+		
 	}
 </script>
 
@@ -222,3 +253,4 @@
 	}
 	}
 </style>
+

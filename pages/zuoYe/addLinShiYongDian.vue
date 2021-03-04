@@ -2,15 +2,21 @@
 	<view>
 		<view class="cu-form-group">
 			<view class="title">作业证编号:</view>
-			<input placeholder="" name="input" v-model="dataList.zyzbh" disabled=""></input>
+			<input placeholder="保存后自动生成" name="input" v-model="dataList.zyzbh" disabled=""></input>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请日期:</view>
 			<input placeholder="" name="input" v-model="dataList.sqrq" disabled=""></input>
 		</view>
+		<!-- <view class="cu-form-group">
+			<view class="title">申请单位:</view>
+			<input placeholder="" name="input" v-model="dataList.sqdw" ></input>
+		</view> -->
 		<view class="cu-form-group">
 			<view class="title">申请单位:</view>
-			<input placeholder="" name="input" v-model="dataList.sqdw" disabled=""></input>
+			<picker @change="bindPickerChange" :value="index" :range="arrayBz" class="item2" style="">
+				<view class="uni-input" style="">{{arrayBz[index]}}</view>
+			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">申请人:</view>
@@ -30,7 +36,7 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">计划性:</view>
-			<picker @change="bindPickerChange" :value="index1" :range="arrayjhx" class="item2" style="">
+			<picker @change="bindPickerChange1" :value="index1" :range="arrayjhx" class="item2" style="">
 				<view class="uni-input" style="">{{dataList.jhx==''?arrayjhx[index1] : dataList.jhx}}</view>
 			</picker>
 		</view>
@@ -118,7 +124,7 @@
 			</view>
 		</view>
 		<view class="btn">
-			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存修改</button>
+			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存</button>
 		</view>
 	</view>
 </template>
@@ -128,6 +134,8 @@
 		data() {
 			return {
 				jinyong:false,
+				arrayBz:[],
+				index:0,
 				dataList:{
 					zyzbh:'',
 					sqrq:'',
@@ -161,14 +169,53 @@
 				index1:0
 			}
 		},
+		async onLoad() {
+			const res = await this.$myRequest({
+					url:'/api/util/getDepartment',
+					method:'POST'
+				})
+				 for (var i = 0; i < res.data.data.length; i++) {
+					 this.arrayBz.push(res.data.data[i].bmmc)  
+				 }
+			var tianbr = uni.getStorageSync('admin').nick
+			this.dataList.sqr = tianbr
+			var date = new Date()
+			var year = date.getFullYear()
+			var month = date.getMonth() + 1
+			var day = date.getDate()
+			if(month<10){
+				month = '0'+month
+			}
+			var day = date.getDate()
+			if(day<10){
+				day = '0'+day
+			}
+			var timer = year + '-' + month + '-' + day 
+			this.dataList.sqrq = timer
+		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'linShiYongDian'
+			})
+			return true;
+		},
 		methods: {
-			bindPickerChange(e) {
+			bindPickerChange1(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.detail.value
 				this.dataList.jhx = this.arrayjhx[this.index1]
 				},
-				//修改临时用电作业
+				bindPickerChange(e) {
+					console.log('picker发送选择改变，携带值为', e.target.value)
+					this.index = e.detail.value
+					this.dataList.sqdw = this.arrayBz[this.index]
+				},
+				//保存临时用电作业
 				async btn1(){
+					
 					//禁用保存按钮
 					this.jinyong = true
 					uni.showLoading({
@@ -185,20 +232,7 @@
 					this.jinyong = false
 				}
 		},
-		async onLoad(option) {
-			var orderId = option.orderId
-			// 获取临时用电作业证详情
-			const res = await this.$myRequest({
-				url:'/api/workorder/getelectricorderDetail',
-				method:'POST',
-				data:{
-					'orderId':orderId
-				}
-			})
-			if(res.data.code==200){
-				this.dataList = res.data.data
-				}
-		}
+		
 	}
 </script>
 

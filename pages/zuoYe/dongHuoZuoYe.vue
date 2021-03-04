@@ -1,8 +1,8 @@
 <template>
 	<view >
-		<!-- <view class="btn">
-			<button type="default" class="btn1" @click="btn1()">增加</button>
-		</view> -->
+		<view class="btn">
+			<button type="default" class="btn1" @click="btn1()">申请动火作业</button>
+		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item" style="padding-left: 10px;">序号</view>
@@ -54,13 +54,12 @@
 					url:'chaKanDongHuo?orderId='+orderId
 				})
 			},
-			//根据id修改研判详情
-			// async update(id){
-			// 	const bid = id
-				// uni.navigateTo({
-				// 	url:'updateBanZu?bid='+bid
-				// })
-			// }
+			//新增动火作业
+			btn1(){
+				uni.navigateTo({
+					url:'./addDongHuo'
+				})
+			}
 		},
 		async onLoad() {
 			// 获取动火作业证列表
@@ -78,9 +77,11 @@
 <style lang="scss">
 	page{
 		background-color: #FFFFFF;
-		
+		.btn1{
+			background-color: #CCE6FF;
+		}
 	}
-
+	
 	.scroll{
 	
 	.table{
