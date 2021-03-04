@@ -58,8 +58,9 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">作业内容:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.zynr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.zynr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.zynr" style="width: 200px;"></input>
 			</view>
 		</view>
 		<!-- <view class="">涉及其他作业证</view>
@@ -97,14 +98,16 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.whbs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.aqcs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="btn">
@@ -121,6 +124,7 @@
 				jinyong:false,
 				index:0,
 				dataList:{
+					id:0,
 					zyzbh:'',
 					gczlx:'',
 					sqr:'',
@@ -160,10 +164,11 @@
 			bindPickerChange1(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.detail.value
-				this.dataList.gczlx = this.arrayzyzlx[this.index1]
+				this.dataList.gczlx = this.index1
 				},
 				//保存高处作业
 				async btn1(){
+					var token = uni.getStorageSync('token')
 					//禁用保存按钮
 					this.jinyong = true
 					uni.showLoading({
@@ -173,9 +178,19 @@
 						uni.hideLoading()
 					},1500)
 					const res = await this.$myRequest({
-						url:'',
-						method:'POST'
+						url:'/api/workorder/changeHighOrder',
+						method:'POST',
+						data:this.dataList,
+						header:{
+							'content-type': 'application/json',
+							'token': token
+						}
 					}) 
+					if(res.data.code==200){
+						uni.navigateTo({
+							url:'gaoChuZuoYe'
+						})
+					}
 					//保存按钮解禁
 					this.jinyong = false
 				}
@@ -199,8 +214,8 @@
 				 }
 			var tianbr = uni.getStorageSync('admin').nick
 			this.dataList.sqr = tianbr
-			
-			
+			this.dataList.gczlx = this.index1
+			this.dataList.sqbm = this.arrayBz[this.index]
 			var date = new Date()
 			var year = date.getFullYear()
 			var month = date.getMonth() + 1

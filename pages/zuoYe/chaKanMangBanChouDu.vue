@@ -113,14 +113,16 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.whbs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.aqcs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="btn">
@@ -149,6 +151,7 @@
 				},
 				//修改盲板抽堵作业
 				async btn1(){
+					var token = uni.getStorageSync('token')
 					//禁用保存按钮
 					this.jinyong = true
 					uni.showLoading({
@@ -158,9 +161,19 @@
 						uni.hideLoading()
 					},1500)
 					const res = await this.$myRequest({
-						url:'',
-						method:'POST'
-					}) 
+						url:'/api/workorder/changeWallOrder',
+							method:'POST',
+							data:this.dataList,
+							header:{
+								'content-type': 'application/json',
+								'token': token
+							}
+						}) 
+						if(res.data.code==200){
+							uni.navigateTo({
+								url:'mangBanChouDu'
+							})
+						} 
 					//保存按钮解禁
 					this.jinyong = false
 				}

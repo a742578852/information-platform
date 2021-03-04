@@ -57,8 +57,9 @@
 		
 		<view class="cu-form-group">
 			<view class="title">吊装内容:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.dznr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.dznr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.dznr" style="width: 200px;"></input>
 			</view>
 		</view>
 		<!-- <view class="">涉及其他作业证</view>
@@ -96,14 +97,16 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.whbs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.aqcs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="btn">
@@ -120,6 +123,7 @@
 				index:0,
 				arrayBz:[],
 				dataList:{
+					id:0,
 					zyzbh:'',
 					dzzlx:'',
 					sqbm:'',
@@ -157,7 +161,7 @@
 				 }
 			var tianbr = uni.getStorageSync('admin').nick
 			this.dataList.zyzfzr = tianbr
-			
+			this.dataList.sqbm = this.arrayBz[this.index]
 			var date = new Date()
 			var year = date.getFullYear()
 			var month = date.getMonth() + 1
@@ -173,8 +177,14 @@
 			this.dataList.zyzsqrq = timer
 		},
 		methods: {
+			bindPickerChange(e) {
+				console.log('picker发送选择改变，携带值为', e.target.value)
+				this.index = e.detail.value
+				this.dataList.sqbm = this.arrayBz[this.index]
+			},
 			//保存吊装作业
 			async btn1(){
+				var token = uni.getStorageSync('token')
 				//禁用保存按钮
 				this.jinyong = true
 				uni.showLoading({
@@ -184,16 +194,21 @@
 					uni.hideLoading()
 				},1500)
 				const res = await this.$myRequest({
-					url:'',
-					method:'POST'
-				}) 
+					url:'/api/workorder/changeHoistingOrder',
+						method:'POST',
+						data:this.dataList,
+						header:{
+							'content-type': 'application/json',
+							'token': token
+						}
+					}) 
+					if(res.data.code==200){
+						uni.navigateTo({
+							url:'diaoZhuangZuoYe'
+						})
+					} 
 				//保存按钮解禁
 				this.jinyong = false
-			},
-			bindPickerChange(e) {
-				console.log('picker发送选择改变，携带值为', e.target.value)
-				this.index = e.detail.value
-				this.dataList.sqbm = this.arrayBz[this.index]
 			},
 		},
 		onBackPress(event) {

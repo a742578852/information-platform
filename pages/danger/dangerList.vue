@@ -44,7 +44,6 @@
 			if(this.id == null){
 				this.id = ''
 			}
-			console.log(this.id)
 			const res = await this.$myRequest({
 				url: '/api/risk/getDangerByRisk',
 				method: 'POST',
@@ -53,9 +52,6 @@
 				}
 			})
 			this.risks = res.data.data
-		 
-			console.log(this.risks)
-
 		}
 	}
 </script>

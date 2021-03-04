@@ -52,14 +52,16 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">电源接入点:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.dyjrd" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 235px;">
+				<!-- <textarea class=""  :value="dataList.dyjrd" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.dyjrd" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">使用电压:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.sydy" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.sydy" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.sydy" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
@@ -68,8 +70,9 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">动土内容:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.dtnr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.dtnr" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.dtnr" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
@@ -111,14 +114,16 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.whbs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
-			<view class="item2" style="width: 150px;">
-				<textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/>
+			<view class="item2" style="width: 255px;">
+				<!-- <textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
+				<input placeholder="" name="input" v-model="dataList.aqcs" style="width: 200px;"></input>
 			</view>
 		</view>
 		<view class="btn">
@@ -135,7 +140,8 @@
 				arrayBz:[],
 				index:0,
 				dataList:{
-					
+					id:0,
+					ryid:0
 				}
 			}
 		},
@@ -149,6 +155,7 @@
 				 }
 			var tianbr = uni.getStorageSync('admin').nick
 			this.dataList.sqr = tianbr
+			this.dataList.sqdw = this.arrayBz[this.index]
 			var date = new Date()
 			var year = date.getFullYear()
 			var month = date.getMonth() + 1
@@ -171,6 +178,7 @@
 			},
 			//保存动土作业
 			async btn1(){
+				var token = uni.getStorageSync('token')
 				//禁用保存按钮
 				this.jinyong = true
 				uni.showLoading({
@@ -180,9 +188,19 @@
 					uni.hideLoading()
 				},1500)
 				const res = await this.$myRequest({
-					url:'',
-					method:'POST'
-				}) 
+					url:'/api/workorder/changeSoilOrder',
+						method:'POST',
+						data:this.dataList,
+						header:{
+							'content-type': 'application/json',
+							'token': token
+						}
+					}) 
+					if(res.data.code==200){
+						uni.navigateTo({
+							url:'dongTuZuoYe'
+						})
+					} 
 				//保存按钮解禁
 				this.jinyong = false
 			}

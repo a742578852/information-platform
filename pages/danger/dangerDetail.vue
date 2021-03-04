@@ -145,9 +145,6 @@
 			this.risk = res.data.data
 			var address = uni.getStorageSync('address')
 			this.imgList.push('http://' + address + '/' + this.risk.yhzp)
-
-			
-			console.log(this.imgList)
 		}
 	}
 </script>
