@@ -31,7 +31,7 @@
 		<view class="cu-form-group">
 			<view class="title">计划性:</view>
 			<picker @change="bindPickerChange" :value="index1" :range="arrayjhx" class="item2" style="">
-				<view class="uni-input" style="">{{dataList.jhx==''?arrayjhx[index1] : dataList.jhx}}</view>
+				<view class="uni-input" style="">{{arrayjhx[index1]}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
@@ -170,7 +170,7 @@
 			bindPickerChange(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.detail.value
-				this.dataList.jhx = this.arrayjhx[this.index1]
+				this.dataList.jhx = this.index1
 				},
 				//修改临时用电作业
 				async btn1(){
@@ -213,6 +213,7 @@
 			})
 			if(res.data.code==200){
 				this.dataList = res.data.data
+				this.index1 = this.dataList.jhx
 				}
 		}
 	}

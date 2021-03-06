@@ -7,7 +7,7 @@
 		<view class="cu-form-group">
 			<view class="title">作业证类型:</view>
 			<picker @change="bindPickerChange1" :value="index1" :range="arrayzyzlx" class="item2" style="">
-				<view class="uni-input" style="">{{dataList.gczlx==''?arrayzyzlx[index1] : dataList.gczlx}}</view>
+				<view class="uni-input" style="">{{arrayzyzlx[index1]}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
@@ -150,7 +150,7 @@
 			bindPickerChange1(e) {
 				console.log('picker发送选择改变，携带值为', e.target.value)
 				this.index1 = e.detail.value
-				this.dataList.gczlx = this.arrayzyzlx[this.index1]
+				this.dataList.gczlx = this.index1
 				},
 				//修改高处作业
 				async btn1(){
@@ -193,6 +193,7 @@
 			})
 			if(res.data.code==200){
 				this.dataList = res.data.data
+				this.index1 = this.dataList.gczlx
 				}
 		}
 	}

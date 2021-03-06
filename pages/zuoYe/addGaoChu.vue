@@ -7,7 +7,7 @@
 		<view class="cu-form-group">
 			<view class="title">作业证类型:</view>
 			<picker @change="bindPickerChange1" :value="index1" :range="arrayzyzlx" class="item2" style="">
-				<view class="uni-input" style="">{{dataList.gczlx==''?arrayzyzlx[index1] : dataList.gczlx}}</view>
+				<view class="uni-input" style="">{{arrayzyzlx[index1]}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">

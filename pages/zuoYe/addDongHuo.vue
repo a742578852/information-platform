@@ -49,13 +49,13 @@
 		<view class="cu-form-group">
 			<view class="title">动火证类型:</view>
 			<picker @change="bindPickerChange1" :value="index1" :range="arraydhzlx" class="item2" style="">
-				<view class="uni-input" style="">{{dataList.dhzlx==''?arraydhzlx[index1] : dataList.dhzlx}}</view>
+				<view class="uni-input" style="">{{arraydhzlx[index1]}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
 			<view class="title">计划性:</view>
 			<picker @change="bindPickerChange2" :value="index2" :range="arrayjhx" class="item2" style="">
-				<view class="uni-input" style="">{{dataList.jhx==''?arrayjhx[index2] : dataList.jhx}}</view>
+				<view class="uni-input" style="">{{arrayjhx[index2]}}</view>
 			</picker>
 		</view>
 		<view class="cu-form-group">
