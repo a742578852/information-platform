@@ -108,16 +108,36 @@
 		</view>
 		<view class="cu-form-group">
 			<view class="title">危害辨识:</view>
-			<view class="item2" style="width: 255px;">
+			<view class="item2" style="width: 255px;" @click="wh">
 				<!-- <textarea class=""  :value="dataList.whbs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
-				<input placeholder="" name="input" v-model="dataList.whbs" style="width: 200px;"></input>
+				<input placeholder="" name="input" v-model="dataList.whbs" style="width: 200px;" disabled="" maxlength=""></input>
 			</view>
 		</view>
+		<scroll-view scroll-x="true" class="scroll" v-if="isTrue">
+			<view class="table">
+				<view class="table-item-item" style="width: 150rpx;">序号</view>
+				<view class="table-item-item" style="width: 320rpx;">风险因素</view>
+				<view class="table-item-item" style="width: 320rpx;">安全措施</view>
+			</view>
+			<checkbox-group @change="checkboxChange">
+				
+				<view class="table-data"  v-for="(item,inde) in whbsList" >
+					<checkbox :value="inde" >
+					<view class="table-data-item1" style="width: 150rpx;padding-left: 25rpx;">{{inde+1}}</view>
+					<view class="table-data-item1" style="width: 300rpx;">{{item.fxys}}</view>
+					<view class="table-data-item1" style="width: 300rpx;">{{item.aqcs}}</view>
+					</checkbox>
+				</view>
+			</checkbox-group>
+				<view class="btn">
+					<button type="default" class="btn1" @click="btnAqcs">保存</button>
+				</view>
+		</scroll-view>
 		<view class="cu-form-group">
 			<view class="title">安全措施:</view>
 			<view class="item2" style="width: 255px;">
 				<!-- <textarea class=""  :value="dataList.aqcs" auto-height="true" style="width: 150px;border:1px solid ;border-color: #C8C7CC;"/> -->
-				<input placeholder="" name="input" v-model="dataList.aqcs" style="width: 200px;"></input>
+				<input placeholder="" name="input" v-model="dataList.aqcs" style="width: 200px;" disabled="" maxlength=""></input>
 			</view>
 		</view>
 		<view class="btn">
@@ -130,6 +150,9 @@
 	export default {
 		data() {
 			return {
+				whbsList:[],
+				values:[],
+				isTrue:false,
 				jinyong:false,
 				dataList:{
 					
@@ -137,6 +160,23 @@
 			}
 		},
 		methods: {
+			checkboxChange: function (e) {
+				 this.values = e.detail.value
+			 },
+			//选择危害辨识
+			btnAqcs(){
+				this.dataList.whbs = ''
+				this.dataList.aqcs = ''
+				this.isTrue = false
+				for(var i=0;i<this.values.length;i++){
+					var ind = this.values[i]
+				    this.dataList.whbs = this.dataList.whbs+' '+this.whbsList[ind].fxys+' '
+					this.dataList.aqcs = this.dataList.aqcs+' '+this.whbsList[ind].aqcs
+				}
+			},
+			wh(){
+				this.isTrue = !this.isTrue
+			},
 			//修改动土作业
 			async btn1(){
 				var token = uni.getStorageSync('token')
@@ -167,6 +207,16 @@
 			}
 		},
 		async onLoad(option) {
+			const ress = await this.$myRequest({
+					url:'/api/workorder/getSafetyMeasures',
+					method:'get',
+					data:{
+						'orderName':'动土作业证'
+					}
+				})
+				if(ress.data.code==200){
+					this.whbsList = ress.data.data
+				}
 			var orderId = option.orderId
 			// 获取动土作业证详情
 			const res = await this.$myRequest({
@@ -201,6 +251,12 @@
 			display: inline-block;
 			padding-left: 30px;
 			background-color: #D2F1F0;
+		}
+		.table-item-item{
+			width: 750rpx;
+			display: inline-block;
+			background-color: #D2F1F0;
+			padding-left: 30px;
 		}
 	}
 	
