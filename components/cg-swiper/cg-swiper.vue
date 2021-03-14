@@ -115,7 +115,7 @@ export default {
 .swiper {
 	margin-top: 10px;
 	width: 100%;
-	height: 380upx;
+	height: 580upx;
 	padding-top: 20upx;
 	background-color: #D2F1F0;
 }
@@ -128,7 +128,7 @@ export default {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 20%;
+	width: 33%;
 	height: 170upx;
 }
 .swiper-img {

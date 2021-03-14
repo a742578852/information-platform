@@ -532,6 +532,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/danger/addYinHuan",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "新增隐患整改单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

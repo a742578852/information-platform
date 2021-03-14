@@ -21,16 +21,18 @@
 
 <script>
 	import cgSwiper from '@/components/cg-swiper/cg-swiper.vue';
-	import jpCharts from '@/components/jp-charts/index.vue';
+	// import jpCharts from '@/components/jp-charts/index.vue';
 
 	export default {
 		components: {
 			cgSwiper,
-			jpCharts
+			// jpCharts
 		},
 		data() {
 			return {
-				swiperList: [{
+				arrayAuthor:[],
+				swiperList: [
+					{
 						text: '在线学习',
 						img: '../../static/yx-login/logo.png'
 					},
@@ -43,7 +45,7 @@
 						img: '../../static/home/news-selected.png'
 					},
 					{
-						text: '隐患排查',
+						text: '安全检查',
 						img: '../../static/icon-bulb.png'
 					},
 					{
@@ -59,83 +61,6 @@
 						img: '../../static/bug.png'
 					}
 				],
-				Charts: { //y轴配置 value在list中的键 showY是否一直显示数据 size字大小 units文字后缀
-					Y: {
-						value: 'value',
-						showY: true,
-						size: 20,
-						units: '次'
-					},
-					X: {
-						value: 'keyw',
-						showX: true,
-						size: 20,
-						units: '月'
-					},
-					keyId: 'keyw',
-					list: [],
-					items: {},
-					width: 750,
-					height: 500,
-					x_width: 100,
-					proportion: 30, //宽度占比
-					showZ: false, //是否显示线条
-					checkedColor: 'red',
-					canClick: true, //不可以点击
-					bgColor: '#007aff',
-					scrollLeft: 0
-				},
-				list: [{
-						keyw: '01',
-						value: 100
-					}, {
-						keyw: '02',
-						value: 120
-					}, {
-						keyw: '03',
-						value: 110
-					},
-					{
-						keyw: '04',
-						value: 80
-					},
-					{
-						keyw: '05',
-						value: 90
-					},
-					{
-						keyw: '06',
-						value: 70
-					},
-					{
-						keyw: '07',
-						value: 60
-					},
-					{
-						keyw: '08',
-						value: 50
-					},
-					{
-						keyw: '09',
-						value: 40
-					},
-					{
-						keyw: '10',
-						value: 30
-					},
-					{
-						keyw: '11',
-						value: 20
-					},
-					{
-						keyw: '12',
-						value: 90
-					},
-				],
-				items: {
-					keyw: '02',
-					value: 110,
-				}
 			}
 		},
 		methods: {
@@ -174,34 +99,101 @@
 
 			},
 			
-			getDeviceIp() {
-				var deviceIp = ''
-					if (plus.os.name == "Android") {
-						var Context = plus.android.importClass("android.content.Context");
-						var wifiManager = plus.android.runtimeMainActivity().getSystemService(Context.WIFI_SERVICE);
-						var wifiInfo = plus.android.invoke(wifiManager, "getConnectionInfo");
-						var ipAddress = plus.android.invoke(wifiInfo, "getIpAddress");
-						deviceIp = '';
-						if (ipAddress != 0) {
-							deviceIp = ((ipAddress & 0xff) + "." + (ipAddress >> 8 & 0xff) + "." + (ipAddress >> 16 & 0xff) + "." + (
-								ipAddress >> 24 & 0xff));
-						}
-					}
-				console.log(deviceIp)
-				return deviceIp;
-			},
+			// getDeviceIp() {
+			// 	var deviceIp = ''
+			// 		if (plus.os.name == "Android") {
+			// 			var Context = plus.android.importClass("android.content.Context");
+			// 			var wifiManager = plus.android.runtimeMainActivity().getSystemService(Context.WIFI_SERVICE);
+			// 			var wifiInfo = plus.android.invoke(wifiManager, "getConnectionInfo");
+			// 			var ipAddress = plus.android.invoke(wifiInfo, "getIpAddress");
+			// 			deviceIp = '';
+			// 			if (ipAddress != 0) {
+			// 				deviceIp = ((ipAddress & 0xff) + "." + (ipAddress >> 8 & 0xff) + "." + (ipAddress >> 16 & 0xff) + "." + (
+			// 					ipAddress >> 24 & 0xff));
+			// 			}
+			// 		}
+			// 	console.log(deviceIp)
+			// 	return deviceIp;
+			// },
 
 		},
 
 		async onLoad() {
-			const res = await this.$myRequest({
+			
+			
+		},
+		async onShow() {
+			const ress = await this.$myRequest({
 				url: '/api/user/addLoginInfo',
 				method: 'POST',
-			 
 			})
+			// if(uni.getStorageSync('isShow') == ''){
+				const res = await this.$myRequest({
+					url: '/api/user/authorityCheck',
+					method: 'get',
+				})
+				if(res.data.code==200){
+					// uni.setStorageSync('isShow','isshow')
+					this.arrayAuthor = res.data.data
+				}
+				
+				if(this.arrayAuthor.studyFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '在线学习'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+				
+				if(this.arrayAuthor.orderFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '作业管理'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+				
+				if(this.arrayAuthor.examinationFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '在线考试'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+				
+				if(this.arrayAuthor.inspectFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '安全检查'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+				
+				if(this.arrayAuthor.riskFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '风险上报'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+				
+				if(this.arrayAuthor.dangerFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '隐患整改'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+				
+				if(this.arrayAuthor.judgeFlg==0){
+					for(var i=0;i<this.swiperList.length;i++){
+						if(this.swiperList[i].text == '风险研判'){
+							this.swiperList.splice(i,1)
+						}
+					}
+				}
+			// }
 		}
-
-
 	}
 </script>
 

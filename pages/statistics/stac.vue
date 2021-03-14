@@ -127,7 +127,6 @@
 					method: 'POST'
 				})
 				var data = res.data.data
-				console.log(data)
 				var ser = [{
 						"name": "整改中",
 						"data": data.completeingCount

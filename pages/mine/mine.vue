@@ -13,14 +13,14 @@
 				</swiper-item>
 			</swiper>
 		</view>
-		<view class="pass" @click="update">
+		<!-- <view class="pass" @click="update">
 			<image src="../../static/my/images/my_23_23.jpg" style="width: 40px; height: 40px;"></image>
 			<view class="pas">修改密码</view>
 		</view>
 		<view class="banben">
 			<image src="../../static/account/set.png" style="width: 40px; height: 40px;"></image>
 			<view class="ban">检查更新</view>
-		</view>
+		</view> -->
 		<view class="zhuxiao" @click="back">
 			<image src="../../static/hm-sms-list-card/images/img_25832_0_2.png" style="width: 40px; height: 40px;"></image>
 			<view class="zhu">账号注销</view>
@@ -38,13 +38,12 @@
 		methods: {
 			back(){
 				uni.clearStorageSync('token')
+				// uni.clearStorageSync('isShow')
 				uni.navigateTo({
 					url:'../login/login',
 					})
 			},
-			update(){
-				
-			}
+			
 		}
 	}
 </script>

@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="">
+			<button type="default" class="btn1" @click="btn1()">新增隐患</button>
+		</view>
 		<scroll-view scroll-x="true" class="scroll">
 			<view class="table">
 				<view class="table-item">序号</view>
@@ -31,10 +34,25 @@
 				]
 			}
 		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.switchTab({
+				url:'../index/index'
+			})
+			return true;
+		},
 		methods: {
 			goDangeDetail(item) {
 				uni.navigateTo({
 					url: 'dangerDetail?riskId=' + item.id
+				})
+			},
+			//新增隐患
+			btn1(){
+				uni.navigateTo({
+					url:'./addYinHuan'
 				})
 			}
 		},
@@ -60,22 +78,13 @@
 	page {
 		background-color: #FFFFFF;
 		width: 100%;
+		.btn1{
+			width: 100%;
+			background-color: #CCE6FF;
+		}
 	}
 
-	.btn {
-		width: 100%;
-		height: 65px;
-		line-height: 30px;
-		font-size: 30px;
-		padding: 10px;
-		display: flex;
-		.btn1 {
-			background-color: #CCE6FF;
-		}
-		.btn2 {
-			background-color: #CCE6FF;
-		}
-	}
+	
 
 	.scroll {
 		width: 100%;
