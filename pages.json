@@ -401,7 +401,7 @@
             "path" : "pages/safe/safe",
             "style" :
             {
-                "navigationBarTitleText": "隐患排查",
+                "navigationBarTitleText": "安全检查",
                 "enablePullDownRefresh": false
             }
 

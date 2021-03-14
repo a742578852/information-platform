@@ -77,7 +77,7 @@
 					uni.navigateTo({
 						url: '../risk/risk',
 					})
-				} else if (item.text == '隐患排查') {
+				} else if (item.text == '安全检查') {
 					uni.navigateTo({
 						url: '../safe/safe',
 					})
