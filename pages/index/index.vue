@@ -59,6 +59,10 @@
 					{
 						text: '隐患整改',
 						img: '../../static/bug.png'
+					},
+					{
+						text: '培训资料',
+						img: '../../static/book.png'
 					}
 				],
 			}
@@ -93,6 +97,10 @@
 				} else if (item.text == '风险研判') {
 					uni.navigateTo({
 						url: '../yanPan/yanPan',
+					})
+				}else if (item.text == '培训资料') {
+					uni.navigateTo({
+						url: '../daTi/peiXun',
 					})
 				}
 

@@ -541,6 +541,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/daTi/peiXun",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "培训资料",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
