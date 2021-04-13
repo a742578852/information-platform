@@ -19,7 +19,12 @@
 			<view class="table-data-item">{{item.gjz}}</view>
 			<view class="table-data-item">{{item.scbm}}</view>
 			<view class="table-data-item" >
-				<button type="default" v-if="item.fj!=null" @click="d(item.fj)" style="font-size: 12px;background-color: #D2F1F0;margin-top: 10px;">查看附件</button>
+				<!-- #ifdef APP-PLUS -->
+				<button  type="default" v-if="item.fj!=null" @click="d(item.fj)" style="font-size: 12px;background-color: #D2F1F0;margin-top: 10px;">查看附件</button>
+				<!-- #endif -->
+				<!-- #ifdef H5 -->
+				<button  type="default" v-if="item.fj!=null" @click="d1(item.fj)" style="font-size: 12px;background-color: #D2F1F0;margin-top: 10px;">查看附件</button>
+				<!-- #endif -->
 			</view>
 		</view>
 		</scroll-view>
@@ -52,10 +57,15 @@
 				// this.pfj = 'http://www.xdocin.com/xdoc?_func=to&_format=html&_cache=1&_xdoc=http://'+this.ip+fj
 				// console.log(this.pfj)
 				var iip = 'http://'+this.ip+fj
-				 plus.runtime.openURL("https://view.xdocin.com/xdoc?_xdoc=" + encodeURIComponent(iip));
-				
+				plus.runtime.openURL("https://view.xdocin.com/xdoc?_xdoc=" + encodeURIComponent(iip));
 			},
-			
+			d1(fj){
+				this.ip = uni.getStorageSync('address');
+				// this.pfj = 'http://www.xdocin.com/xdoc?_func=to&_format=html&_cache=1&_xdoc=http://'+this.ip+fj
+				// console.log(this.pfj)
+				var iip = 'http://'+this.ip+fj
+				window.open("https://view.xdocin.com/xdoc?_xdoc=" + encodeURIComponent(iip));
+			},
 		},
 		async onLoad() {
 			// 获取培训资料列表
@@ -96,6 +106,7 @@
 	}
 	
 	.table-data{
+		
 		display: flex;
 		font-size: 12px;
 		// margin: 10px;
