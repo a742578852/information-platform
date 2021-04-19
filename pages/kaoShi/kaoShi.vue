@@ -75,7 +75,7 @@
 					</view> -->
 					<view class="q_choose" style="padding: 10px;">
 					<!-- 单选题 -->
-					<view class='qc_dx' v-if="subject.tx=='单选题'">
+					<view class='qc_dx' v-if="subject.tx=='单选题'||subject.tx=='判断题'">
 						<radio-group @change='answerChange($event,subject.id)' @click="subject.type=1">
 							<view class="pd_item" >
 								<label class="radio">
@@ -84,10 +84,10 @@
 								<label class="radio">
 									<radio value="B" /><text style="font-size: 16px;margin: 10px;" v-text="'B:'+subject.selb"> </text>
 								</label></br>
-								<label class="radio">
+								<label class="radio" v-if="subject.tx=='单选题'">
 									<radio value="C" /><text style="font-size: 16px;margin: 10px;" v-text="'C:'+subject.selc"> </text>
 								</label></br>
-								<label class="radio">
+								<label class="radio" v-if="subject.tx=='单选题'">
 									<radio value="D" /><text style="font-size: 16px;margin: 10px;" v-text="'D:'+subject.seld"> </text>
 								</label>
 							</view>
@@ -266,12 +266,12 @@
 			   })
 			if(res.data.code==200){
 				 this.subjectList=res.data.data.questions
-				this.kmmc = this.subjectList[0].kmmc
+				this.kmmc = res.data.data.score.kmmc
 				// this.tx = this.subjectList[index].tx
 				
 			}
-			
 			this.currentType = this.subjectList[0].type
+			
 			uni.setNavigationBarTitle({
 				title: this.title
 			});			

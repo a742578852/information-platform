@@ -7,7 +7,7 @@
 				<text v-else-if="currentType==='3'">多选题</text>
 				<text v-else-if="currentType===4">填空题</text>
 				<text v-else-if="currentType===5">问答题</text> -->
-				<text >请答题 </text>
+				<!-- <text >{{tx1}} </text> -->
 				<!-- <view style="margin-left: 100px;">{{subjectList[0].kmmc}}</view> -->
 				<view style="margin-left: 100px;" v-model="kmmc">{{kmmc}}</view>
 			</view>
@@ -61,9 +61,13 @@
 				<swiper-item v-for="(subject,index) in subjectList" @touchmove.stop>
 					
 					<view v-if="index-subjectIndex>=-1&&index-subjectIndex<=1">
-										
+						<view class="">
+							<text >{{subject.tx}}</text>
+						</view>				
 					<view class="cu-bar bg-white solid-bottom">
-						<view class="action text-black">
+						
+						<view class="action text-black" >
+							
 							<text class="cuIcon-title ">{{index+1}}.</text>{{subject.content}}
 						</view>
 						
@@ -71,8 +75,8 @@
 					<view class="answer">
 						<view class="">A: {{subject.sela}}</view>
 						<view class="">B: {{subject.selb}}</view>
-						<view class="">C: {{subject.selc}}</view>
-						<view class="">D: {{subject.seld}}</view>
+						<view class="" v-if="subject.tx!='判断题'">C: {{subject.selc}}</view>
+						<view class="" v-if="subject.tx!='判断题'">D: {{subject.seld}}</view>
 					</view>
 					
 					<view>
@@ -167,6 +171,7 @@
 		
 		data() {
 			return {
+				tx1:'',
 				tx:"",
 				kmmc:'',
 				flag:false,
@@ -231,6 +236,7 @@
 		
 		
 		async onLoad(option) {
+			console.log(option.id);
 			const res =await this.$myRequest({
 				url:'/api/study/getTopic',
 				method:'POST',
@@ -238,6 +244,7 @@
 					subjectId:option.id
 				}
 			})
+			
 			if(res.data.code==200){
 				 this.subjectList=res.data.data
 				this.kmmc = this.subjectList[0].kmmc
@@ -248,7 +255,8 @@
 			});			
 			
 			//添加用户显示答案字段
-			for (var i = 0; i < this.subjectList.length; i++) {		
+			for (var i = 0; i < this.subjectList.length; i++) {	
+				this.tx1 = this.subjectList[i].tx
 				this.$set(this.subjectList[i],"showAnswer",false);				
 			}
 			
