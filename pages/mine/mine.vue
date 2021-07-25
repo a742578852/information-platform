@@ -37,7 +37,8 @@
 		},
 		methods: {
 			back(){
-				uni.clearStorageSync('token')
+				// uni.clearStorageSync('token')
+				uni.removeStorageSync('token')
 				// uni.clearStorageSync('isShow')
 				uni.navigateTo({
 					url:'../login/login',

@@ -236,7 +236,7 @@
 		
 		
 		async onLoad(option) {
-			console.log(option.id);
+			console.log(option.id+'000');
 			const res =await this.$myRequest({
 				url:'/api/study/getTopic',
 				method:'POST',
@@ -244,7 +244,7 @@
 					subjectId:option.id
 				}
 			})
-			
+			console.log('题目信息：'+res.data.data[0].kmmc);
 			if(res.data.code==200){
 				 this.subjectList=res.data.data
 				this.kmmc = this.subjectList[0].kmmc

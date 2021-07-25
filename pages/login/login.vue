@@ -51,7 +51,7 @@
 		// 读取本地存储密码及账号
 		onShow() {
 		  this.From.UserName =uni.getStorageSync('username')
-		  this.From.PassWord = uni.getStorageSync('password')
+		  // this.From.PassWord = uni.getStorageSync('password')
 		},
 		onBackPress(options) {  
 		            return true;  
@@ -89,6 +89,7 @@
 						if(res.data.code==200){
 							uni.setStorageSync('admin',res.data.data.admin)
 							uni.setStorageSync('token',res.data.data.token)
+							console.log(res.data.data.token);
 							uni.setStorageSync('username',that.From.UserName)
 							uni.setStorageSync('password',that.From.PassWord)
 							uni.switchTab({
