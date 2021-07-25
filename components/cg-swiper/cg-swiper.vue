@@ -13,13 +13,13 @@
 		>
 			<swiper-item style="width: 100%;height: 360upx;">
 				<view class="swiper-item" >
-					<view class="swiper-item-view" v-for="(item, index) in swiperList" :key="index" v-if="index < 10" @click="clickItem(item)">
+					<view class="swiper-item-view" v-for="(item, index) in swiperList" :key="index"  @click="clickItem(item)">
 						<image class="swiper-img" :src="item.img" ></image>
 						<text>{{ item.text }}</text>
 					</view>
 				</view>
 			</swiper-item>
-			<block v-if="swiperList.length > 10">
+			<!-- <block v-if="swiperList.length > 10">
 				<swiper-item style="width: 100%;height: 360upx;">
 					<view class="swiper-item">
 						<view class="swiper-item-view" v-for="(item, index) in swiperList" :key="index" v-if="index > 9 && index < 20" @click="clickItem(item)">
@@ -28,7 +28,7 @@
 						</view>
 					</view>
 				</swiper-item>
-			</block>
+			</block> -->
 		</swiper>
 		<view class="dots" v-if="customize == true && swiperDots == false">
 			<block v-for="(item, index) in swiperList" :key="index" v-if="index < 2 && swiperList.length > 10">

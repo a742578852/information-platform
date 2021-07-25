@@ -244,7 +244,20 @@
 					subjectId:option.id
 				}
 			})
-			console.log('题目信息：'+res.data.data[0].kmmc);
+			console.log('题目信息：'+res.data.data[0].content);
+			
+			for(var i=0;i<res.data.data.length;i++){
+				
+				var z = new RegExp('<([^<>]*)>')
+				 
+				  while((res.data.data[i].content.match('<([^<>]*)>')) != null){
+				   res.data.data[i].content = res.data.data[i].content.replace(z,'') 
+				   res.data.data[i].content = res.data.data[i].content.replace('&nbsp;','')
+				  }
+			}
+			
+			  
+			  
 			if(res.data.code==200){
 				 this.subjectList=res.data.data
 				this.kmmc = this.subjectList[0].kmmc

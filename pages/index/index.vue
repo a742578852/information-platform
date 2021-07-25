@@ -135,73 +135,106 @@
 				url: '/api/user/addLoginInfo',
 				method: 'POST',
 			})
-			// if(uni.getStorageSync('isShow') == ''){
-				const res = await this.$myRequest({
-					url: '/api/user/authorityCheck',
-					method: 'get',
-				})
-				if(res.data.code==200){
-					// uni.setStorageSync('isShow','isshow')
-					this.arrayAuthor = res.data.data
-				}
-				
-				if(this.arrayAuthor.studyFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '在线学习'){
-							this.swiperList.splice(i,1)
-						}
+			const res = await this.$myRequest({
+				url: '/api/user/authorityCheck',
+				method: 'get',
+			})
+			if(res.data.code==200){
+				// uni.setStorageSync('isShow','isshow')
+				this.arrayAuthor = res.data.data
+			}
+			this.swiperList = [
+					{
+						text: '在线学习',
+						img: '../../static/yx-login/logo.png'
+					},
+					{
+						text: '在线考试',
+						img: '../../static/logo.png'
+					},
+					{
+						text: '风险上报',
+						img: '../../static/home/news-selected.png'
+					},
+					{
+						text: '安全检查',
+						img: '../../static/icon-bulb.png'
+					},
+					{
+						text: '风险研判',
+						img: '../../static/home/news-selected.png'
+					},
+					{
+						text: '作业管理',
+						img: '../../static/home/ios-folder-outline.png'
+					},
+					{
+						text: '隐患整改',
+						img: '../../static/bug.png'
+					},
+					{
+						text: '培训资料',
+						img: '../../static/book.png'
+					}
+				]
+			if(this.arrayAuthor.studyFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '在线学习'){
+						this.swiperList.splice(i,1)
+						
 					}
 				}
-				
-				if(this.arrayAuthor.orderFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '作业管理'){
-							this.swiperList.splice(i,1)
-						}
+			}
+			
+			if(this.arrayAuthor.orderFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '作业管理'){
+						this.swiperList.splice(i,1)
 					}
 				}
-				
-				if(this.arrayAuthor.examinationFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '在线考试'){
-							this.swiperList.splice(i,1)
-						}
+			}
+			
+			if(this.arrayAuthor.examinationFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '在线考试'){
+						this.swiperList.splice(i,1)
 					}
 				}
-				
-				if(this.arrayAuthor.inspectFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '安全检查'){
-							this.swiperList.splice(i,1)
-						}
+			}
+			
+			if(this.arrayAuthor.inspectFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '安全检查'){
+						this.swiperList.splice(i,1)
 					}
 				}
-				
-				if(this.arrayAuthor.riskFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '风险上报'){
-							this.swiperList.splice(i,1)
-						}
+			}
+			
+			if(this.arrayAuthor.riskFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '风险上报'){
+						this.swiperList.splice(i,1)
 					}
 				}
-				
-				if(this.arrayAuthor.dangerFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '隐患整改'){
-							this.swiperList.splice(i,1)
-						}
+			}
+			
+			if(this.arrayAuthor.dangerFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '隐患整改'){
+						this.swiperList.splice(i,1)
 					}
 				}
-				
-				if(this.arrayAuthor.judgeFlg==0){
-					for(var i=0;i<this.swiperList.length;i++){
-						if(this.swiperList[i].text == '风险研判'){
-							this.swiperList.splice(i,1)
-						}
+			}
+			
+			if(this.arrayAuthor.judgeFlg==0){
+				for(var i=0;i<this.swiperList.length;i++){
+					if(this.swiperList[i].text == '风险研判'){
+						this.swiperList.splice(i,1)
 					}
 				}
-			// }
+			}
 		}
+		
 	}
 </script>
 
