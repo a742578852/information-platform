@@ -550,6 +550,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/canvas/canvas",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

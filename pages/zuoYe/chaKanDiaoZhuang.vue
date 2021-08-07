@@ -124,6 +124,7 @@
 			</view>
 		</view>
 		<view class="btn">
+			<button type="default" class="btn8" @click="btn9">签名</button>
 			<button type="default" class="btn1" @click="btn1()" :disabled="jinyong">保存修改</button>
 		</view>
 	</view>
@@ -166,6 +167,12 @@
 			}
 		},
 		methods: {
+			//签名
+			btn9(){
+				uni.navigateTo({
+					url:'../canvas/canvas'
+				})
+			},
 			checkboxChange: function (e) {
 				 this.values = e.detail.value
 			 },
