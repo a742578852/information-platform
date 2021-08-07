@@ -7,6 +7,9 @@
     "transformPx" : false,
     /* 5+App特有相关 */
     "app-plus" : {
+        "compatible" : {
+            "ignoreVersion" : true //true表示忽略版本检查提示框，HBuilderX1.9.0及以上版本支持  
+        },
         "usingComponents" : true,
         "nvueCompiler" : "uni-app",
         "compilerVersion" : 3,
@@ -119,8 +122,10 @@
     },
     "h5" : {
         "router" : {
-            "mode" : "hash"
-        }
+            "mode" : "hash",
+            "base" : "./"
+        },
+        "domain" : "122.51.190.13"
     },
     "quickapp-webview" : {
         "icon" : "C:/Users/印钞机/Desktop/化工能源.png"

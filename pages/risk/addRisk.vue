@@ -8,15 +8,32 @@
 			</view>
 
 			<view class="cu-form-group">
-				<view class="title"><span style="color:red;">* </span>风险因素</view>
+				<!-- <view class="title"><span style="color:red;">* </span>风险因素</view>
 				<picker @change="PickerChange" v-model:value="fxys" :range="fxyss">
 					<view class="picker">
 						{{index>-1?fxyss[index]:fxys}}
 					</view>
 
-				</picker>
+				</picker> -->
+				
+				
+				
+				<view class="title">环：</view>
+				<input ></input>
 			</view>
-
+			
+				<view class="cu-form-group">
+					<view class="title">人：</view>
+					<input ></input>
+					</view>
+					<view class="cu-form-group">
+						<view class="title">物 ：</view>
+						<input ></input>
+						</view>
+						<view class="cu-form-group">
+							<view class="title">管：</view>
+							<input ></input>
+							</view>
 			<view class="cu-form-group align-start">
 				<view class="title">风险描述</view>
 				<textarea maxlength="-1" placeholder="请输入风险描述" v-model:value='fxms'></textarea>
