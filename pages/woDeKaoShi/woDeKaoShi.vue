@@ -12,7 +12,7 @@
 		<view class="shijuan-item" >{{item.sttime}}</view>
 		<view class="shijuan-item" >{{item.ettime}}</view>
 		<view class="shijuan-item" >{{item.issubmited==0?'未考':'已考'}}</view>
-		<view class="shijuan-item" >{{item.ettime}}</view>
+		<view class="shijuan-item" >{{item.total}}</view>
 	</view>
 	</view>
 </template>
@@ -78,6 +78,15 @@
 				
 			   }
 			   
+		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.switchTab({
+				url:'../index/index'
+			})
+			return true;
 		},
 		onLoad() {
 			this.getShiJuan()

@@ -59,6 +59,10 @@
 			<swiper :current="subjectIndex" class="swiper-box" @change="SwiperChange" :style="{'height':swiperHeight}">
 				<swiper-item v-for="(subject,index) in subjectList" @touchmove.stop>
 					<text style="color: red;margin: 10px;">{{subject.tx}}</text>
+					<view class="" style="font-size: 40upx;display: flex; justify-content:flex-end;margin-bottom: 5upx;">
+						考试剩余时间：<uni-countdown @timeup='subShiJun()' background-color="#00B26A" :show-day="false" :hour="0" :minute="30" :second="0" ></uni-countdown>
+					</view>
+					
 					<view v-if="index-subjectIndex>=-1&&index-subjectIndex<=1">
 										
 					<view class="cu-bar bg-white solid-bottom">
@@ -318,8 +322,8 @@
 				})
 				console.log(res.data.code)
 				if(res.data.code==200){
-					uni.switchTab({
-						url:'../index/index'
+					uni.navigateTo({
+						url:'../woDeKaoShi/woDeKaoShi'
 					})
 				}
 			},
@@ -424,7 +428,16 @@
 			},
 			
 			
-		}
+		},
+		onBackPress(event) {
+			if (event.from === 'navigateBack') {
+				return false;
+			}
+			uni.navigateTo({
+				url:'../woDeKaoShi/woDeKaoShi'
+			})
+			return true;
+		},
 	}
 </script>
 
