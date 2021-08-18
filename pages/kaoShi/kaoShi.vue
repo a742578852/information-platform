@@ -131,10 +131,10 @@
 						<radio-group @change='answerChange($event,subject.id)' @click="subject.type=1">
 							<view class="pd_item" >
 								<label class="radio">
-									<radio value="T" /><text style="font-size: 16px;margin: 10px;" v-text="正确"> </text>
+									<radio value="T" /><text style="font-size: 16px;margin: 10px;" >正确 </text>
 								</label></br>
 								<label class="radio">
-									<radio value="F" /><text style="font-size: 16px;margin: 10px;" v-text="错误"> </text>
+									<radio value="F" /><text style="font-size: 16px;margin: 10px;" >错误 </text>
 								</label></br>
 								
 							</view>
