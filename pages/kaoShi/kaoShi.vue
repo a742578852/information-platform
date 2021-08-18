@@ -56,12 +56,41 @@
 			</view>
 		</view>
 		<form>
+			<view class="container">
+				<countdown-timer ref="countdown" :time="time" @finish="onFinish" autoStart>
+					<template v-slot="{day, hour, minute, second, remain, time}">
+						<view class="case">
+							<view class="title">剩余考试时间：</view>
+							<view class="custom">
+								
+								<!-- #ifndef MP -->
+								<view>{{fillWithZero(hour + (day * 24), 2)}}</view>
+								<view>:</view>
+								<view>{{fillWithZero(minute, 2)}}</view>
+								<view>:</view>
+								<view>{{fillWithZero(second, 2)}}</view>
+								<!-- #endif -->
+								
+								<!-- #ifdef MP -->
+								<!-- 小程序暂时不支持在v-slot内部调用方法，后期可能会支持 -->
+								<view>{{hour + (day * 24)}}</view>
+								<view>:</view>
+								<view>{{minute}}</view>
+								<view>:</view>
+								<view>{{second}}</view>
+								<!-- #endif -->
+								
+							</view>
+							<!-- <view class="reset-btn" @click="$refs.countdown.pause()">暂停</view> -->
+						</view>
+					</template>
+				</countdown-timer>
+			</view>
 			<swiper :current="subjectIndex" class="swiper-box" @change="SwiperChange" :style="{'height':swiperHeight}">
 				<swiper-item v-for="(subject,index) in subjectList" @touchmove.stop>
 					<text style="color: red;margin: 10px;">{{subject.tx}}</text>
-					<view class="" style="font-size: 40upx;display: flex; justify-content:flex-end;margin-bottom: 5upx;">
-						考试剩余时间：<uni-countdown @timeup='subShiJun()' background-color="#00B26A" :show-day="false" :hour="0" :minute="30" :second="0" ></uni-countdown>
-					</view>
+					
+					
 					
 					<view v-if="index-subjectIndex>=-1&&index-subjectIndex<=1">
 										
@@ -72,14 +101,14 @@
 						
 					</view>
 					<!-- <view class="answer">
-						<view class="">A: {{subject.sela}}</view>
+						<view class="">A: {{subject.sela}}</view> 
 						<view class="">B: {{subject.selb}}</view>
 						<view class="">C: {{subject.selc}}</view>
 						<view class="">D: {{subject.seld}}</view>
 					</view> -->
 					<view class="q_choose" style="padding: 10px;">
 					<!-- 单选题 -->
-					<view class='qc_dx' v-if="subject.tx=='单选题'||subject.tx=='判断题'">
+					<view class='qc_dx' v-if="subject.tx=='单选题'">
 						<radio-group @change='answerChange($event,subject.id)' @click="subject.type=1">
 							<view class="pd_item" >
 								<label class="radio">
@@ -88,15 +117,41 @@
 								<label class="radio">
 									<radio value="B" /><text style="font-size: 16px;margin: 10px;" v-text="'B:'+subject.selb"> </text>
 								</label></br>
-								<label class="radio" v-if="subject.tx=='单选题'">
+								<label class="radio" >
 									<radio value="C" /><text style="font-size: 16px;margin: 10px;" v-text="'C:'+subject.selc"> </text>
 								</label></br>
-								<label class="radio" v-if="subject.tx=='单选题'">
+								<label class="radio" >
 									<radio value="D" /><text style="font-size: 16px;margin: 10px;" v-text="'D:'+subject.seld"> </text>
 								</label>
 							</view>
 						</radio-group>
 					</view>
+					<!-- 判断题 -->
+					<view class='qc_dx' v-if="subject.tx=='判断题'">
+						<radio-group @change='answerChange($event,subject.id)' @click="subject.type=1">
+							<view class="pd_item" >
+								<label class="radio">
+									<radio value="T" /><text style="font-size: 16px;margin: 10px;" v-text="正确"> </text>
+								</label></br>
+								<label class="radio">
+									<radio value="F" /><text style="font-size: 16px;margin: 10px;" v-text="错误"> </text>
+								</label></br>
+								
+							</view>
+						</radio-group>
+					</view>
+					
+					<!-- 判断题 -->
+					<view class='qc_dx' v-if="subject.tx=='填空题'">
+						<!-- <radio-group @change='answerChange($event,subject.id)' @click="subject.type=1"> -->
+							<view class="pd_item" >
+								<view class="title">请输入答案:</view></br>
+								<!-- <input  name="input"  style="border: solid 1upx;width: 150%;height: 80upx;"></input> -->
+								<textarea @blur="bindTextAreaBlur($event,subject.id)" @click="subject.type=1"  style="border: solid 1upx;" auto-height />
+							</view>
+						<!-- </radio-group> -->
+					</view>
+					
 					<!-- 多选题 -->
 					<view class="qc_dx" v-if="subject.tx=='多选题'">
 						<checkbox-group @change='answerChange($event,subject.id)' @click="subject.type=1">
@@ -180,11 +235,13 @@
 </template>
 
 <script>
-	
+	import countdownTimer from '../../components/countdown-timer/countdown-timer.vue'
 	export default {
 		
 		data() {
 			return {
+				time: new Date('2020/04/24 02:00:00').getTime() - new Date('2020/04/24 00:30:00').getTime(),
+				isAnswer:false,
 				scoreId:'',
 				tx:"",
 				kmmc:'',
@@ -254,9 +311,6 @@
 			});
 
 		},
-		
-		
-		
 		async onLoad(option) {
 			var id = option.id
 			this.scoreId = id
@@ -286,7 +340,33 @@
 			}
 			
 		},
+		// onShow() {
+		// 	$refs.countdown.pause()
+		// 	this.time = 1*60*2*1000
+		// },
 		methods: {
+			bindTextAreaBlur: function (e,id) {
+			            console.log(e.detail.value,id)
+						if(e.detail.value!=''&&e.detail.value!=null){
+							this.isAnswer = true
+						}
+						this.answersList.push({'questionId':id,'answer':e.detail.value})
+			        },
+			onFinish() {
+				uni.showToast({
+					icon: 'none',
+					title: '考试结束',
+				})
+				this.subShiJun()
+			},
+			fillWithZero(num, n) {
+				var len = num.toString().length;
+				while (len < n) {
+					num = "0" + num;
+					len++;
+				}
+				return num;
+			},
 			//获取选择的答案
 			answerChange(e,id){
 				
@@ -320,13 +400,13 @@
 						answer:JSON.stringify(this.answersList)
 					}
 				})
-				console.log(res.data.code)
 				if(res.data.code==200){
 					uni.navigateTo({
 						url:'../woDeKaoShi/woDeKaoShi'
 					})
 				}
 			},
+			
 			showCardModal: function(e) {
 				this.modalCard = e.currentTarget.dataset.target
 			},
@@ -433,6 +513,8 @@
 			if (event.from === 'navigateBack') {
 				return false;
 			}
+			this.$refs.countdown.pause()
+			this.time = 1*60*90*1000
 			uni.navigateTo({
 				url:'../woDeKaoShi/woDeKaoShi'
 			})
@@ -445,6 +527,38 @@
 	@import "../../colorui/animation.css";
 	@import "../../colorui/icon.css";
 	@import "../../colorui/main.css";
+	.container {
+		padding: 20upx;
+	}
+	.case {
+		display: flex;
+		margin: 20upx;
+		justify-content: flex-end;
+	}
+	.case > .title {
+		margin-right: 10upx;
+	}
+	.custom {
+		display: flex;
+	}
+	.custom :nth-child(odd) {
+		background-color: red;
+		padding: 2upx 4upx;
+		color: white;
+		border-radius: 5upx;
+		text-align: center;
+	}
+	.custom :nth-child(even) {
+		padding: 0 5upx;
+	}
+	.reset-btn {
+		margin: 20upx 10upx;
+		padding: 20upx;
+		text-align: center;
+		background-color: red;
+		border-radius: 10upx;
+		color: white;
+	}
 	page {
 		background-color: #FFFFFF;
 	}

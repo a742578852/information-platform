@@ -64,7 +64,7 @@
 			async login(){
 				var that = this
 				var address = uni.getStorageSync('address')
-				
+				console.log(address);
 				if(address!=''){
 					if(that.From.UserName==''){
 						uni.showToast({
@@ -86,6 +86,7 @@
 								password:that.From.PassWord
 							}
 						})
+						
 						if(res.data.code==200){
 							uni.setStorageSync('admin',res.data.data.admin)
 							uni.setStorageSync('token',res.data.data.token)

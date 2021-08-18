@@ -21,6 +21,11 @@
 			<image src="../../static/account/set.png" style="width: 40px; height: 40px;"></image>
 			<view class="ban">检查更新</view>
 		</view> -->
+		
+		<view style="font-size: 50upx;margin-left: 25upx;margin-bottom: 50upx;">
+			登录人：{{nick}}
+		</view>
+		
 		<view class="zhuxiao" @click="back">
 			<image src="../../static/hm-sms-list-card/images/img_25832_0_2.png" style="width: 40px; height: 40px;"></image>
 			<view class="zhu">账号注销</view>
@@ -32,7 +37,7 @@
 	export default {
 		data() {
 			return {
-				
+				nick:''
 			}
 		},
 		methods: {
@@ -45,6 +50,9 @@
 					})
 			},
 			
+		},
+		onShow() {
+			this.nick = uni.getStorageSync('admin').nick
 		}
 	}
 </script>

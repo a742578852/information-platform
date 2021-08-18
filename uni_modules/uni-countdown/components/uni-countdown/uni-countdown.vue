@@ -137,6 +137,7 @@
 			clearInterval(this.timer)
 		},
 		// #endif
+		
 		methods: {
 			toSeconds(timestamp, day, hours, minutes, seconds) {
 				if (timestamp) {
