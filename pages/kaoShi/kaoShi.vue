@@ -141,13 +141,13 @@
 						</radio-group>
 					</view>
 					
-					<!-- 判断题 -->
+					<!-- 填空题 -->
 					<view class='qc_dx' v-if="subject.tx=='填空题'">
 						<!-- <radio-group @change='answerChange($event,subject.id)' @click="subject.type=1"> -->
 							<view class="pd_item" >
 								<view class="title">请输入答案:</view></br>
 								<!-- <input  name="input"  style="border: solid 1upx;width: 150%;height: 80upx;"></input> -->
-								<textarea @blur="bindTextAreaBlur($event,subject.id)" @click="subject.type=1"  style="border: solid 1upx;" auto-height />
+								<textarea @blur="bindTextAreaBlur($event,subject.id)" @click="subject.type=1"  style="border: solid 1upx;"  auto-height />
 							</view>
 						<!-- </radio-group> -->
 					</view>
@@ -241,7 +241,7 @@
 		data() {
 			return {
 				time: new Date('2020/04/24 02:00:00').getTime() - new Date('2020/04/24 00:30:00').getTime(),
-				isAnswer:false,
+				
 				scoreId:'',
 				tx:"",
 				kmmc:'',
@@ -325,8 +325,6 @@
 			if(res.data.code==200){
 				 this.subjectList=res.data.data.questions
 				this.kmmc = res.data.data.score.kmmc
-				// this.tx = this.subjectList[index].tx
-				
 			}
 			this.currentType = this.subjectList[0].type
 			
@@ -340,17 +338,20 @@
 			}
 			
 		},
-		// onShow() {
-		// 	$refs.countdown.pause()
-		// 	this.time = 1*60*2*1000
-		// },
 		methods: {
 			bindTextAreaBlur: function (e,id) {
-			            console.log(e.detail.value,id)
 						if(e.detail.value!=''&&e.detail.value!=null){
-							this.isAnswer = true
+						var ids=0
+						for(var i = 0;i<this.answersList.length;i++){
+							if(this.answersList[i].questionId == id){
+								ids = 1
+								this.answersList[i].answer = e.detail.value
+							}
 						}
-						this.answersList.push({'questionId':id,'answer':e.detail.value})
+						if(ids==0){
+							this.answersList.push({'questionId':id,'answer':e.detail.value})
+						}
+						}
 			        },
 			onFinish() {
 				uni.showToast({
@@ -369,12 +370,11 @@
 			},
 			//获取选择的答案
 			answerChange(e,id){
-				
-				console.log(id)
 				this.tempUserAnswer = e.detail.value;
 				//console.log(this.answersList[0].questionId+'0000000000')
 				this.ansString='';
 				for(var j = 0; j < this.tempUserAnswer.length; j++){
+					
 					this.ansString = this.ansString + this.tempUserAnswer[j]
 				}
 				 console.log(this.ansString)
@@ -391,7 +391,6 @@
 			},
 			//提交试卷
 			async subShiJun(){
-				
 				const res = await this.$myRequest({
 					url:'/api/study/markingExam',
 					method:'POST',

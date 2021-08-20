@@ -46,6 +46,7 @@
 			},
 			//明天判断时间和状态
 			async goKaoShi(issubmited,sttime,ettime,id){
+				console.log('试卷id：'+id);
 				var date = new Date(),
 				year = date.getFullYear(),
 				month = date.getMonth() + 1,
